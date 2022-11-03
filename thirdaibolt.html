@@ -44,6 +44,17 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdaibase.html">thirdai</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">thirdai.bolt</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.DistributedTrainingWrapper"><code class="docutils literal notranslate"><span class="pre">DistributedTrainingWrapper</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.DistributedTrainingWrapper.__init__"><code class="docutils literal notranslate"><span class="pre">DistributedTrainingWrapper.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.DistributedTrainingWrapper.__module__"><code class="docutils literal notranslate"><span class="pre">DistributedTrainingWrapper.__module__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.DistributedTrainingWrapper.compute_and_store_batch_gradients"><code class="docutils literal notranslate"><span class="pre">DistributedTrainingWrapper.compute_and_store_batch_gradients()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.DistributedTrainingWrapper.finish_training"><code class="docutils literal notranslate"><span class="pre">DistributedTrainingWrapper.finish_training()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.DistributedTrainingWrapper.model"><code class="docutils literal notranslate"><span class="pre">DistributedTrainingWrapper.model</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.DistributedTrainingWrapper.num_batches"><code class="docutils literal notranslate"><span class="pre">DistributedTrainingWrapper.num_batches()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.DistributedTrainingWrapper.set_datasets"><code class="docutils literal notranslate"><span class="pre">DistributedTrainingWrapper.set_datasets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.DistributedTrainingWrapper.update_parameters"><code class="docutils literal notranslate"><span class="pre">DistributedTrainingWrapper.update_parameters()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.EvalConfig"><code class="docutils literal notranslate"><span class="pre">EvalConfig</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.EvalConfig.__init__"><code class="docutils literal notranslate"><span class="pre">EvalConfig.__init__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.EvalConfig.__module__"><code class="docutils literal notranslate"><span class="pre">EvalConfig.__module__</span></code></a></li>
@@ -123,8 +134,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>thirdai.bolt</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">thirdai.bolt</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/thirdaibolt.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -136,6 +147,56 @@
              
   <section id="module-thirdai.bolt">
 <span id="thirdai-bolt"></span><h1>thirdai.bolt<a class="headerlink" href="#module-thirdai.bolt" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.bolt.DistributedTrainingWrapper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.</span></span><span class="sig-name descname"><span class="pre">DistributedTrainingWrapper</span></span><a class="headerlink" href="#thirdai.bolt.DistributedTrainingWrapper" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.DistributedTrainingWrapper.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.DistributedTrainingWrapper" title="thirdai._thirdai.bolt.DistributedTrainingWrapper"><span class="pre">thirdai._thirdai.bolt.DistributedTrainingWrapper</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">thirdai._thirdai.bolt.nn.Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.TrainConfig" title="thirdai._thirdai.bolt.TrainConfig"><span class="pre">thirdai._thirdai.bolt.TrainConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.DistributedTrainingWrapper.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="thirdai.bolt.DistributedTrainingWrapper.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'thirdai._thirdai.bolt'</span></em><a class="headerlink" href="#thirdai.bolt.DistributedTrainingWrapper.__module__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.DistributedTrainingWrapper.compute_and_store_batch_gradients">
+<span class="sig-name descname"><span class="pre">compute_and_store_batch_gradients</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.DistributedTrainingWrapper" title="thirdai._thirdai.bolt.DistributedTrainingWrapper"><span class="pre">thirdai._thirdai.bolt.DistributedTrainingWrapper</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.DistributedTrainingWrapper.compute_and_store_batch_gradients" title="Permalink to this definition"></a></dt>
+<dd><p>Uses the batch_idx’th batch of the currently set dataset to accumulate a single batche’s gradients in the wrapped Bolt model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.DistributedTrainingWrapper.finish_training">
+<span class="sig-name descname"><span class="pre">finish_training</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.DistributedTrainingWrapper" title="thirdai._thirdai.bolt.DistributedTrainingWrapper"><span class="pre">thirdai._thirdai.bolt.DistributedTrainingWrapper</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.DistributedTrainingWrapper.finish_training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="thirdai.bolt.DistributedTrainingWrapper.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#thirdai.bolt.DistributedTrainingWrapper.model" title="Permalink to this definition"></a></dt>
+<dd><p>The underlying Bolt model wrapped by this DistributedTrainingWrapper.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.DistributedTrainingWrapper.num_batches">
+<span class="sig-name descname"><span class="pre">num_batches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.DistributedTrainingWrapper" title="thirdai._thirdai.bolt.DistributedTrainingWrapper"><span class="pre">thirdai._thirdai.bolt.DistributedTrainingWrapper</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#thirdai.bolt.DistributedTrainingWrapper.num_batches" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.DistributedTrainingWrapper.set_datasets">
+<span class="sig-name descname"><span class="pre">set_datasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.DistributedTrainingWrapper" title="thirdai._thirdai.bolt.DistributedTrainingWrapper"><span class="pre">thirdai._thirdai.bolt.DistributedTrainingWrapper</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="thirdaidataset.html#thirdai.dataset.BoltDataset" title="thirdai._thirdai.dataset.BoltDataset"><span class="pre">thirdai._thirdai.dataset.BoltDataset</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_labels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="thirdaidataset.html#thirdai.dataset.BoltDataset" title="thirdai._thirdai.dataset.BoltDataset"><span class="pre">thirdai._thirdai.dataset.BoltDataset</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.DistributedTrainingWrapper.set_datasets" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the current train data and labels the wrapper class uses for computeAndStoreBatchGradients. We need this method instead of just passing in a single pair of training data and training labels at construction time because we might have a streaming dataset we want to train on, which will entail switching out the current datasets dynamically. If this is not the first time this method hasbeen called, the batch sizes of the passed in datasets must be the same as when this method was called the first time.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.DistributedTrainingWrapper.update_parameters">
+<span class="sig-name descname"><span class="pre">update_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.DistributedTrainingWrapper" title="thirdai._thirdai.bolt.DistributedTrainingWrapper"><span class="pre">thirdai._thirdai.bolt.DistributedTrainingWrapper</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.DistributedTrainingWrapper.update_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the parameters of the wrapped Bolt model. You should call this manually after setting the gradients of the wrapped model.</p>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="thirdai.bolt.EvalConfig">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.</span></span><span class="sig-name descname"><span class="pre">EvalConfig</span></span><a class="headerlink" href="#thirdai.bolt.EvalConfig" title="Permalink to this definition"></a></dt>
@@ -189,8 +250,11 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>deployment_config</strong> (<em>DeploymentConfig</em>) – A config for the ModelPipeline.</p></li>
 <li><p><strong>parameters</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Union</em><em>[</em><em>bool</em><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>str</em><em>]</em><em>]</em>) – A mapping from parameter
-names to values. This is used to pass in values to UserSpecifiedParameters,
-or provide the name of the option to use for OptionMappedParameters.</p></li>
+names to values. This is used to pass in any additional parameters required
+to construct the desired model. The keys should be the names of the parameters
+as strings and the values can be integers, floats, strings, or bools depending
+on what the type of the parameter is. An exception will be thrown if a required
+parameter is not specified or if the the parameter is not the right type.</p></li>
 </ul>
 </dd>
 </dl>
@@ -215,8 +279,11 @@ parameters.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>config_path</strong> (<em>str</em>) – A path to a serialized deployment config for the ModelPipeline.</p></li>
 <li><p><strong>parameters</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Union</em><em>[</em><em>bool</em><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>str</em><em>]</em><em>]</em>) – A mapping from parameter
-names to values. This is used to pass in values to UserSpecifiedParameters,
-or provide the name of the option to use for OptionMappedParameters.</p></li>
+names to values. This is used to pass in any additional parameters required
+to construct the desired model. The keys should be the names of the parameters
+as strings and the values can be integers, floats, strings, or bools depending
+on what the type of the parameter is. An exception will be thrown if a required
+parameter is not specified or if the the parameter is not the right type.</p></li>
 </ul>
 </dd>
 </dl>
@@ -869,7 +936,7 @@ to change for the model to predict the target class.</p>
 <li><p><strong>input_sample</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – The input sample as a dictionary
 where the keys are column names as specified in data_types and the ”
 values are the respective column values.</p></li>
-<li><p><strong>target</strong> (<em>str</em>) – Optional. The desired target class. If provided, the
+<li><p><strong>target_class</strong> (<em>str</em>) – Optional. The desired target class. If provided, the
 model will identify the columns that need to change for the model to
 predict the target class.</p></li>
 </ul>
@@ -904,12 +971,12 @@ See <cite>dataset.Explanation</cite> for details.</p>
 <span class="go">    )</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Make a single prediction</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">explanations</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span>
-<span class="go">        input_sample={&quot;user_id&quot;: &quot;A33225&quot;, &quot;timestamp&quot;: &quot;2022-02-02&quot;, &quot;special_event&quot;: &quot;christmas&quot;}, target=35</span>
+<span class="go">        input_sample={&quot;user_id&quot;: &quot;A33225&quot;, &quot;timestamp&quot;: &quot;2022-02-02&quot;, &quot;special_event&quot;: &quot;christmas&quot;}, target_class=35</span>
 <span class="go">    )</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">explanations</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="go">column_number: 0 | column_name: &quot;special_event&quot; | keyword: &quot;christmas&quot; | percentage_significance: 25.2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">explanations</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="go">column_number: 1 | column_name: &quot;movie_title&quot; | keyword: &quot;Previously seen &#39;Die Hard&#39;&quot; | percentage_significance: -22.3</span>
+<span class="go">column_number: 1 | column_name: &quot;movie_title&quot; | keyword: &quot;&#39;Die Hard&#39; is one of last 5 values&quot; | percentage_significance: -22.3</span>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
@@ -917,7 +984,7 @@ See <cite>dataset.Explanation</cite> for details.</p>
 <li><p><cite>percentage_significance</cite> can be positive or negative depending on the
 relationship between the responsible column and the prediction. In the above
 example, the <cite>percentage_significance</cite> associated with the explanation
-“Previously seen ‘Die Hard’” is negative because recently watching “Die Hard” is
+“‘Die Hard’ is one of last 5 values” is negative because recently watching “Die Hard” is
 negatively correlated with the target class “Home Alone”. A large negative value
 is just as “explanatory” as a large positive value.</p></li>
 <li><p>The values of columns that are tracked temporally may be unknown during inference
@@ -1208,7 +1275,7 @@ The serialized UDT includes its current temporal context.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.UniversalDeepTransformer.train">
-<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">thirdai._thirdai.bolt.UniversalDeepTransformer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_config:</span> <span class="pre">thirdai._thirdai.bolt.TrainConfig</span> <span class="pre">=</span> <span class="pre">&lt;thirdai._thirdai.bolt.TrainConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f29de5e9cb0&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_in_memory_batches:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.train" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">thirdai._thirdai.bolt.UniversalDeepTransformer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_config:</span> <span class="pre">thirdai._thirdai.bolt.TrainConfig</span> <span class="pre">=</span> <span class="pre">&lt;thirdai._thirdai.bolt.TrainConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fdb1d975c70&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_in_memory_batches:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.train" title="Permalink to this definition"></a></dt>
 <dd><p>Trains a UniversalDeepTransformer (UDT) on a given dataset using a file on disk.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
