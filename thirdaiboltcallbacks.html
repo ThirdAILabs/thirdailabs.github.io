@@ -51,12 +51,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.callbacks.Callback"><code class="docutils literal notranslate"><span class="pre">Callback</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.Callback.__init__"><code class="docutils literal notranslate"><span class="pre">Callback.__init__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.Callback.__module__"><code class="docutils literal notranslate"><span class="pre">Callback.__module__</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.Callback.on_batch_begin"><code class="docutils literal notranslate"><span class="pre">Callback.on_batch_begin()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.Callback.on_batch_end"><code class="docutils literal notranslate"><span class="pre">Callback.on_batch_end()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.Callback.on_epoch_begin"><code class="docutils literal notranslate"><span class="pre">Callback.on_epoch_begin()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.Callback.on_epoch_end"><code class="docutils literal notranslate"><span class="pre">Callback.on_epoch_end()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.Callback.on_train_begin"><code class="docutils literal notranslate"><span class="pre">Callback.on_train_begin()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.Callback.on_train_end"><code class="docutils literal notranslate"><span class="pre">Callback.on_train_end()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.callbacks.EarlyStopCheckpoint"><code class="docutils literal notranslate"><span class="pre">EarlyStopCheckpoint</span></code></a><ul>
@@ -93,21 +87,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.callbacks.MultiplicativeLR"><code class="docutils literal notranslate"><span class="pre">MultiplicativeLR</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.MultiplicativeLR.__init__"><code class="docutils literal notranslate"><span class="pre">MultiplicativeLR.__init__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.MultiplicativeLR.__module__"><code class="docutils literal notranslate"><span class="pre">MultiplicativeLR.__module__</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.callbacks.TrainState"><code class="docutils literal notranslate"><span class="pre">TrainState</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.TrainState.__init__"><code class="docutils literal notranslate"><span class="pre">TrainState.__init__()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.TrainState.__module__"><code class="docutils literal notranslate"><span class="pre">TrainState.__module__</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.TrainState.epoch_times"><code class="docutils literal notranslate"><span class="pre">TrainState.epoch_times</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.TrainState.get_all_train_metrics"><code class="docutils literal notranslate"><span class="pre">TrainState.get_all_train_metrics()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.TrainState.get_all_validation_metrics"><code class="docutils literal notranslate"><span class="pre">TrainState.get_all_validation_metrics()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.TrainState.get_train_metrics"><code class="docutils literal notranslate"><span class="pre">TrainState.get_train_metrics()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.TrainState.get_validation_metrics"><code class="docutils literal notranslate"><span class="pre">TrainState.get_validation_metrics()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.TrainState.learning_rate"><code class="docutils literal notranslate"><span class="pre">TrainState.learning_rate</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.TrainState.rebuild_hash_tables_batch"><code class="docutils literal notranslate"><span class="pre">TrainState.rebuild_hash_tables_batch</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.TrainState.reconstruct_hash_functions_batch"><code class="docutils literal notranslate"><span class="pre">TrainState.reconstruct_hash_functions_batch</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.TrainState.stop_training"><code class="docutils literal notranslate"><span class="pre">TrainState.stop_training</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.TrainState.verbose"><code class="docutils literal notranslate"><span class="pre">TrainState.verbose</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -149,42 +128,12 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.callbacks.Callback.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.callbacks.Callback" title="thirdai._thirdai.bolt.callbacks.Callback"><span class="pre">thirdai._thirdai.bolt.callbacks.Callback</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.callbacks.Callback.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.callbacks.Callback.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="thirdai.bolt.callbacks.Callback.__module__">
 <span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'thirdai._thirdai.bolt.callbacks'</span></em><a class="headerlink" href="#thirdai.bolt.callbacks.Callback.__module__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.Callback.on_batch_begin">
-<span class="sig-name descname"><span class="pre">on_batch_begin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">thirdai._thirdai.bolt.callbacks.Callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0:</span> <span class="pre">thirdai._thirdai.bolt.nn.Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1:</span> <span class="pre">thirdai::bolt::TrainState</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.callbacks.Callback.on_batch_begin" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.Callback.on_batch_end">
-<span class="sig-name descname"><span class="pre">on_batch_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">thirdai._thirdai.bolt.callbacks.Callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0:</span> <span class="pre">thirdai._thirdai.bolt.nn.Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1:</span> <span class="pre">thirdai::bolt::TrainState</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.callbacks.Callback.on_batch_end" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.Callback.on_epoch_begin">
-<span class="sig-name descname"><span class="pre">on_epoch_begin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">thirdai._thirdai.bolt.callbacks.Callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0:</span> <span class="pre">thirdai._thirdai.bolt.nn.Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1:</span> <span class="pre">thirdai::bolt::TrainState</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.callbacks.Callback.on_epoch_begin" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.Callback.on_epoch_end">
-<span class="sig-name descname"><span class="pre">on_epoch_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">thirdai._thirdai.bolt.callbacks.Callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0:</span> <span class="pre">thirdai._thirdai.bolt.nn.Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1:</span> <span class="pre">thirdai::bolt::TrainState</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.callbacks.Callback.on_epoch_end" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.Callback.on_train_begin">
-<span class="sig-name descname"><span class="pre">on_train_begin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">thirdai._thirdai.bolt.callbacks.Callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0:</span> <span class="pre">thirdai._thirdai.bolt.nn.Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1:</span> <span class="pre">thirdai::bolt::TrainState</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.callbacks.Callback.on_train_begin" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.Callback.on_train_end">
-<span class="sig-name descname"><span class="pre">on_train_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">thirdai._thirdai.bolt.callbacks.Callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0:</span> <span class="pre">thirdai._thirdai.bolt.nn.Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1:</span> <span class="pre">thirdai::bolt::TrainState</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.callbacks.Callback.on_train_end" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -196,11 +145,25 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.callbacks.EarlyStopCheckpoint.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.callbacks.EarlyStopCheckpoint" title="thirdai._thirdai.bolt.callbacks.EarlyStopCheckpoint"><span class="pre">thirdai._thirdai.bolt.callbacks.EarlyStopCheckpoint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">monitored_metric</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_save_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patience</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_delta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.callbacks.EarlyStopCheckpoint.__init__" title="Permalink to this definition"></a></dt>
-<dd><p>This callback is intended to stop training early based on prediction results from a given validation set. Saves the best model to model_save_path.
-:param * monitored_metric: The metric to monitor for early stopping. The metric is assumed to be associated with validation data.
-:param * model_save_path: string. The file path to save the model that scored the best on the validation set
-:param * patience: int. The nuber of epochs with no improvement in validation score after which training will be stopped.
-:param * min_delta: float. The minimum change in the monitored quantity to qualify as an improvement, i.e. an absolute change of less than min_delta will count as no improvement.</p>
+<dd><p>This callback is intended to stop training early based on prediction results
+from a given validation set. Saves the best model to model_save_path.
+:param monitored_metric: The metric to monitor for early stopping. The</p>
+<blockquote>
+<div><p>metric is assumed to be associated with validation data.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_save_path</strong> (<em>string</em>) – The file path to save the model that scored the
+best on the validation set</p></li>
+<li><p><strong>patience</strong> (<em>int</em>) – The nuber of epochs with no improvement in validation score
+after which training will be stopped.</p></li>
+<li><p><strong>min_delta</strong> (<em>float</em>) – The minimum change in the monitored quantity to qualify
+as an improvement, i.e. an absolute change of less than min_delta will
+count as no improvement.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py attribute">
@@ -320,72 +283,6 @@
 <dl class="py attribute">
 <dt class="sig sig-object py" id="thirdai.bolt.callbacks.MultiplicativeLR.__module__">
 <span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'thirdai._thirdai.bolt.callbacks'</span></em><a class="headerlink" href="#thirdai.bolt.callbacks.MultiplicativeLR.__module__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.TrainState">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.callbacks.</span></span><span class="sig-name descname"><span class="pre">TrainState</span></span><a class="headerlink" href="#thirdai.bolt.callbacks.TrainState" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.TrainState.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.callbacks.TrainState.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.TrainState.__module__">
-<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'thirdai._thirdai.bolt.callbacks'</span></em><a class="headerlink" href="#thirdai.bolt.callbacks.TrainState.__module__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.TrainState.epoch_times">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">epoch_times</span></span><a class="headerlink" href="#thirdai.bolt.callbacks.TrainState.epoch_times" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.TrainState.get_all_train_metrics">
-<span class="sig-name descname"><span class="pre">get_all_train_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.callbacks.TrainState" title="thirdai._thirdai.bolt.callbacks.TrainState"><span class="pre">thirdai._thirdai.bolt.callbacks.TrainState</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#thirdai.bolt.callbacks.TrainState.get_all_train_metrics" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.TrainState.get_all_validation_metrics">
-<span class="sig-name descname"><span class="pre">get_all_validation_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.callbacks.TrainState" title="thirdai._thirdai.bolt.callbacks.TrainState"><span class="pre">thirdai._thirdai.bolt.callbacks.TrainState</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#thirdai.bolt.callbacks.TrainState.get_all_validation_metrics" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.TrainState.get_train_metrics">
-<span class="sig-name descname"><span class="pre">get_train_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.callbacks.TrainState" title="thirdai._thirdai.bolt.callbacks.TrainState"><span class="pre">thirdai._thirdai.bolt.callbacks.TrainState</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#thirdai.bolt.callbacks.TrainState.get_train_metrics" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.TrainState.get_validation_metrics">
-<span class="sig-name descname"><span class="pre">get_validation_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.callbacks.TrainState" title="thirdai._thirdai.bolt.callbacks.TrainState"><span class="pre">thirdai._thirdai.bolt.callbacks.TrainState</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#thirdai.bolt.callbacks.TrainState.get_validation_metrics" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.TrainState.learning_rate">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">learning_rate</span></span><a class="headerlink" href="#thirdai.bolt.callbacks.TrainState.learning_rate" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.TrainState.rebuild_hash_tables_batch">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rebuild_hash_tables_batch</span></span><a class="headerlink" href="#thirdai.bolt.callbacks.TrainState.rebuild_hash_tables_batch" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.TrainState.reconstruct_hash_functions_batch">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">reconstruct_hash_functions_batch</span></span><a class="headerlink" href="#thirdai.bolt.callbacks.TrainState.reconstruct_hash_functions_batch" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.TrainState.stop_training">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stop_training</span></span><a class="headerlink" href="#thirdai.bolt.callbacks.TrainState.stop_training" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.TrainState.verbose">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">verbose</span></span><a class="headerlink" href="#thirdai.bolt.callbacks.TrainState.verbose" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
