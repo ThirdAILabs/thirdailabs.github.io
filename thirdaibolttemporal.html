@@ -126,7 +126,7 @@ to False.</p></li>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Suppose each row of our data has the following columns: &quot;product_id&quot;, &quot;timestamp&quot;, &quot;ad_spend_level&quot;, &quot;sales_performance&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># We want to predict the current week&#39;s sales performance for each product using temporal context.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># For each product ID, we would like to track both their ad spend level and sales performance over time.</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Ad spend level is known at the time of inference but sales performance is not. Then we can configure Oracle as follows:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Ad spend level is known at the time of inference but sales performance is not. Then we can configure UDT as follows:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">deployment</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
 <span class="go">        data_types={</span>
 <span class="go">            &quot;product_id&quot;: bolt.types.categorical(n_unique_classes=5000),</span>
@@ -164,7 +164,7 @@ numerical column is tracked over time.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>column_name</strong> (<em>str</em>) – The name of the tracked column.</p></li>
 <li><p><strong>history_length</strong> (<em>int</em>) – Amount of time to look back. Time is in terms
-of the time granularity passed to the Oracle constructor.</p></li>
+of the time granularity passed to the UDT constructor.</p></li>
 <li><p><strong>column_known_during_inference</strong> (<em>bool</em>) – Optional. Whether the
 value of the tracked column is known during inference. Defaults
 to False.</p></li>
@@ -175,7 +175,7 @@ to False.</p></li>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Suppose each row of our data has the following columns: &quot;product_id&quot;, &quot;timestamp&quot;, &quot;ad_spend&quot;, &quot;sales_performance&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># We want to predict the current week&#39;s sales performance for each product using temporal context.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># For each product ID, we would like to track both their ad spend and sales performance over time.</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Ad spend is known at the time of inference but sales performance is not. Then we can configure Oracle as follows:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Ad spend is known at the time of inference but sales performance is not. Then we can configure UDT as follows:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">deployment</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
 <span class="go">        data_types={</span>
 <span class="go">            &quot;product_id&quot;: bolt.types.categorical(n_unique_classes=5000),</span>

@@ -93,6 +93,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.TrainConfig.with_validation"><code class="docutils literal notranslate"><span class="pre">TrainConfig.with_validation()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.UDTConfig"><code class="docutils literal notranslate"><span class="pre">UDTConfig</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UDTConfig.__init__"><code class="docutils literal notranslate"><span class="pre">UDTConfig.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UDTConfig.__module__"><code class="docutils literal notranslate"><span class="pre">UDTConfig.__module__</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.__init__"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.__init__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.__module__"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.__module__</span></code></a></li>
@@ -673,6 +678,129 @@ tracked metric to be configured via <cite>with_metrics(…)</cite>.</p></li>
 </dd>
 </dl>
 </dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.bolt.UDTConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.</span></span><span class="sig-name descname"><span class="pre">UDTConfig</span></span><a class="headerlink" href="#thirdai.bolt.UDTConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.UDTConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.UDTConfig" title="thirdai._thirdai.bolt.UDTConfig"><span class="pre">thirdai._thirdai.bolt.UDTConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="thirdaibolttypes.html#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><span class="pre">thirdai._thirdai.bolt.types.ColumnType</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temporal_tracking_relationships</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="thirdaibolttemporal.html#thirdai.bolt.temporal.TemporalConfig" title="thirdai._thirdai.bolt.temporal.TemporalConfig"><span class="pre">thirdai._thirdai.bolt.temporal.TemporalConfig</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_granularity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'daily'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lookahead</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.UDTConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>A configuration object for UDT.</p>
+<p>UDT is an all-purpose classifier for tabular datasets. In addition to learning from
+the columns of a single row, UDT can make use of “temporal context”. For
+example, if used to build a movie recommender, UDT may use information
+about the last 5 movies that a user has watched to recommend the next movie.
+Similarly, if used to forecast the outcome of marketing campaigns, UDT may
+use several months’ worth of campaign history for each product to make better
+forecasts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_types</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="thirdaibolttypes.html#thirdai.bolt.types.ColumnType" title="thirdai.bolt.types.ColumnType"><em>bolt.types.ColumnType</em></a><em>]</em>) – <p>A mapping from column name to column type.
+This map specifies the columns that we want to pass into the model; it does
+not need to include all columns in the dataset.</p>
+<p>Column type is one of:
+- <cite>bolt.types.categorical(n_unique_values: int)</cite>
+- <cite>bolt.types.numerical(range: tuple(float, float))</cite>
+- <cite>bolt.types.text(average_n_words: int=None)</cite>
+- <cite>bolt.types.date()</cite>
+See bolt.types for details.</p>
+<p>If <cite>temporal_tracking_relationships</cite> is non-empty, there must one
+bolt.types.date() column. This column contains date strings in YYYY-MM-DD format.
+There can only be one bolt.types.date() column.</p>
+</p></li>
+<li><p><strong>temporal_tracking_relationships</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>str</em><em> or </em><a class="reference internal" href="thirdaibolttemporal.html#thirdai.bolt.temporal.TemporalConfig" title="thirdai.bolt.temporal.TemporalConfig"><em>bolt.temporal.TemporalConfig</em></a><em>]</em><em>]</em>) – <p>Optional.
+A mapping from column name to a list of either other column names or bolt.temporal objects.
+This mapping tells UDT what columns can be tracked over time for each key.
+For example, we may want to tell UDT that we want to track a user’s watch
+history by passing in a map like <cite>{“user_id”: [“movie_id”]}</cite></p>
+<p>If we provide a mapping from a string to a list of strings like the above,
+the temporal tracking configuration will be autotuned. We can take control by
+passing in bolt.temporal objects intead of strings.</p>
+<p>bolt.temporal object is one of:
+- <a href="#id1"><span class="problematic" id="id2">`</span></a>bolt.temporal.categorical(column_name: str, track_last_n: int, column_known_during_inference: bool=False)
+- <a href="#id3"><span class="problematic" id="id4">`</span></a>bolt.temporal.numerical(column_name: str, history_length: int, column_known_during_inference: bool=False)
+See bolt.temporal for details.</p>
+</p></li>
+<li><p><strong>target</strong> (<em>str</em>) – Name of the column that contains the value to be predicted by
+UDT. The target column has to be a categorical column.</p></li>
+<li><p><strong>time_granularity</strong> (<em>str</em>) – Optional. Either <cite>“daily”</cite>/<cite>”d”</cite>, <cite>“weekly”</cite>/<cite>”w”</cite>, <cite>“biweekly”</cite>/<cite>”b”</cite>,
+or <cite>“monthly”</cite>/<cite>”m”</cite>. Interval of time that we are interested in. Temporal numerical
+features are clubbed according to this time granularity. E.g. if
+<cite>time_granularity=”w”</cite> and the numerical values on days 1 and 2 are
+345.25 and 201.1 respectively, then UDT captures a single numerical
+value of 546.26 for the week instead of individual values for the two days.
+Defaults to “daily”.</p></li>
+<li><p><strong>lookahead</strong> (<em>str</em>) – Optional. How far into the future the model needs to predict. This length of
+time is in terms of time_granularity. E.g. ‘time_granularity=”daily”` and
+<cite>lookahead=5</cite> means the model needs to learn to predict 5 days ahead. Defaults to 0
+(predict the immediate next thing).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Suppose each row of our data has the following columns: &quot;product_id&quot;, &quot;timestamp&quot;, &quot;ad_spend&quot;, &quot;sales_quantity&quot;, &quot;sales_performance&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># We want to predict next week&#39;s sales performance for each product using temporal context.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># For each product ID, we would like to track both their ad spend and sales quantity over time.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">config</span> <span class="o">=</span> <span class="n">deployment</span><span class="o">.</span><span class="n">UDTConfig</span><span class="p">(</span>
+<span class="go">        data_types={</span>
+<span class="go">            &quot;product_id&quot;: bolt.types.categorical(n_unique_classes=5000),</span>
+<span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
+<span class="go">            &quot;ad_spend&quot;: bolt.types.numerical(range=(0, 10000)),</span>
+<span class="go">            &quot;sales_quantity&quot;: bolt.types.numerical(range=(0, 20)),</span>
+<span class="go">            &quot;sales_performance&quot;: bolt.types.categorical(n_unique_classes=5),</span>
+<span class="go">        },</span>
+<span class="go">        temporal_tracking_relationships={</span>
+<span class="go">            &quot;product_id&quot;: [</span>
+<span class="go">                # Track last 5 weeks of ad spend</span>
+<span class="go">                bolt.temporal.numerical(column_name=&quot;ad_spend&quot;, history_length=5),</span>
+<span class="go">                # Track last 10 weeks of ad spend</span>
+<span class="go">                bolt.temporal.numerical(column_name=&quot;ad_spend&quot;, history_length=10),</span>
+<span class="go">                # Track last 5 weeks of sales performance</span>
+<span class="go">                bolt.temporal.categorical(column_name=&quot;sales_performance&quot;, history_length=5),</span>
+<span class="go">            ]</span>
+<span class="go">        },</span>
+<span class="go">        target=&quot;sales_performance&quot;</span>
+<span class="go">        time_granularity=&quot;weekly&quot;,</span>
+<span class="go">        lookahead=2 # predict 2 weeks ahead</span>
+<span class="go">    )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Alternatively suppose our data has the following columns: &quot;user_id&quot;, &quot;movie_id&quot;, &quot;hours_watched&quot;, &quot;timestamp&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># We want to build a movie recommendation system.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Then we may configure UDT as follows:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">config</span> <span class="o">=</span> <span class="n">deployment</span><span class="o">.</span><span class="n">UDTConfig</span><span class="p">(</span>
+<span class="go">        data_types={</span>
+<span class="go">            &quot;user_id&quot;: bolt.types.categorical(n_unique_classes=5000),</span>
+<span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
+<span class="go">            &quot;movie_id&quot;: bolt.types.categorical(n_unique_classes=3000),</span>
+<span class="go">            &quot;hours_watched&quot;: bolt.types.numerical(range=(0, 25)),</span>
+<span class="go">        },</span>
+<span class="go">        temporal_tracking_relationships={</span>
+<span class="go">            &quot;user_id&quot;: [</span>
+<span class="go">                &quot;movie_id&quot;, # autotuned movie temporal tracking</span>
+<span class="go">                bolt.temporal.numerical(column_name=&quot;hours_watched&quot;, history_length=&quot;5&quot;) # track last 5 days of hours watched.</span>
+<span class="go">            ]</span>
+<span class="go">        },</span>
+<span class="go">        target=&quot;movie_id&quot;</span>
+<span class="go">    )</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Refer to the documentation bolt.types.ColumnType and bolt.temporal.TemporalConfig to better understand column types</dt><dd><p>and temporal tracking configurations.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="thirdai.bolt.UDTConfig.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'thirdai._thirdai.bolt'</span></em><a class="headerlink" href="#thirdai.bolt.UDTConfig.__module__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -1275,7 +1403,7 @@ The serialized UDT includes its current temporal context.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.UniversalDeepTransformer.train">
-<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">thirdai._thirdai.bolt.UniversalDeepTransformer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_config:</span> <span class="pre">thirdai._thirdai.bolt.TrainConfig</span> <span class="pre">=</span> <span class="pre">&lt;thirdai._thirdai.bolt.TrainConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f8513560270&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_in_memory_batches:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.train" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">thirdai._thirdai.bolt.UniversalDeepTransformer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_config:</span> <span class="pre">thirdai._thirdai.bolt.TrainConfig</span> <span class="pre">=</span> <span class="pre">&lt;thirdai._thirdai.bolt.TrainConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f0eee800eb0&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_in_memory_batches:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.train" title="Permalink to this definition"></a></dt>
 <dd><p>Trains a UniversalDeepTransformer (UDT) on a given dataset using a file on disk.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>

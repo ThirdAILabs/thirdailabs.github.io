@@ -117,12 +117,12 @@ movie titles, or age groups.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n_unique_classes</strong> (<em>int</em>) – Number of unique categories in the column.
-Oracle throws an error if the column contains more than the
+UDT throws an error if the column contains more than the
 specified number of unique values.</p></li>
 <li><p><strong>delimiter</strong> (<em>str</em>) – Optional. Defaults to None. A single character
 (length-1 string) that separates multiple values in the same
 column. This can only be used for the target column. If not
-provided, Oracle assumes that there is only one value in the column.</p></li>
+provided, UDT assumes that there is only one value in the column.</p></li>
 <li><p><strong>consecutive_integer_ids</strong> (<em>bool</em>) – Optional. Defaults to None. When set to
 True, the values of this column are assumed to be integers ranging
 from 0 to n_unique_classes - 1. Otherwise, the values are assumed to
@@ -195,13 +195,13 @@ search queries, and user bios.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>average_n_words</strong> (<em>int</em>) – Optional. Average number of words in the
-text column in each row. If provided, Oracle may make
+text column in each row. If provided, UDT may make
 optimizations as appropriate.</p></li>
 <li><p><strong>embedding_size</strong> (<em>str</em>) – Optional. One of “small”/”s”, “medium”/”m”,
 or “large”/”l”. Defaults to “m”.</p></li>
-<li><p><strong>use_attention</strong> (<em>bool</em>) – Optional. If true, oracle is guaranteed to
+<li><p><strong>use_attention</strong> (<em>bool</em>) – Optional. If true, udt is guaranteed to
 use attention when processing this text column. Otherwise,
-oracle will only use attention when appropriate.</p></li>
+udt will only use attention when appropriate.</p></li>
 </ul>
 </dd>
 </dl>
