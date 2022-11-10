@@ -48,6 +48,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.models.Generator"><code class="docutils literal notranslate"><span class="pre">Generator</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Generator.__init__"><code class="docutils literal notranslate"><span class="pre">Generator.__init__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Generator.__module__"><code class="docutils literal notranslate"><span class="pre">Generator.__module__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Generator.evaluate"><code class="docutils literal notranslate"><span class="pre">Generator.evaluate()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Generator.generate"><code class="docutils literal notranslate"><span class="pre">Generator.generate()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Generator.load"><code class="docutils literal notranslate"><span class="pre">Generator.load()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Generator.save"><code class="docutils literal notranslate"><span class="pre">Generator.save()</span></code></a></li>
@@ -128,6 +129,36 @@
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.models.Generator.evaluate">
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.models.Generator" title="thirdai._thirdai.bolt.models.Generator"><span class="pre">thirdai._thirdai.bolt.models.Generator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#thirdai.bolt.models.Generator.evaluate" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluates the query candidate generator using the input from a CSV file.
+The input file is expected to have pairs of correct and incorrect queries
+in that order.
+This function also prints the recall at K.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>str</em>) – Input file</p></li>
+<li><p><strong>top_k</strong> (<em>int</em>) – The number of closest queries to return</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Generated candidate queries for
+each incorrect query in the input file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[List[str]]</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">generator</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Generator</span><span class="p">(</span><span class="n">config_file_name</span><span class="o">=</span><span class="s2">&quot;config_file&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">generator</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="s2">&quot;train_file&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">candidate_queries</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="s2">&quot;eval_file&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.models.Generator.generate">
 <span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.models.Generator" title="thirdai._thirdai.bolt.models.Generator"><span class="pre">thirdai._thirdai.bolt.models.Generator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">queries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#thirdai.bolt.models.Generator.generate" title="Permalink to this definition"></a></dt>
 <dd><p>Generates a list of correct candidate queries for each of the the given
@@ -136,7 +167,10 @@ By default, 5 queries are chosen as output. If less than 5 queries are
 found, then the output list is padded with empty strings.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>queries</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Input queries</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>queries</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Input queries</p></li>
+<li><p><strong>top_k</strong> (<em>int</em>) – The number of closest queries to return</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The generated list of queries by flash.</p>
@@ -149,8 +183,9 @@ found, then the output list is padded with empty strings.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">generator</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Generator</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">query_file_name</span> <span class="o">=</span> <span class="s2">&quot;/path/to/query/file/name&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">generator</span><span class="o">.</span><span class="n">build_index</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="n">query_file_name</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">candidates</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;first incorrect query&quot;</span><span class="p">,</span>
-<span class="go">                                           &quot;second incorrect query&quot;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">candidates</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
+<span class="go">            query=[&quot;first incorrect query&quot;,&quot;second incorrect query&quot;]</span>
+<span class="go">    )</span>
 </pre></div>
 </div>
 </dd></dl>
