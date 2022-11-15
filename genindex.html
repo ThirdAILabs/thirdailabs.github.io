@@ -46,6 +46,7 @@
 <li class="toctree-l1"><a class="reference internal" href="thirdaibolttemporal.html">thirdai.bolt.temporal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdaiboltcallbacks.html">thirdai.bolt.callbacks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdaidataset.html">thirdai.dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thirdaidata.html">thirdai.data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdailog.html">thirdai.logging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdaisearch.html">thirdai.search</a></li>
 </ul>
@@ -129,9 +130,13 @@
 </li>
         <li><a href="thirdaibolt.html#thirdai.bolt.EvalConfig.__init__">(thirdai.bolt.EvalConfig method)</a>
 </li>
-        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Generator.__init__">(thirdai.bolt.models.Generator method)</a>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Pipeline.__init__">(thirdai.bolt.models.Pipeline method)</a>
 </li>
-        <li><a href="thirdaibolt.html#thirdai.bolt.Pipeline.__init__">(thirdai.bolt.Pipeline method)</a>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTClassifier.__init__">(thirdai.bolt.models.UDTClassifier method)</a>
+</li>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTConfig.__init__">(thirdai.bolt.models.UDTConfig method)</a>
+</li>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTGenerator.__init__">(thirdai.bolt.models.UDTGenerator method)</a>
 </li>
         <li><a href="thirdaibolttemporal.html#thirdai.bolt.temporal.TemporalConfig.__init__">(thirdai.bolt.temporal.TemporalConfig method)</a>
 </li>
@@ -175,9 +180,13 @@
 </li>
         <li><a href="thirdaibolt.html#thirdai.bolt.EvalConfig.__module__">(thirdai.bolt.EvalConfig attribute)</a>
 </li>
-        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Generator.__module__">(thirdai.bolt.models.Generator attribute)</a>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Pipeline.__module__">(thirdai.bolt.models.Pipeline attribute)</a>
 </li>
-        <li><a href="thirdaibolt.html#thirdai.bolt.Pipeline.__module__">(thirdai.bolt.Pipeline attribute)</a>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTClassifier.__module__">(thirdai.bolt.models.UDTClassifier attribute)</a>
+</li>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTConfig.__module__">(thirdai.bolt.models.UDTConfig attribute)</a>
+</li>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTGenerator.__module__">(thirdai.bolt.models.UDTGenerator attribute)</a>
 </li>
         <li><a href="thirdaibolttemporal.html#thirdai.bolt.temporal.TemporalConfig.__module__">(thirdai.bolt.temporal.TemporalConfig attribute)</a>
 </li>
@@ -196,7 +205,11 @@
         <li><a href="thirdaisearch.html#thirdai.search.DocRetrieval.__module__">(thirdai.search.DocRetrieval attribute)</a>
 </li>
       </ul></li>
+      <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.__new__">__new__() (thirdai.bolt.UniversalDeepTransformer method)</a>
+</li>
       <li><a href="thirdaibolt.html#thirdai.bolt.TrainConfig.__setstate__">__setstate__() (thirdai.bolt.TrainConfig method)</a>
+</li>
+      <li><a href="thirdaibolttypes.html#thirdai.bolt.types.ColumnType.__str__">__str__() (thirdai.bolt.types.ColumnType method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -222,7 +235,7 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.class_name">class_name() (thirdai.bolt.UniversalDeepTransformer method)</a>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTClassifier.class_name">class_name() (thirdai.bolt.models.UDTClassifier method)</a>
 </li>
       <li><a href="thirdaibolttypes.html#thirdai.bolt.types.ColumnType">ColumnType (class in thirdai.bolt.types)</a>
 </li>
@@ -256,7 +269,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="thirdaiboltcallbacks.html#thirdai.bolt.callbacks.EarlyStopCheckpoint">EarlyStopCheckpoint (class in thirdai.bolt.callbacks)</a>
 </li>
-      <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.embedding_representation">embedding_representation() (thirdai.bolt.UniversalDeepTransformer method)</a>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTClassifier.embedding_representation">embedding_representation() (thirdai.bolt.models.UDTClassifier method)</a>
 </li>
       <li><a href="thirdaibolt.html#thirdai.bolt.EvalConfig.enable_sparse_inference">enable_sparse_inference() (thirdai.bolt.EvalConfig method)</a>
 </li>
@@ -268,18 +281,18 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Generator.evaluate">evaluate() (thirdai.bolt.models.Generator method)</a>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Pipeline.evaluate">evaluate() (thirdai.bolt.models.Pipeline method)</a>
 
       <ul>
-        <li><a href="thirdaibolt.html#thirdai.bolt.Pipeline.evaluate">(thirdai.bolt.Pipeline method)</a>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTClassifier.evaluate">(thirdai.bolt.models.UDTClassifier method)</a>
 </li>
-        <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.evaluate">(thirdai.bolt.UniversalDeepTransformer method)</a>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTGenerator.evaluate">(thirdai.bolt.models.UDTGenerator method)</a>
 </li>
       </ul></li>
-      <li><a href="thirdaibolt.html#thirdai.bolt.Pipeline.explain">explain() (thirdai.bolt.Pipeline method)</a>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Pipeline.explain">explain() (thirdai.bolt.models.Pipeline method)</a>
 
       <ul>
-        <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.explain">(thirdai.bolt.UniversalDeepTransformer method)</a>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTClassifier.explain">(thirdai.bolt.models.UDTClassifier method)</a>
 </li>
       </ul></li>
       <li><a href="thirdaiboltcallbacks.html#thirdai.bolt.callbacks.ExponentialLR">ExponentialLR (class in thirdai.bolt.callbacks)</a>
@@ -290,18 +303,14 @@
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Generator.generate">generate() (thirdai.bolt.models.Generator method)</a>
-</li>
-      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Generator">Generator (class in thirdai.bolt.models)</a>
-</li>
       <li><a href="thirdaiboltcallbacks.html#thirdai.bolt.callbacks.TrainState.get_all_train_metrics">get_all_train_metrics() (thirdai.bolt.callbacks.TrainState method)</a>
 </li>
       <li><a href="thirdaiboltcallbacks.html#thirdai.bolt.callbacks.TrainState.get_all_validation_metrics">get_all_validation_metrics() (thirdai.bolt.callbacks.TrainState method)</a>
 </li>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Pipeline.get_data_processor">get_data_processor() (thirdai.bolt.models.Pipeline method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="thirdaibolt.html#thirdai.bolt.Pipeline.get_data_processor">get_data_processor() (thirdai.bolt.Pipeline method)</a>
-</li>
       <li><a href="thirdaisearch.html#thirdai.search.DocRetrieval.get_doc">get_doc() (thirdai.search.DocRetrieval method)</a>
 </li>
       <li><a href="thirdaiboltcallbacks.html#thirdai.bolt.callbacks.LearningRateScheduler.get_final_lr">get_final_lr() (thirdai.bolt.callbacks.LearningRateScheduler method)</a>
@@ -316,11 +325,11 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.index">index() (thirdai.bolt.UniversalDeepTransformer method)</a>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTClassifier.index">index() (thirdai.bolt.models.UDTClassifier method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.index_batch">index_batch() (thirdai.bolt.UniversalDeepTransformer method)</a>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTClassifier.index_batch">index_batch() (thirdai.bolt.models.UDTClassifier method)</a>
 </li>
       <li><a href="thirdailog.html#thirdai.logging.info">info() (in module thirdai.logging)</a>
 </li>
@@ -348,17 +357,19 @@
       </ul></li>
       <li><a href="thirdaiboltcallbacks.html#thirdai.bolt.callbacks.LearningRateScheduler">LearningRateScheduler (class in thirdai.bolt.callbacks)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Generator.load">load() (thirdai.bolt.models.Generator static method)</a>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Pipeline.load">load() (thirdai.bolt.models.Pipeline static method)</a>
 
       <ul>
-        <li><a href="thirdaibolt.html#thirdai.bolt.Pipeline.load">(thirdai.bolt.Pipeline static method)</a>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTClassifier.load">(thirdai.bolt.models.UDTClassifier static method)</a>
+</li>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTGenerator.load">(thirdai.bolt.models.UDTGenerator static method)</a>
 </li>
         <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.load">(thirdai.bolt.UniversalDeepTransformer static method)</a>
 </li>
       </ul></li>
-      <li><a href="thirdaibolt.html#thirdai.bolt.Pipeline.load_validation_data">load_validation_data() (thirdai.bolt.Pipeline method)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Pipeline.load_validation_data">load_validation_data() (thirdai.bolt.models.Pipeline method)</a>
 </li>
       <li><a href="thirdaiboltcallbacks.html#thirdai.bolt.callbacks.LRSchedule">LRSchedule (class in thirdai.bolt.callbacks)</a>
 </li>
@@ -447,23 +458,27 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="thirdaibolt.html#thirdai.bolt.Pipeline">Pipeline (class in thirdai.bolt)</a>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Pipeline">Pipeline (class in thirdai.bolt.models)</a>
 </li>
-      <li><a href="thirdaibolt.html#thirdai.bolt.Pipeline.predict">predict() (thirdai.bolt.Pipeline method)</a>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Pipeline.predict">predict() (thirdai.bolt.models.Pipeline method)</a>
 
       <ul>
-        <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.predict">(thirdai.bolt.UniversalDeepTransformer method)</a>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTClassifier.predict">(thirdai.bolt.models.UDTClassifier method)</a>
+</li>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTGenerator.predict">(thirdai.bolt.models.UDTGenerator method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="thirdaibolt.html#thirdai.bolt.Pipeline.predict_batch">predict_batch() (thirdai.bolt.Pipeline method)</a>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Pipeline.predict_batch">predict_batch() (thirdai.bolt.models.Pipeline method)</a>
 
       <ul>
-        <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.predict_batch">(thirdai.bolt.UniversalDeepTransformer method)</a>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTClassifier.predict_batch">(thirdai.bolt.models.UDTClassifier method)</a>
+</li>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTGenerator.predict_batch">(thirdai.bolt.models.UDTGenerator method)</a>
 </li>
       </ul></li>
-      <li><a href="thirdaibolt.html#thirdai.bolt.Pipeline.predict_tokens">predict_tokens() (thirdai.bolt.Pipeline method)</a>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Pipeline.predict_tokens">predict_tokens() (thirdai.bolt.models.Pipeline method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -483,7 +498,7 @@
 </li>
       <li><a href="thirdaiboltcallbacks.html#thirdai.bolt.callbacks.TrainState.reconstruct_hash_functions_batch">reconstruct_hash_functions_batch (thirdai.bolt.callbacks.TrainState property)</a>
 </li>
-      <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.reset_temporal_trackers">reset_temporal_trackers() (thirdai.bolt.UniversalDeepTransformer method)</a>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTClassifier.reset_temporal_trackers">reset_temporal_trackers() (thirdai.bolt.models.UDTClassifier method)</a>
 </li>
       <li><a href="thirdaidataset.html#thirdai.dataset.DataLoader.resource_name">resource_name() (thirdai.dataset.DataLoader method)</a>
 
@@ -509,14 +524,16 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="thirdaidataset.html#thirdai.dataset.S3DataLoader">S3DataLoader (class in thirdai.dataset)</a>
 </li>
-      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Generator.save">save() (thirdai.bolt.models.Generator method)</a>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Pipeline.save">save() (thirdai.bolt.models.Pipeline method)</a>
 
       <ul>
-        <li><a href="thirdaibolt.html#thirdai.bolt.Pipeline.save">(thirdai.bolt.Pipeline method)</a>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTClassifier.save">(thirdai.bolt.models.UDTClassifier method)</a>
 </li>
-        <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.save">(thirdai.bolt.UniversalDeepTransformer method)</a>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTGenerator.save">(thirdai.bolt.models.UDTGenerator method)</a>
 </li>
       </ul></li>
+      <li><a href="thirdaidata.html#thirdai.data.semantic_type_inference">semantic_type_inference (class in thirdai.data)</a>
+</li>
       <li><a href="thirdaisearch.html#thirdai.search.DocRetrieval.serialize_to_file">serialize_to_file() (thirdai.search.DocRetrieval method)</a>
 </li>
   </ul></td>
@@ -591,12 +608,12 @@
       </ul></li>
       <li><a href="thirdailog.html#thirdai.logging.trace">trace() (in module thirdai.logging)</a>
 </li>
-      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Generator.train">train() (thirdai.bolt.models.Generator method)</a>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.Pipeline.train">train() (thirdai.bolt.models.Pipeline method)</a>
 
       <ul>
-        <li><a href="thirdaibolt.html#thirdai.bolt.Pipeline.train">(thirdai.bolt.Pipeline method)</a>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTClassifier.train">(thirdai.bolt.models.UDTClassifier method)</a>
 </li>
-        <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.train">(thirdai.bolt.UniversalDeepTransformer method)</a>
+        <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTGenerator.train">(thirdai.bolt.models.UDTGenerator method)</a>
 </li>
       </ul></li>
       <li><a href="thirdaibolt.html#thirdai.bolt.TrainConfig">TrainConfig (class in thirdai.bolt)</a>
@@ -609,6 +626,14 @@
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTClassifier">UDTClassifier (class in thirdai.bolt.models)</a>
+</li>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTConfig">UDTConfig (class in thirdai.bolt.models)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="thirdaiboltmodels.html#thirdai.bolt.models.UDTGenerator">UDTGenerator (class in thirdai.bolt.models)</a>
+</li>
       <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer">UniversalDeepTransformer (class in thirdai.bolt)</a>
 </li>
   </ul></td>
