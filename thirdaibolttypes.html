@@ -46,21 +46,27 @@
 <li class="toctree-l1"><a class="reference internal" href="thirdaibolt.html">thirdai.bolt</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdaiboltmodels.html">thirdai.bolt.models</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">thirdai.bolt.types</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.types.ColumnType"><code class="docutils literal notranslate"><span class="pre">ColumnType</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.ColumnType.__init__"><code class="docutils literal notranslate"><span class="pre">ColumnType.__init__()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.ColumnType.__module__"><code class="docutils literal notranslate"><span class="pre">ColumnType.__module__</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.ColumnType.__str__"><code class="docutils literal notranslate"><span class="pre">ColumnType.__str__()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.types.ColumnType"><code class="docutils literal notranslate"><span class="pre">ColumnType</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.types.categorical"><code class="docutils literal notranslate"><span class="pre">categorical</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.categorical.__init__"><code class="docutils literal notranslate"><span class="pre">categorical.__init__()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.types.categorical"><code class="docutils literal notranslate"><span class="pre">categorical()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.types.date"><code class="docutils literal notranslate"><span class="pre">date()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.types.date"><code class="docutils literal notranslate"><span class="pre">date</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.date.__init__"><code class="docutils literal notranslate"><span class="pre">date.__init__()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.types.metadata"><code class="docutils literal notranslate"><span class="pre">metadata</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.metadata.__init__"><code class="docutils literal notranslate"><span class="pre">metadata.__init__()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.metadata.__module__"><code class="docutils literal notranslate"><span class="pre">metadata.__module__</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.types.numerical"><code class="docutils literal notranslate"><span class="pre">numerical()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.types.text"><code class="docutils literal notranslate"><span class="pre">text()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.types.numerical"><code class="docutils literal notranslate"><span class="pre">numerical</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.numerical.__init__"><code class="docutils literal notranslate"><span class="pre">numerical.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.types.text"><code class="docutils literal notranslate"><span class="pre">text</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.text.__init__"><code class="docutils literal notranslate"><span class="pre">text.__init__()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="thirdaibolttemporal.html">thirdai.bolt.temporal</a></li>
@@ -102,26 +108,15 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">ColumnType</span></span><a class="headerlink" href="#thirdai.bolt.types.ColumnType" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
 <p>Base class for bolt types.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.types.ColumnType.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.types.ColumnType.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="thirdai.bolt.types.ColumnType.__module__">
-<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'thirdai._thirdai.bolt.types'</span></em><a class="headerlink" href="#thirdai.bolt.types.ColumnType.__module__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.types.ColumnType.__str__">
-<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><span class="pre">thirdai._thirdai.bolt.types.ColumnType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#thirdai.bolt.types.ColumnType.__str__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
 </dd></dl>
 
-<dl class="py function">
+<dl class="py class">
 <dt class="sig sig-object py" id="thirdai.bolt.types.categorical">
-<span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">categorical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.types.metadata" title="thirdai._thirdai.bolt.types.metadata"><span class="pre">thirdai._thirdai.bolt.types.metadata</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><span class="pre">thirdai._thirdai.bolt.types.ColumnType</span></a></span></span><a class="headerlink" href="#thirdai.bolt.types.categorical" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">categorical</span></span><a class="headerlink" href="#thirdai.bolt.types.categorical" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.types.categorical.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.types.metadata" title="thirdai.bolt.types.metadata"><span class="pre">bolt.types.metadata</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.categorical.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Categorical column type. Use this object if a column contains categorical
 data (each unique value is treated as a class). Examples include user IDs,
 movie titles, or age groups.</p>
@@ -152,9 +147,15 @@ column.</p></li>
 </div>
 </dd></dl>
 
-<dl class="py function">
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="thirdai.bolt.types.date">
-<span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">date</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><span class="pre">thirdai._thirdai.bolt.types.ColumnType</span></a></span></span><a class="headerlink" href="#thirdai.bolt.types.date" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">date</span></span><a class="headerlink" href="#thirdai.bolt.types.date" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.types.date.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.date.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Date column type. Use this object if a column contains date strings.
 Date strings must be in YYYY-MM-DD format.</p>
 <p class="rubric">Example</p>
@@ -168,13 +169,15 @@ Date strings must be in YYYY-MM-DD format.</p>
 </div>
 </dd></dl>
 
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="thirdai.bolt.types.metadata">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">metadata</span></span><a class="headerlink" href="#thirdai.bolt.types.metadata" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.types.metadata.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.types.metadata" title="thirdai._thirdai.bolt.types.metadata"><span class="pre">thirdai._thirdai.bolt.types.metadata</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><span class="pre">thirdai._thirdai.bolt.types.ColumnType</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.metadata.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai.bolt.types.ColumnType"><span class="pre">bolt.types.ColumnType</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.metadata.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>A configuration object for processing a metadata file to enrich categorical
 features from the main dataset. To illustrate when this is useful, suppose
 we are building a movie recommendation system. The contents of the training
@@ -233,16 +236,15 @@ to column type. Column type is one of:
 </div>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="thirdai.bolt.types.metadata.__module__">
-<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'thirdai._thirdai.bolt.types'</span></em><a class="headerlink" href="#thirdai.bolt.types.metadata.__module__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
 </dd></dl>
 
-<dl class="py function">
+<dl class="py class">
 <dt class="sig sig-object py" id="thirdai.bolt.types.numerical">
-<span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">numerical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">granularity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'m'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><span class="pre">thirdai._thirdai.bolt.types.ColumnType</span></a></span></span><a class="headerlink" href="#thirdai.bolt.types.numerical" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">numerical</span></span><a class="headerlink" href="#thirdai.bolt.types.numerical" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.types.numerical.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">granularity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'m'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.numerical.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Numerical column type. Use this object if a column contains numerical
 data (the value is treated as a quantity). Examples include hours of
 a movie watched, sale quantity, or population size.</p>
@@ -268,16 +270,22 @@ better the model performance.</p></li>
 </div>
 </dd></dl>
 
-<dl class="py function">
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="thirdai.bolt.types.text">
-<span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">average_n_words</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_attention</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><span class="pre">thirdai._thirdai.bolt.types.ColumnType</span></a></span></span><a class="headerlink" href="#thirdai.bolt.types.text" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">text</span></span><a class="headerlink" href="#thirdai.bolt.types.text" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.types.text.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">average_n_words</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_attention</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.text.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Text column type. Use this object if a column contains text data
 (the meaning of the text matters). Examples include descriptions,
 search queries, and user bios.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>average_n_words</strong> (<em>int</em>) – Optional. Average number of words in the
+<li><p><strong>average_n_words</strong> (<em>float</em>) – Optional. Average number of words in the
 text column in each row. If provided, UDT may make
 optimizations as appropriate.</p></li>
 <li><p><strong>use_attention</strong> (<em>bool</em>) – Optional. If true, udt is guaranteed to
@@ -296,6 +304,8 @@ udt will only use attention when appropriate.</p></li>
 <span class="go">    )</span>
 </pre></div>
 </div>
+</dd></dl>
+
 </dd></dl>
 
 </section>

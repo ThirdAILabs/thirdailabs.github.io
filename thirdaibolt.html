@@ -45,17 +45,12 @@
 <li class="toctree-l1"><a class="reference internal" href="thirdaibase.html">thirdai</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">thirdai.bolt</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.__init__"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.__init__()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.__module__"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.__module__</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.__new__"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.__new__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.load"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.load()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.TrainConfig"><code class="docutils literal notranslate"><span class="pre">TrainConfig</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.TrainConfig.__getstate__"><code class="docutils literal notranslate"><span class="pre">TrainConfig.__getstate__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.TrainConfig.__init__"><code class="docutils literal notranslate"><span class="pre">TrainConfig.__init__()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.TrainConfig.__module__"><code class="docutils literal notranslate"><span class="pre">TrainConfig.__module__</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.TrainConfig.__setstate__"><code class="docutils literal notranslate"><span class="pre">TrainConfig.__setstate__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.TrainConfig.learning_rate"><code class="docutils literal notranslate"><span class="pre">TrainConfig.learning_rate</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.TrainConfig.num_epochs"><code class="docutils literal notranslate"><span class="pre">TrainConfig.num_epochs</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.TrainConfig.silence"><code class="docutils literal notranslate"><span class="pre">TrainConfig.silence()</span></code></a></li>
@@ -67,7 +62,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.EvalConfig"><code class="docutils literal notranslate"><span class="pre">EvalConfig</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.EvalConfig.__init__"><code class="docutils literal notranslate"><span class="pre">EvalConfig.__init__()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.EvalConfig.__module__"><code class="docutils literal notranslate"><span class="pre">EvalConfig.__module__</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.EvalConfig.enable_sparse_inference"><code class="docutils literal notranslate"><span class="pre">EvalConfig.enable_sparse_inference()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.EvalConfig.return_activations"><code class="docutils literal notranslate"><span class="pre">EvalConfig.return_activations()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.EvalConfig.silence"><code class="docutils literal notranslate"><span class="pre">EvalConfig.silence()</span></code></a></li>
@@ -129,21 +123,11 @@ model for query reformulation tasks. For instance, given a dataset with consisti
 queries that have spelling mistakes, UDT can be used to generate relevant reformulations
 with the correct spelling.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.UniversalDeepTransformer.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="thirdai.bolt.UniversalDeepTransformer.__module__">
-<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'thirdai._thirdai.bolt'</span></em><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.__module__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.UniversalDeepTransformer.__new__">
 <span class="sig-name descname"><span class="pre">__new__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.__new__" title="Permalink to this definition"></a></dt>
 <dd><p>Overloaded function.</p>
 <ol class="arabic simple">
-<li><p>__new__(self: object, data_types: Dict[str, thirdai._thirdai.bolt.types.ColumnType], temporal_tracking_relationships: Dict[str, List[Union[str, thirdai._thirdai.bolt.temporal.TemporalConfig]]] = {}, target: str, n_target_classes: int, integer_target: bool = False, time_granularity: str = ‘daily’, lookahead: int = 0, delimiter: str = ‘,’, options: Dict[str, str] = {}) -&gt; thirdai::automl::deployment::UniversalDeepTransformer</p></li>
+<li><p>__new__(self: object, data_types: Dict[str, thirdai._thirdai.bolt.types.ColumnType], temporal_tracking_relationships: Dict[str, List[Union[str, thirdai._thirdai.bolt.temporal.TemporalConfig]]] = {}, target: str, n_target_classes: Optional[int] = None, integer_target: bool = False, time_granularity: str = ‘daily’, lookahead: int = 0, delimiter: str = ‘,’, options: Dict[str, str] = {}) -&gt; thirdai::automl::deployment::UniversalDeepTransformer</p></li>
 </ol>
 <p>UniversalDeepTransformer (UDT) Constructor.</p>
 <dl class="field-list simple">
@@ -250,22 +234,22 @@ time is in terms of time_granularity. E.g. ‘time_granularity=”daily”` and
 and temporal tracking configurations.</p></li>
 </ul>
 <ol class="arabic simple" start="2">
-<li><p>__new__(self: object, source_column_index: int, target_column_index: int, dataset_size: str) -&gt; thirdai::bolt::QueryCandidateGenerator</p></li>
+<li><p>__new__(self: object, source_column: str, target_column: str, dataset_size: str) -&gt; thirdai::bolt::QueryCandidateGenerator</p></li>
 </ol>
 <p>UniversalDeepTransformer (UDT) Constructor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>target_column_index</strong> (<em>int</em>) – Index specifying the target queries in the input dataset.
+<li><p><strong>target_column</strong> (<em>str</em>) – Column name specifying the target queries in the input dataset.
 Queries in this column are the target that the UDT model learns to predict.</p></li>
-<li><p><strong>source_column_index</strong> (<em>int</em>) – Index specifying the source queries in the input dataset.
+<li><p><strong>source_column</strong> (<em>str</em>) – Column name specifying the source queries in the input dataset.
 The UDT model uses is trained based on these queries.</p></li>
 <li><p><strong>dataset_size</strong> (<em>str</em>) – <p>The size of the input dataset. This size factor informs what
 UDT model to create.</p>
 <p>The dataset size can be one of the following:
 - small
 - medium
--large</p>
+- large</p>
 </p></li>
 </ul>
 </dd>
@@ -276,8 +260,8 @@ UDT model to create.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># has a target correct query for each incorrect query. We can initialize a UDT model</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># for query reformulation as follows:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
-<span class="go">        target_column_index=0,</span>
-<span class="go">        source_column_index=1,</span>
+<span class="go">        target_column=&quot;queries_for_prediction&quot;,</span>
+<span class="go">        source_column=&quot;incorrect_queries&quot;,</span>
 <span class="go">        dataset_size=&quot;medium&quot;</span>
 <span class="go">    )</span>
 </pre></div>
@@ -286,16 +270,12 @@ UDT model to create.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.UniversalDeepTransformer.load">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.load" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.load" title="Permalink to this definition"></a></dt>
 <dd><p>Loads a serialized instance of a UniversalDeepTransformer (UDT) model from a
 file on disk.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>filename</strong> (<em>str</em>) – The file on disk from where to load an instance of UDT.</p></li>
-<li><p><strong>model_type</strong> (<em>str</em>) – Type of UDT model to load from serialized file. Options
-include “udt_classifier” and “udt_generator”</p></li>
-</ul>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – The file on disk from where to load an instance of UDT.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The loaded instance of UDT</p>
@@ -304,20 +284,9 @@ include “udt_classifier” and “udt_generator”</p></li>
 <dd class="field-odd"><p><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer" title="thirdai.bolt.UniversalDeepTransformer">UniversalDeepTransformer</a></p>
 </dd>
 </dl>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul class="simple">
-<li><p>If mode_type is set to “udt_generator”, the underlying assumption will</p></li>
-</ul>
-<p>be that the pre-serialized model was query reformulation specific.
-Otherwise, attempting to load the incorrect model will throw an error.</p>
-</div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
-<span class="go">        &quot;udt_savefile.bolt&quot;,</span>
-<span class="go">        model_type=&quot;udt_classifier&quot;</span>
-<span class="go">    )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;udt_savefile.bolt&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -329,23 +298,8 @@ Otherwise, attempting to load the incorrect model will throw an error.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.</span></span><span class="sig-name descname"><span class="pre">TrainConfig</span></span><a class="headerlink" href="#thirdai.bolt.TrainConfig" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.TrainConfig.__getstate__">
-<span class="sig-name descname"><span class="pre">__getstate__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.TrainConfig" title="thirdai._thirdai.bolt.TrainConfig"><span class="pre">thirdai._thirdai.bolt.TrainConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#thirdai.bolt.TrainConfig.__getstate__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.TrainConfig.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.TrainConfig" title="thirdai._thirdai.bolt.TrainConfig"><span class="pre">thirdai._thirdai.bolt.TrainConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.TrainConfig.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="thirdai.bolt.TrainConfig.__module__">
-<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'thirdai._thirdai.bolt'</span></em><a class="headerlink" href="#thirdai.bolt.TrainConfig.__module__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.TrainConfig.__setstate__">
-<span class="sig-name descname"><span class="pre">__setstate__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.TrainConfig" title="thirdai._thirdai.bolt.TrainConfig"><span class="pre">thirdai._thirdai.bolt.TrainConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.TrainConfig.__setstate__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.TrainConfig.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
@@ -362,27 +316,27 @@ Otherwise, attempting to load the incorrect model will throw an error.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.TrainConfig.silence">
-<span class="sig-name descname"><span class="pre">silence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.TrainConfig" title="thirdai._thirdai.bolt.TrainConfig"><span class="pre">thirdai._thirdai.bolt.TrainConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.TrainConfig" title="thirdai._thirdai.bolt.TrainConfig"><span class="pre">thirdai._thirdai.bolt.TrainConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.TrainConfig.silence" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">silence</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.TrainConfig" title="thirdai.bolt.TrainConfig"><span class="pre">bolt.TrainConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.TrainConfig.silence" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.TrainConfig.with_callbacks">
-<span class="sig-name descname"><span class="pre">with_callbacks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">thirdai._thirdai.bolt.TrainConfig,</span> <span class="pre">callbacks:</span> <span class="pre">List[thirdai::bolt::Callback]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.TrainConfig" title="thirdai._thirdai.bolt.TrainConfig"><span class="pre">thirdai._thirdai.bolt.TrainConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.TrainConfig.with_callbacks" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">with_callbacks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">callbacks:</span> <span class="pre">List[thirdai::bolt::Callback]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.TrainConfig" title="thirdai.bolt.TrainConfig"><span class="pre">bolt.TrainConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.TrainConfig.with_callbacks" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.TrainConfig.with_log_loss_frequency">
-<span class="sig-name descname"><span class="pre">with_log_loss_frequency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.TrainConfig" title="thirdai._thirdai.bolt.TrainConfig"><span class="pre">thirdai._thirdai.bolt.TrainConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_loss_frequency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.TrainConfig" title="thirdai._thirdai.bolt.TrainConfig"><span class="pre">thirdai._thirdai.bolt.TrainConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.TrainConfig.with_log_loss_frequency" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">with_log_loss_frequency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_loss_frequency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.TrainConfig" title="thirdai.bolt.TrainConfig"><span class="pre">bolt.TrainConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.TrainConfig.with_log_loss_frequency" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.TrainConfig.with_metrics">
-<span class="sig-name descname"><span class="pre">with_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.TrainConfig" title="thirdai._thirdai.bolt.TrainConfig"><span class="pre">thirdai._thirdai.bolt.TrainConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.TrainConfig" title="thirdai._thirdai.bolt.TrainConfig"><span class="pre">thirdai._thirdai.bolt.TrainConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.TrainConfig.with_metrics" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">with_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.TrainConfig" title="thirdai.bolt.TrainConfig"><span class="pre">bolt.TrainConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.TrainConfig.with_metrics" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.TrainConfig.with_validation">
-<span class="sig-name descname"><span class="pre">with_validation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">thirdai._thirdai.bolt.TrainConfig,</span> <span class="pre">validation_data:</span> <span class="pre">List[thirdai._thirdai.dataset.BoltDataset],</span> <span class="pre">validation_labels:</span> <span class="pre">thirdai._thirdai.dataset.BoltDataset,</span> <span class="pre">eval_config:</span> <span class="pre">thirdai::bolt::EvalConfig,</span> <span class="pre">validation_frequency:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">save_best_per_metric:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.TrainConfig" title="thirdai._thirdai.bolt.TrainConfig"><span class="pre">thirdai._thirdai.bolt.TrainConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.TrainConfig.with_validation" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">with_validation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">validation_data:</span> <span class="pre">List[dataset.BoltDataset],</span> <span class="pre">validation_labels:</span> <span class="pre">dataset.BoltDataset,</span> <span class="pre">eval_config:</span> <span class="pre">thirdai::bolt::EvalConfig,</span> <span class="pre">validation_frequency:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">save_best_per_metric:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.TrainConfig" title="thirdai.bolt.TrainConfig"><span class="pre">bolt.TrainConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.TrainConfig.with_validation" title="Permalink to this definition"></a></dt>
 <dd><p>Add validation options to execute validation during training. Can be used to
 configure input data and labels, frequency to validate and optionally saving
 best model per a specified metric.</p>
@@ -412,32 +366,27 @@ tracked metric to be configured via <cite>with_metrics(…)</cite>.</p></li>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.EvalConfig.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.EvalConfig" title="thirdai._thirdai.bolt.EvalConfig"><span class="pre">thirdai._thirdai.bolt.EvalConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.EvalConfig.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="thirdai.bolt.EvalConfig.__module__">
-<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'thirdai._thirdai.bolt'</span></em><a class="headerlink" href="#thirdai.bolt.EvalConfig.__module__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.EvalConfig.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.EvalConfig.enable_sparse_inference">
-<span class="sig-name descname"><span class="pre">enable_sparse_inference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.EvalConfig" title="thirdai._thirdai.bolt.EvalConfig"><span class="pre">thirdai._thirdai.bolt.EvalConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.EvalConfig" title="thirdai._thirdai.bolt.EvalConfig"><span class="pre">thirdai._thirdai.bolt.EvalConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.EvalConfig.enable_sparse_inference" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">enable_sparse_inference</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.EvalConfig" title="thirdai.bolt.EvalConfig"><span class="pre">bolt.EvalConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.EvalConfig.enable_sparse_inference" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.EvalConfig.return_activations">
-<span class="sig-name descname"><span class="pre">return_activations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.EvalConfig" title="thirdai._thirdai.bolt.EvalConfig"><span class="pre">thirdai._thirdai.bolt.EvalConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.EvalConfig" title="thirdai._thirdai.bolt.EvalConfig"><span class="pre">thirdai._thirdai.bolt.EvalConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.EvalConfig.return_activations" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">return_activations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.EvalConfig" title="thirdai.bolt.EvalConfig"><span class="pre">bolt.EvalConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.EvalConfig.return_activations" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.EvalConfig.silence">
-<span class="sig-name descname"><span class="pre">silence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.EvalConfig" title="thirdai._thirdai.bolt.EvalConfig"><span class="pre">thirdai._thirdai.bolt.EvalConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.EvalConfig" title="thirdai._thirdai.bolt.EvalConfig"><span class="pre">thirdai._thirdai.bolt.EvalConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.EvalConfig.silence" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">silence</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.EvalConfig" title="thirdai.bolt.EvalConfig"><span class="pre">bolt.EvalConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.EvalConfig.silence" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.EvalConfig.with_metrics">
-<span class="sig-name descname"><span class="pre">with_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.EvalConfig" title="thirdai._thirdai.bolt.EvalConfig"><span class="pre">thirdai._thirdai.bolt.EvalConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.EvalConfig" title="thirdai._thirdai.bolt.EvalConfig"><span class="pre">thirdai._thirdai.bolt.EvalConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.EvalConfig.with_metrics" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">with_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.EvalConfig" title="thirdai.bolt.EvalConfig"><span class="pre">bolt.EvalConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.EvalConfig.with_metrics" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
