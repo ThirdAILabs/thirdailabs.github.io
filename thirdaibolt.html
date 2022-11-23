@@ -127,7 +127,7 @@ with the correct spelling.</p>
 <span class="sig-name descname"><span class="pre">__new__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.__new__" title="Permalink to this definition"></a></dt>
 <dd><p>Overloaded function.</p>
 <ol class="arabic simple">
-<li><p>__new__(self: object, data_types: Dict[str, thirdai._thirdai.bolt.types.ColumnType], temporal_tracking_relationships: Dict[str, List[Union[str, thirdai._thirdai.bolt.temporal.TemporalConfig]]] = {}, target: str, n_target_classes: Optional[int] = None, integer_target: bool = False, time_granularity: str = ‘daily’, lookahead: int = 0, delimiter: str = ‘,’, options: Dict[str, str] = {}) -&gt; thirdai::automl::deployment::UniversalDeepTransformer</p></li>
+<li><p>__new__(self: object, data_types: Dict[str, thirdai._thirdai.bolt.types.ColumnType], temporal_tracking_relationships: Dict[str, List[Union[str, thirdai._thirdai.bolt.temporal.TemporalConfig]]] = {}, target: str, n_target_classes: Optional[int] = None, integer_target: bool = False, time_granularity: str = ‘daily’, lookahead: int = 0, delimiter: str = ‘,’, model_config: Optional[str] = None, options: Dict[str, str] = {}) -&gt; thirdai::automl::models::UniversalDeepTransformer</p></li>
 </ol>
 <p>UniversalDeepTransformer (UDT) Constructor.</p>
 <dl class="field-list simple">
@@ -175,6 +175,8 @@ time is in terms of time_granularity. E.g. ‘time_granularity=”daily”` and
 (predict the current value of the target).</p></li>
 <li><p><strong>delimiter</strong> (<em>str</em>) – Optional. Defaults to ‘,’. A single character
 (length-1 string) that separates the columns of the CSV training / validation dataset.</p></li>
+<li><p><strong>model_config</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – This overwrites the autotuned model with a custom model
+defined by the given config file.</p></li>
 </ul>
 </dd>
 </dl>

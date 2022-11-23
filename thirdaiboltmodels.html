@@ -47,11 +47,12 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">thirdai.bolt.models</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.models.Pipeline"><code class="docutils literal notranslate"><span class="pre">Pipeline</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Pipeline.__init__"><code class="docutils literal notranslate"><span class="pre">Pipeline.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Pipeline.default_evaluate_batch_size"><code class="docutils literal notranslate"><span class="pre">Pipeline.default_evaluate_batch_size</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Pipeline.default_train_batch_size"><code class="docutils literal notranslate"><span class="pre">Pipeline.default_train_batch_size</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Pipeline.evaluate"><code class="docutils literal notranslate"><span class="pre">Pipeline.evaluate()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Pipeline.explain"><code class="docutils literal notranslate"><span class="pre">Pipeline.explain()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Pipeline.get_data_processor"><code class="docutils literal notranslate"><span class="pre">Pipeline.get_data_processor()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Pipeline.load"><code class="docutils literal notranslate"><span class="pre">Pipeline.load()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Pipeline.load_validation_data"><code class="docutils literal notranslate"><span class="pre">Pipeline.load_validation_data()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Pipeline.predict"><code class="docutils literal notranslate"><span class="pre">Pipeline.predict()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Pipeline.predict_batch"><code class="docutils literal notranslate"><span class="pre">Pipeline.predict_batch()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Pipeline.predict_tokens"><code class="docutils literal notranslate"><span class="pre">Pipeline.predict_tokens()</span></code></a></li>
@@ -62,10 +63,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier"><code class="docutils literal notranslate"><span class="pre">UDTClassifier</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.__init__"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.__init__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.class_name"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.class_name()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.default_evaluate_batch_size"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.default_evaluate_batch_size</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.default_train_batch_size"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.default_train_batch_size</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.embedding_representation"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.embedding_representation()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.evaluate"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.evaluate()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.explain"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.explain()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.index"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.index()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.index_batch"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.index_batch()</span></code></a></li>
@@ -73,7 +71,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.predict_batch"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.predict_batch()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.reset_temporal_trackers"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.reset_temporal_trackers()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.save"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.save()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.train"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.train()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.models.UDTConfig"><code class="docutils literal notranslate"><span class="pre">UDTConfig</span></code></a><ul>
@@ -193,65 +190,62 @@ parameter is not specified or if the the parameter is not the right type.</p></l
 </div>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="thirdai.bolt.models.Pipeline.default_evaluate_batch_size">
+<span class="sig-name descname"><span class="pre">default_evaluate_batch_size</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2048</span></em><a class="headerlink" href="#thirdai.bolt.models.Pipeline.default_evaluate_batch_size" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="thirdai.bolt.models.Pipeline.default_train_batch_size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_train_batch_size</span></span><a class="headerlink" href="#thirdai.bolt.models.Pipeline.default_train_batch_size" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.models.Pipeline.evaluate">
-<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.models.Pipeline.evaluate" title="Permalink to this definition"></a></dt>
-<dd><p>Overloaded function.</p>
-<ol class="arabic simple">
-<li><p>evaluate(self: thirdai._thirdai.bolt.models.Pipeline, filename: str, eval_config: Optional[thirdai._thirdai.bolt.EvalConfig] = None) -&gt; object</p></li>
-</ol>
-<p>Evaluates the ModelPipeline on the given dataset and returns a numpy array of the
-activations.</p>
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_sparse_inference</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.models.Pipeline.evaluate" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluates the UniversalDeepTransformer (UDT) on the given dataset and returns a
+numpy array of the activations. We currently support csv and parquet format
+files. If the file is parquet, it should end in .parquet or .pqt. Otherwise,
+we will assume it is a csv file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>filename</strong> (<em>str</em>) – Path to the dataset file.</p></li>
-<li><p><strong>eval_config</strong> (<em>Option</em><em>[</em><a class="reference internal" href="thirdaibolt.html#thirdai.bolt.EvalConfig" title="thirdai.bolt.EvalConfig"><em>bolt.EvalConfig</em></a><em>]</em>) – The predict config is optional
-and allows for specification of metrics to compute and whether to use sparse
-inference.</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – Path to the dataset file. Like train, this can be a path
+to a local file or a path to an S3 file.</p></li>
+<li><p><strong>metrics</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of metrics to compute during evaluation.</p></li>
+<li><p><strong>use_sparse_inference</strong> (<em>bool</em>) – Optional, defaults to False, determines if
+sparse inference is used during evaluation.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Optional, defaults to True. Controls if additional information
+is printed during training.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a numpy array of the activations if the output is dense, or a tuple
 of the active neurons and activations if the output is sparse. The shape of
-each array will be (dataset_length, num_nonzeros_in_output).</p>
+each array will be (dataset_length, num_nonzeros_in_output). When the
+<cite>consecutive_integer_ids</cite> argument of target column’s categorical ColumnType
+object is set to False (as it is by default), UDT creates an internal
+mapping between target class names and neuron ids. You can map neuron ids back to
+target class names by calling the <cite>class_names()</cite> method.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>(np.ndarray or Tuple[np.ndarray, np.ndarray])</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">eval_config</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">EvalConfig</span><span class="p">()</span><span class="o">.</span><span class="n">with_metrics</span><span class="p">([</span><span class="s2">&quot;categorical_accuracy&quot;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">activations</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;./test_file&quot;</span><span class="p">,</span> <span class="n">eval_config</span><span class="o">=</span><span class="n">eval_config</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">activations</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;./test_file&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>evaluate(self: thirdai._thirdai.bolt.models.Pipeline, data_source: thirdai._thirdai.dataset.DataLoader, eval_config: Optional[thirdai._thirdai.bolt.EvalConfig] = None) -&gt; object</p></li>
-</ol>
-<p>Evaluates the ModelPipeline on the given dataset and returns a numpy array of the
-activations.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data_source</strong> (<a class="reference internal" href="thirdaidataset.html#thirdai.dataset.DataLoader" title="thirdai.dataset.DataLoader"><em>dataset.DataLoader</em></a>) – A data loader for the given dataset.</p></li>
-<li><p><strong>eval_config</strong> (<em>Option</em><em>[</em><a class="reference internal" href="thirdaibolt.html#thirdai.bolt.EvalConfig" title="thirdai.bolt.EvalConfig"><em>bolt.EvalConfig</em></a><em>]</em>) – The predict config is optional
-and allows for specification of metrics to compute and whether to use sparse
-inference.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Returns a numpy array of the activations if the output is dense, or a tuple
-of the active neurons and activations if the output is sparse. The shape of
-each array will be (dataset_length, num_nonzeros_in_output).</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>(np.ndarray or Tuple[np.ndarray, np.ndarray])</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>If temporal tracking relationships are provided, UDT can make better predictions</dt><dd><p>by taking temporal context into account. For example, UDT may keep track of
+the last few movies that a user has watched to better recommend the next movie.</p>
 </dd>
 </dl>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">active_neurons</span><span class="p">,</span> <span class="n">activations</span><span class="p">)</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">data_source</span><span class="o">=</span><span class="n">dataset</span><span class="o">.</span><span class="n">S3DataLoader</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
-</pre></div>
-</div>
+</li>
+</ul>
+<p>`   model.evaluate()` automatically updates UDT’s temporal context.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -289,7 +283,7 @@ absolute value of the <cite>percentage_significance</cite> field of each element
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.models.Pipeline.get_data_processor">
-<span class="sig-name descname"><span class="pre">get_data_processor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">thirdai::automl::deployment::DatasetLoaderFactory</span></span></span><a class="headerlink" href="#thirdai.bolt.models.Pipeline.get_data_processor" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_data_processor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">thirdai::automl::data::DatasetLoaderFactory</span></span></span><a class="headerlink" href="#thirdai.bolt.models.Pipeline.get_data_processor" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the data processor of the model pipeline.</p>
 </dd></dl>
 
@@ -306,11 +300,6 @@ absolute value of the <cite>percentage_significance</cite> field of each element
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.models.Pipeline.load_validation_data">
-<span class="sig-name descname"><span class="pre">load_validation_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dataset.BoltDataset</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dataset.BoltDataset</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#thirdai.bolt.models.Pipeline.load_validation_data" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.models.Pipeline.predict">
@@ -415,26 +404,39 @@ each array will be (num_nonzeros_in_output, ).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.models.Pipeline.train">
-<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.models.Pipeline.train" title="Permalink to this definition"></a></dt>
-<dd><p>Overloaded function.</p>
-<ol class="arabic simple">
-<li><p>train(self: thirdai._thirdai.bolt.models.Pipeline, filename: str, train_config: thirdai._thirdai.bolt.TrainConfig, batch_size: Optional[int] = None, max_in_memory_batches: Optional[int] = None) -&gt; None</p></li>
-</ol>
-<p>Trains a ModelPipeline on a given dataset using a file on disk.</p>
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Validation</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_in_memory_batches</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="thirdaiboltcallbacks.html#thirdai.bolt.callbacks.Callback" title="thirdai.bolt.callbacks.Callback"><span class="pre">Callback</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.models.Pipeline.train" title="Permalink to this definition"></a></dt>
+<dd><p>Trains a UniversalDeepTransformer (UDT) on a given dataset using a file on disk
+or on S3. If the file is on S3, it should be in the normal s3 form, i.e.
+s3://bucket/path/to/key. We currently support csv and parquet format files.
+If the file is parquet, it should end in .parquet or .pqt. Otherwise, we
+will assume it is a csv file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>filename</strong> (<em>str</em>) – Path to the dataset file.</p></li>
-<li><p><strong>train_config</strong> (<a class="reference internal" href="thirdaibolt.html#thirdai.bolt.TrainConfig" title="thirdai.bolt.TrainConfig"><em>bolt.TrainConfig</em></a>) – The training config specifies the number
-of epochs and learning_rate, and optionally allows for specification of a
-validation dataset, metrics, callbacks, and how frequently to log metrics
-during training.</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – Path to the dataset file. Can be a path to a file on
+disk or an S3 resource identifier. If the filename is on S3 this
+function will use boto3 internally to load the file (normal boto3
+credential options apply). If multiple files match the bucket and
+prefix, then this will train on all of them.</p></li>
+<li><p><strong>learning_rate</strong> (<em>float</em>) – Optional, uses default if not provided.</p></li>
+<li><p><strong>epochs</strong> (<em>int</em>) – Optional, uses default if not provided.</p></li>
+<li><p><strong>validation</strong> (<em>Optional</em><em>[</em><em>bolt.Validation</em><em>]</em>) – This is an optional parameter that
+specifies a validation dataset, metrics, and interval to use during
+training.</p></li>
 <li><p><strong>batch_size</strong> (<em>Option</em><em>[</em><em>int</em><em>]</em>) – This is an optional parameter indicating which batch
-size to use for training. If not specified the default batch size from the
-TrainEvalParameters is used.</p></li>
+size to use for training. If not specified, the batch size will be autotuned.</p></li>
 <li><p><strong>max_in_memory_batches</strong> (<em>Option</em><em>[</em><em>int</em><em>]</em>) – The maximum number of batches to load in
 memory at a given time. If this is specified then the dataset will be processed
 in a streaming fashion.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Optional, defaults to True. Controls if additional information
+is printed during training.</p></li>
+<li><p><strong>callbacks</strong> (<em>List</em><em>[</em><a class="reference internal" href="thirdaiboltcallbacks.html#thirdai.bolt.callbacks.Callback" title="thirdai.bolt.callbacks.Callback"><em>bolt.callbacks.Callback</em></a><em>]</em>) – List of callbacks to use during
+training.</p></li>
+<li><p><strong>metrics</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of metrics to compute during training. These are
+logged if logging is enabled, and are accessible by any callbacks.</p></li>
+<li><p><strong>logging_interval</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – How frequently to log training metrics,
+represents the number of batches between logging metrics. If not specified
+logging is done at the end of each epoch.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -442,42 +444,22 @@ in a streaming fashion.</p></li>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">train_config</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">TrainConfig</span><span class="p">(</span>
-<span class="go">        epochs=5, learning_rate=0.01</span>
-<span class="go">    ).with_metrics([&quot;mean_squared_error&quot;])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
+<span class="go">        filename=&quot;./train_file&quot;, epochs=5, learning_rate=0.01, max_in_memory_batches=12</span>
+<span class="go">    )</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
-<span class="go">        filename=&quot;./train_file&quot;, train_config=train_config , max_in_memory_batches=12</span>
+<span class="go">        filename=&quot;s3://bucket/path/to/key&quot;</span>
 <span class="go">    )</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>train(self: thirdai._thirdai.bolt.models.Pipeline, data_source: thirdai._thirdai.dataset.DataLoader, train_config: thirdai._thirdai.bolt.TrainConfig, max_in_memory_batches: Optional[int] = None) -&gt; None</p></li>
-</ol>
-<p>Trains a ModelPipeline on a given dataset using any DataLoader.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data_source</strong> (<a class="reference internal" href="thirdaidataset.html#thirdai.dataset.DataLoader" title="thirdai.dataset.DataLoader"><em>dataset.DataLoader</em></a>) – A data loader for the given dataset.</p></li>
-<li><p><strong>train_config</strong> (<a class="reference internal" href="thirdaibolt.html#thirdai.bolt.TrainConfig" title="thirdai.bolt.TrainConfig"><em>bolt.TrainConfig</em></a>) – The training config specifies the number
-of epochs and learning_rate, and optionally allows for specification of a
-validation dataset, metrics, callbacks, and how frequently to log metrics
-during training.</p></li>
-<li><p><strong>max_in_memory_batches</strong> (<em>Option</em><em>[</em><em>int</em><em>]</em>) – The maximum number of batches to load in
-memory at a given time. If this is specified then the dataset will be processed
-in a streaming fashion.</p></li>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>If temporal tracking relationships are provided, UDT can make better</p></li>
 </ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">train_config</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">TrainConfig</span><span class="p">(</span><span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
-<span class="go">        data_source=dataset.S3DataLoader(...), train_config=train_config, max_in_memory_batches=12</span>
-<span class="go">    )</span>
-</pre></div>
-</div>
+<p>predictions by taking temporal context into account. For example, UDT may
+keep track of the last few movies that a user has watched to better
+recommend the next movie. <cite>model.train()</cite> automatically updates UDT’s
+temporal context.</p>
 </dd></dl>
 
 </dd></dl>
@@ -488,7 +470,7 @@ in a streaming fashion.</p></li>
 <dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.models.Pipeline" title="thirdai._thirdai.bolt.models.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.models.UDTClassifier.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data_types:</span> <span class="pre">Dict[str,</span> <span class="pre">bolt.types.ColumnType],</span> <span class="pre">temporal_tracking_relationships:</span> <span class="pre">Dict[str,</span> <span class="pre">List[Union[str,</span> <span class="pre">bolt.temporal.TemporalConfig]]]</span> <span class="pre">=</span> <span class="pre">{},</span> <span class="pre">target:</span> <span class="pre">str,</span> <span class="pre">n_target_classes:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">integer_target:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">time_granularity:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'daily',</span> <span class="pre">lookahead:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">delimiter:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">',',</span> <span class="pre">options:</span> <span class="pre">Dict[str,</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">{}</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTClassifier.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data_types:</span> <span class="pre">Dict[str,</span> <span class="pre">bolt.types.ColumnType],</span> <span class="pre">temporal_tracking_relationships:</span> <span class="pre">Dict[str,</span> <span class="pre">List[Union[str,</span> <span class="pre">bolt.temporal.TemporalConfig]]]</span> <span class="pre">=</span> <span class="pre">{},</span> <span class="pre">target:</span> <span class="pre">str,</span> <span class="pre">n_target_classes:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">integer_target:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">time_granularity:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'daily',</span> <span class="pre">lookahead:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">delimiter:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">',',</span> <span class="pre">model_config:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">options:</span> <span class="pre">Dict[str,</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">{}</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTClassifier.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>UniversalDeepTransformer (UDT) Constructor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -535,6 +517,8 @@ time is in terms of time_granularity. E.g. ‘time_granularity=”daily”` and
 (predict the current value of the target).</p></li>
 <li><p><strong>delimiter</strong> (<em>str</em>) – Optional. Defaults to ‘,’. A single character
 (length-1 string) that separates the columns of the CSV training / validation dataset.</p></li>
+<li><p><strong>model_config</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – This overwrites the autotuned model with a custom model
+defined by the given config file.</p></li>
 </ul>
 </dd>
 </dl>
@@ -623,16 +607,6 @@ useful for mapping the activations returned by <cite>evaluate()</cite> and
 </div>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="thirdai.bolt.models.UDTClassifier.default_evaluate_batch_size">
-<span class="sig-name descname"><span class="pre">default_evaluate_batch_size</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2048</span></em><a class="headerlink" href="#thirdai.bolt.models.UDTClassifier.default_evaluate_batch_size" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="thirdai.bolt.models.UDTClassifier.default_train_batch_size">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_train_batch_size</span></span><a class="headerlink" href="#thirdai.bolt.models.UDTClassifier.default_train_batch_size" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.models.UDTClassifier.embedding_representation">
 <span class="sig-name descname"><span class="pre">embedding_representation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_sample</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTClassifier.embedding_representation" title="Permalink to this definition"></a></dt>
@@ -689,51 +663,6 @@ To do this without retraining the model, we need to use <cite>model.index()</cit
 <cite>model.index_batch()</cite>. Read about <cite>model.index()</cite> and <cite>model.index_batch()</cite>
 for details.</p></li>
 </ul>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.models.UDTClassifier.evaluate">
-<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eval_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="thirdaibolt.html#thirdai.bolt.EvalConfig" title="thirdai.bolt.EvalConfig"><span class="pre">EvalConfig</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.models.UDTClassifier.evaluate" title="Permalink to this definition"></a></dt>
-<dd><p>Evaluates the UniversalDeepTransformer (UDT) on the given dataset and returns a
-numpy array of the activations.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>filename</strong> (<em>str</em>) – Path to the dataset file. Like train, this can be a path
-to a local file or a path to an S3 file.</p></li>
-<li><p><strong>eval_config</strong> (<em>Option</em><em>[</em><a class="reference internal" href="thirdaibolt.html#thirdai.bolt.EvalConfig" title="thirdai.bolt.EvalConfig"><em>bolt.EvalConfig</em></a><em>]</em>) – The predict config is optional.
-It specifies metrics to compute and whether to use sparse
-inference.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Returns a numpy array of the activations if the output is dense, or a tuple
-of the active neurons and activations if the output is sparse. The shape of
-each array will be (dataset_length, num_nonzeros_in_output). When the
-<cite>consecutive_integer_ids</cite> argument of target column’s categorical ColumnType
-object is set to False (as it is by default), UDT creates an internal
-mapping between target class names and neuron ids. You can map neuron ids back to
-target class names by calling the <cite>class_names()</cite> method.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>(np.ndarray or Tuple[np.ndarray, np.ndarray])</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">eval_config</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">EvalConfig</span><span class="p">()</span><span class="o">.</span><span class="n">with_metrics</span><span class="p">([</span><span class="s2">&quot;categorical_accuracy&quot;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">activations</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;./test_file&quot;</span><span class="p">,</span> <span class="n">eval_config</span><span class="o">=</span><span class="n">eval_config</span><span class="p">)</span>
-</pre></div>
-</div>
-<p class="rubric">Notes</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt>If temporal tracking relationships are provided, UDT can make better predictions</dt><dd><p>by taking temporal context into account. For example, UDT may keep track of
-the last few movies that a user has watched to better recommend the next movie.</p>
-</dd>
-</dl>
-</li>
-</ul>
-<p>`   model.evaluate()` automatically updates UDT’s temporal context.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1065,57 +994,6 @@ The serialized UDT includes its current temporal context.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;udt_savefile.bolt&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.models.UDTClassifier.train">
-<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_config:</span> <span class="pre">~bolt.TrainConfig</span> <span class="pre">=</span> <span class="pre">&lt;bolt.TrainConfig</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size:</span> <span class="pre">~typing.Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_in_memory_batches:</span> <span class="pre">~typing.Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.models.UDTClassifier.train" title="Permalink to this definition"></a></dt>
-<dd><p>Trains a UniversalDeepTransformer (UDT) on a given dataset using a file on disk
-or on S3. If the file is on S3, it should be in the normal s3 form, i.e.
-s3://bucket/path/to/key.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>filename</strong> (<em>str</em>) – Path to the dataset file. Can be a path to a file on
-disk or an S3 resource identifier. If the filename is on S3 this
-function will use boto3 internally to load the file (normal boto3
-credential options apply). If multiple files match the bucket and
-prefix, then this will train on all of them.</p></li>
-<li><p><strong>train_config</strong> (<a class="reference internal" href="thirdaibolt.html#thirdai.bolt.TrainConfig" title="thirdai.bolt.TrainConfig"><em>bolt.TrainConfig</em></a>) – The training config specifies the number
-of epochs and learning_rate, and optionally allows for specification of a
-validation dataset, metrics, callbacks, and how frequently to log metrics
-during training.</p></li>
-<li><p><strong>batch_size</strong> (<em>Option</em><em>[</em><em>int</em><em>]</em>) – This is an optional parameter indicating which batch
-size to use for training. If not specified, the batch size will be autotuned.</p></li>
-<li><p><strong>max_in_memory_batches</strong> (<em>Option</em><em>[</em><em>int</em><em>]</em>) – The maximum number of batches to load in
-memory at a given time. If this is specified then the dataset will be processed
-in a streaming fashion.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">train_config</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">TrainConfig</span><span class="p">(</span>
-<span class="go">        epochs=5, learning_rate=0.01</span>
-<span class="go">    ).with_metrics([&quot;mean_squared_error&quot;])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
-<span class="go">        filename=&quot;./train_file&quot;, train_config=train_config , max_in_memory_batches=12</span>
-<span class="go">    )</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
-<span class="go">        filename=&quot;s3://bucket/path/to/key&quot;, train_config=train_config</span>
-<span class="go">    )</span>
-</pre></div>
-</div>
-<p class="rubric">Notes</p>
-<ul class="simple">
-<li><p>If temporal tracking relationships are provided, UDT can make better</p></li>
-</ul>
-<p>predictions by taking temporal context into account. For example, UDT may
-keep track of the last few movies that a user has watched to better
-recommend the next movie. <cite>model.train()</cite> automatically updates UDT’s
-temporal context.</p>
 </dd></dl>
 
 </dd></dl>
