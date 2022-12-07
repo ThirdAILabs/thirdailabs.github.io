@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>thirdai.bolt.temporal &mdash; thirdai  documentation</title>
@@ -98,7 +98,7 @@
 <dd><p>Temporal categorical config. Use this object to configure how a
 categorical column is tracked over time.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>column_name</strong> (<em>str</em>) – The name of the tracked column.</p></li>
 <li><p><strong>track_last_n</strong> (<em>int</em>) – Number of last categorical values to track
@@ -138,10 +138,16 @@ Defaults to False.</p></li>
 </div>
 <p class="rubric">Notes</p>
 <ul class="simple">
-<li><p>Temporal categorical features are tracked as a set; if we track the last 5 ad spend levels,
-we capture what the last 5 ad spend levels are, but we do not capture their order.</p></li>
-<li><p>The same column can be tracked more than once, allowing us to capture both short and
-long term trends.</p></li>
+<li><dl class="simple">
+<dt>Temporal categorical features are tracked as a set; if we track the last 5 ad spend levels,</dt><dd><p>we capture what the last 5 ad spend levels are, but we do not capture their order.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The same column can be tracked more than once, allowing us to capture both short and</dt><dd><p>long term trends.</p>
+</dd>
+</dl>
+</li>
 </ul>
 </dd></dl>
 
@@ -151,7 +157,7 @@ long term trends.</p></li>
 <dd><p>Temporal numerical config. Use this object to configure how a
 numerical column is tracked over time.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>column_name</strong> (<em>str</em>) – The name of the tracked column.</p></li>
 <li><p><strong>history_length</strong> (<em>int</em>) – Amount of time to look back. Time is in terms
@@ -193,8 +199,11 @@ to False.</p></li>
 </div></blockquote>
 <p class="rubric">Notes</p>
 <ul class="simple">
-<li><p>The same column can be tracked more than once, allowing us to capture both short and
-long term trends.</p></li>
+<li><dl class="simple">
+<dt>The same column can be tracked more than once, allowing us to capture both short and</dt><dd><p>long term trends.</p>
+</dd>
+</dl>
+</li>
 </ul>
 </dd></dl>
 

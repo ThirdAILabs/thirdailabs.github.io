@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>thirdai.bolt &mdash; thirdai  documentation</title>
@@ -127,11 +127,11 @@ with the correct spelling.</p>
 <span class="sig-name descname"><span class="pre">__new__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.__new__" title="Permalink to this definition"></a></dt>
 <dd><p>Overloaded function.</p>
 <ol class="arabic simple">
-<li><p>__new__(self: object, data_types: Dict[str, thirdai._thirdai.bolt.types.ColumnType], temporal_tracking_relationships: Dict[str, List[Union[str, thirdai._thirdai.bolt.temporal.TemporalConfig]]] = {}, target: str, n_target_classes: Optional[int] = None, integer_target: bool = False, time_granularity: str = ‘daily’, lookahead: int = 0, delimiter: str = ‘,’, model_config: Optional[str] = None, options: Dict[str, str] = {}) -&gt; thirdai::automl::models::UniversalDeepTransformer</p></li>
+<li><p>__new__(self: object, data_types: Dict[str, thirdai::automl::data::DataType], temporal_tracking_relationships: Dict[str, List[Union[str, thirdai::automl::data::TemporalConfig]]] = {}, target: str, n_target_classes: Optional[int] = None, integer_target: bool = False, time_granularity: str = ‘daily’, lookahead: int = 0, delimiter: str = ‘,’, model_config: Optional[str] = None, options: Dict[str, str] = {}) -&gt; thirdai::automl::models::UniversalDeepTransformer</p></li>
 </ol>
 <p>UniversalDeepTransformer (UDT) Constructor.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data_types</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="thirdaibolttypes.html#thirdai.bolt.types.ColumnType" title="thirdai.bolt.types.ColumnType"><em>bolt.types.ColumnType</em></a><em>]</em>) – <p>A mapping from column name to column type.
 This map specifies the columns that we want to pass into the model; it does
@@ -236,11 +236,11 @@ defined by the given config file.</p></li>
 and temporal tracking configurations.</p></li>
 </ul>
 <ol class="arabic simple" start="2">
-<li><p>__new__(self: object, source_column: str, target_column: str, dataset_size: str) -&gt; thirdai::bolt::QueryCandidateGenerator</p></li>
+<li><p>__new__(self: object, source_column: str, target_column: str, dataset_size: str) -&gt; thirdai::automl::models::QueryCandidateGenerator</p></li>
 </ol>
 <p>UniversalDeepTransformer (UDT) Constructor.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target_column</strong> (<em>str</em>) – Column name specifying the target queries in the input dataset.
 Queries in this column are the target that the UDT model learns to predict.</p></li>
@@ -276,13 +276,13 @@ UDT model to create.</p>
 <dd><p>Loads a serialized instance of a UniversalDeepTransformer (UDT) model from a
 file on disk.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – The file on disk from where to load an instance of UDT.</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The loaded instance of UDT</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer" title="thirdai.bolt.UniversalDeepTransformer">UniversalDeepTransformer</a></p>
 </dd>
 </dl>
@@ -343,7 +343,7 @@ file on disk.</p>
 configure input data and labels, frequency to validate and optionally saving
 best model per a specified metric.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>validation_data</strong> (<em>dataset.BoltDataset</em>) – Input dataset for validation</p></li>
 <li><p><strong>validation_label</strong> (<em>dataset.BoltDataset</em>) – Ground truth labels to use during validation</p></li>
