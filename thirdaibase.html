@@ -43,6 +43,8 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">thirdai</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.activate"><code class="docutils literal notranslate"><span class="pre">activate()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.deactivate"><code class="docutils literal notranslate"><span class="pre">deactivate()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.set_global_num_threads"><code class="docutils literal notranslate"><span class="pre">set_global_num_threads()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.set_thirdai_license_path"><code class="docutils literal notranslate"><span class="pre">set_thirdai_license_path()</span></code></a></li>
 </ul>
@@ -86,6 +88,18 @@
 <span id="thirdai"></span><h1>thirdai<a class="headerlink" href="#module-thirdai" title="Permalink to this heading"></a></h1>
 <p>The ThirdAI Python package</p>
 <dl class="py function">
+<dt class="sig sig-object py" id="thirdai.activate">
+<span class="sig-prename descclassname"><span class="pre">thirdai.</span></span><span class="sig-name descname"><span class="pre">activate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.activate" title="Permalink to this definition"></a></dt>
+<dd><p>Set a ThirdAI API access key to authenticate future calls to ThirdAI functions.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="thirdai.deactivate">
+<span class="sig-prename descclassname"><span class="pre">thirdai.</span></span><span class="sig-name descname"><span class="pre">deactivate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.deactivate" title="Permalink to this definition"></a></dt>
+<dd><p>Remove the currently stored ThirdAI access key. Future calls to ThirdAI functions may fail.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="thirdai.set_global_num_threads">
 <span class="sig-prename descclassname"><span class="pre">thirdai.</span></span><span class="sig-name descname"><span class="pre">set_global_num_threads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_num_threads</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.set_global_num_threads" title="Permalink to this definition"></a></dt>
 <dd><p>Set the maximum number of threads to use to any future calls to the thirdai library.</p>
@@ -94,7 +108,7 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="thirdai.set_thirdai_license_path">
 <span class="sig-prename descclassname"><span class="pre">thirdai.</span></span><span class="sig-name descname"><span class="pre">set_thirdai_license_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">license_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.set_thirdai_license_path" title="Permalink to this definition"></a></dt>
-<dd><p>Set a license filepath for any future calls to the thirdai library.</p>
+<dd><p>Set a license filepath for any future calls to ThirdAI functions. License file verification will be treated as a fallback if activate has not been called.</p>
 </dd></dl>
 
 </section>

@@ -71,12 +71,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.class_name"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.class_name()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.embedding_representation"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.embedding_representation()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.explain"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.explain()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.get_prediction_threshold"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.get_prediction_threshold()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.index"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.index()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.index_batch"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.index_batch()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.predict"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.predict()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.predict_batch"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.predict_batch()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.reset_temporal_trackers"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.reset_temporal_trackers()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.save"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.save()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTClassifier.set_prediction_threshold"><code class="docutils literal notranslate"><span class="pre">UDTClassifier.set_prediction_threshold()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.models.UDTConfig"><code class="docutils literal notranslate"><span class="pre">UDTConfig</span></code></a><ul>
@@ -208,7 +210,7 @@ parameter is not specified or if the the parameter is not the right type.</p></l
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.models.Pipeline.evaluate">
-<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_sparse_inference</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_predicted_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.models.Pipeline.evaluate" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_sparse_inference</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_predicted_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.models.Pipeline.evaluate" title="Permalink to this definition"></a></dt>
 <dd><p>Evaluates the UniversalDeepTransformer (UDT) on the given dataset and returns a
 numpy array of the activations. We currently support csv and parquet format
 files. If the file is parquet, it should end in .parquet or .pqt. Otherwise,
@@ -531,7 +533,7 @@ new true samples. <cite>.update_temporal_trackers()</cite> does exactly this.</p
 <dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.models.Pipeline" title="thirdai._thirdai.bolt.models.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.models.UDTClassifier.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data_types:</span> <span class="pre">Dict[str,</span> <span class="pre">thirdai::automl::data::DataType],</span> <span class="pre">temporal_tracking_relationships:</span> <span class="pre">Dict[str,</span> <span class="pre">List[Union[str,</span> <span class="pre">thirdai::automl::data::TemporalConfig]]]</span> <span class="pre">=</span> <span class="pre">{},</span> <span class="pre">target:</span> <span class="pre">str,</span> <span class="pre">n_target_classes:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">integer_target:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">time_granularity:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'daily',</span> <span class="pre">lookahead:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">delimiter:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">',',</span> <span class="pre">model_config:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">options:</span> <span class="pre">Dict[str,</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">{}</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTClassifier.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data_types:</span> <span class="pre">Dict[str,</span> <span class="pre">thirdai::automl::data::DataType],</span> <span class="pre">temporal_tracking_relationships:</span> <span class="pre">Dict[str,</span> <span class="pre">List[Union[str,</span> <span class="pre">thirdai::automl::data::TemporalConfig]]]</span> <span class="pre">=</span> <span class="pre">{},</span> <span class="pre">target:</span> <span class="pre">str,</span> <span class="pre">n_target_classes:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">integer_target:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">time_granularity:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'daily',</span> <span class="pre">lookahead:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">delimiter:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">',',</span> <span class="pre">model_config:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">options:</span> <span class="pre">Dict[str,</span> <span class="pre">thirdai::automl::deployment::UserParameterInput]</span> <span class="pre">=</span> <span class="pre">{}</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTClassifier.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>UniversalDeepTransformer (UDT) Constructor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -808,6 +810,11 @@ for details.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.models.UDTClassifier.get_prediction_threshold">
+<span class="sig-name descname"><span class="pre">get_prediction_threshold</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTClassifier.get_prediction_threshold" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.models.UDTClassifier.index">
 <span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_sample</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTClassifier.index" title="Permalink to this definition"></a></dt>
 <dd><p>Indexes a single true sample to keep UniversalDeepTransformer’s (UDT) temporal
@@ -903,8 +910,12 @@ values are the respective column values.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.models.UDTClassifier.predict">
-<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_sample</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_sparse_inference</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_predicted_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTClassifier.predict" title="Permalink to this definition"></a></dt>
-<dd><p>Performs inference on a single sample.</p>
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.models.UDTClassifier.predict" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>predict(self: thirdai._thirdai.bolt.models.UDTClassifier, input_sample: Dict[str, str], use_sparse_inference: bool = False, return_predicted_class: bool = False) -&gt; object</p></li>
+</ol>
+<p>Performs inference on a single sample.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -920,10 +931,76 @@ each array will be (num_nonzeros_in_output, ). When the
 <cite>consecutive_integer_ids</cite> argument of target column’s categorical ColumnType
 object is set to False (as it is by default), UDT creates an internal
 mapping between target class names and neuron ids. You can map neuron ids back to
-target class names by calling the <cite>class_names()</cite> method.</p>
+target class names by calling the <cite>class_names()</cite> method. If the <cite>prediction_depth</cite>
+of the model is &gt; 1 and the task is classification then it will return a numpy array
+of integers indicating the predicted class for each timstamp up to <cite>prediction_depth</cite>.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(np.ndarray or Tuple[np.ndarray, np.ndarray])</p>
+<dd class="field-odd"><p>(np.ndarray, Tuple[np.ndarray, np.ndarray], or List[int])</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Suppose we configure UDT as follows:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<span class="go">        data_types={</span>
+<span class="go">            &quot;user_id&quot;: bolt.types.categorical(),</span>
+<span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
+<span class="go">            &quot;special_event&quot;: bolt.types.categorical(),</span>
+<span class="go">            &quot;movie_title&quot;: bolt.types.categorical()</span>
+<span class="go">        },</span>
+<span class="go">        temporal_tracking_relationships={</span>
+<span class="go">            &quot;user_id&quot;: [&quot;movie_title&quot;]</span>
+<span class="go">        },</span>
+<span class="go">        target=&quot;movie_title&quot;,</span>
+<span class="go">        n_target_classes=500</span>
+<span class="go">    )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Make a single prediction</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">activations</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
+<span class="go">        input_sample={&quot;user_id&quot;: &quot;A33225&quot;, &quot;timestamp&quot;: &quot;2022-12-25&quot;, &quot;special_event&quot;: &quot;christmas&quot;}</span>
+<span class="go">    )</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The values of columns that are tracked temporally may be unknown during inference
+(the column_known_during_inference attribute of the bolt.temporal objects are False
+by default). These columns do not need to be passed into <cite>model.predict()</cite>.
+For example, we did not pass the “movie_title” column to <cite>model.predict()</cite>.
+All other columns must be passed in.</p></li>
+<li><p>If temporal tracking relationships are provided, UDT can make better predictions
+by taking temporal context into account. For example, UDT may keep track of
+the last few movies that a user has watched to better recommend the next movie.
+Thus, UDT is at its best when its internal temporal context gets updated with
+new true samples. <cite>model.predict()</cite> does not update UDT’s temporal context.
+To do this without retraining the model, we need to use <cite>model.index()</cite> or
+<cite>model.index_batch()</cite>. Read about <cite>model.index()</cite> and <cite>model.index_batch()</cite>
+for details.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>predict(self: thirdai._thirdai.bolt.models.UDTClassifier, input_sample: str, use_sparse_inference: bool = False, return_predicted_class: bool = False) -&gt; object</p></li>
+</ol>
+<p>Performs inference on a single sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_sample</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – The input sample as a dictionary
+where the keys are column names and the values are the respective column values.</p></li>
+<li><p><strong>use_sparse_inference</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether or not to use sparse inference.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns a numpy array of the activations if the output is dense, or a tuple
+of the active neurons and activations if the output is sparse. The shape of
+each array will be (num_nonzeros_in_output, ). When the
+<cite>consecutive_integer_ids</cite> argument of target column’s categorical ColumnType
+object is set to False (as it is by default), UDT creates an internal
+mapping between target class names and neuron ids. You can map neuron ids back to
+target class names by calling the <cite>class_names()</cite> method. If the <cite>prediction_depth</cite>
+of the model is &gt; 1 and the task is classification then it will return a numpy array
+of integers indicating the predicted class for each timstamp up to <cite>prediction_depth</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray, Tuple[np.ndarray, np.ndarray], or List[int])</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -967,8 +1044,12 @@ for details.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.models.UDTClassifier.predict_batch">
-<span class="sig-name descname"><span class="pre">predict_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_sparse_inference</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_predicted_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTClassifier.predict_batch" title="Permalink to this definition"></a></dt>
-<dd><p>Performs inference on a batch of samples in parallel.</p>
+<span class="sig-name descname"><span class="pre">predict_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.models.UDTClassifier.predict_batch" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>predict_batch(self: thirdai._thirdai.bolt.models.UDTClassifier, input_samples: List[Dict[str, str]], use_sparse_inference: bool = False, return_predicted_class: bool = False) -&gt; object</p></li>
+</ol>
+<p>Performs inference on a batch of samples in parallel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -985,10 +1066,66 @@ each array will be (batch_size, num_nonzeros_in_output). When the
 <cite>consecutive_integer_ids</cite> argument of target column’s categorical ColumnType
 object is set to False (as it is by default), UDT creates an internal
 mapping between target class names and neuron ids. You can map neuron ids back to
-target class names by calling the <cite>class_names()</cite> method.</p>
+target class names by calling the <cite>class_names()</cite> method. If the <cite>prediction_depth</cite>
+of the model is &gt; 1 and the task is classification then it will return a numpy
+array of shape <cite>(batch_size, prediction_depth)</cite> which gives the predictions at
+each timestep for each element in the batch.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(np.ndarray or Tuple[np.ndarray, np.ndarray])</p>
+<dd class="field-odd"><p>(np.ndarray, Tuple[np.ndarray, np.ndarray], or List[List[int]])</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">activations</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_batch</span><span class="p">([</span>
+<span class="go">        {&quot;user_id&quot;: &quot;A33225&quot;, &quot;timestamp&quot;: &quot;2022-12-25&quot;, &quot;special_event&quot;: &quot;christmas&quot;},</span>
+<span class="go">        {&quot;user_id&quot;: &quot;A25978&quot;, &quot;timestamp&quot;: &quot;2022-12-25&quot;, &quot;special_event&quot;: &quot;christmas&quot;},</span>
+<span class="go">        {&quot;user_id&quot;: &quot;A25978&quot;, &quot;timestamp&quot;: &quot;2022-12-26&quot;, &quot;special_event&quot;: &quot;christmas&quot;}&quot;</span>
+<span class="go">    ])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The values of columns that are tracked temporally may be unknown during inference
+(the column_known_during_inference attribute of the bolt.temporal objects are False
+by default). These columns do not need to be passed into <cite>model.predict_batch()</cite>.
+For example, we did not pass the “movie_title” column to <cite>model.predict_batch()</cite>.
+All other columns must be passed in.</p></li>
+<li><p>If temporal tracking relationships are provided, UDT can make better predictions
+by taking temporal context into account. For example, UDT may keep track of
+the last few movies that a user has watched to better recommend the next movie.
+Thus, UDT is at its best when its internal temporal context gets updated with
+new true samples. <cite>model.predict_batch()</cite> does not update UDT’s temporal context.
+To do this without retraining the model, we need to use <cite>model.index()</cite> or
+<cite>model.index_batch()</cite>. Read about <cite>model.index()</cite> and <cite>model.index_batch()</cite>
+for details.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>predict_batch(self: thirdai._thirdai.bolt.models.UDTClassifier, input_samples: List[str], use_sparse_inference: bool = False, return_predicted_class: bool = False) -&gt; object</p></li>
+</ol>
+<p>Performs inference on a batch of samples in parallel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_samples</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – A list of input sample as dictionaries
+where the keys are column names as specified in data_types and the
+values are the respective column values.</p></li>
+<li><p><strong>use_sparse_inference</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether or not to use sparse inference.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns a numpy array of the activations if the output is dense, or a tuple
+of the active neurons and activations if the output is sparse. The shape of
+each array will be (batch_size, num_nonzeros_in_output). When the
+<cite>consecutive_integer_ids</cite> argument of target column’s categorical ColumnType
+object is set to False (as it is by default), UDT creates an internal
+mapping between target class names and neuron ids. You can map neuron ids back to
+target class names by calling the <cite>class_names()</cite> method. If the <cite>prediction_depth</cite>
+of the model is &gt; 1 and the task is classification then it will return a numpy
+array of shape <cite>(batch_size, prediction_depth)</cite> which gives the predictions at
+each timestep for each element in the batch.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray, Tuple[np.ndarray, np.ndarray], or List[List[int]])</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -1056,6 +1193,11 @@ The serialized UDT includes its current temporal context.</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.models.UDTClassifier.set_prediction_threshold">
+<span class="sig-name descname"><span class="pre">set_prediction_threshold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTClassifier.set_prediction_threshold" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
