@@ -57,12 +57,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.DataLoader.restart"><code class="docutils literal notranslate"><span class="pre">DataLoader.restart()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#thirdai.dataset.S3DataLoader"><code class="docutils literal notranslate"><span class="pre">S3DataLoader</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.S3DataLoader.__init__"><code class="docutils literal notranslate"><span class="pre">S3DataLoader.__init__()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.S3DataLoader.next_batch"><code class="docutils literal notranslate"><span class="pre">S3DataLoader.next_batch()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.S3DataLoader.next_line"><code class="docutils literal notranslate"><span class="pre">S3DataLoader.next_line()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.S3DataLoader.resource_name"><code class="docutils literal notranslate"><span class="pre">S3DataLoader.resource_name()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.S3DataLoader.restart"><code class="docutils literal notranslate"><span class="pre">S3DataLoader.restart()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.dataset.CSVDataLoader"><code class="docutils literal notranslate"><span class="pre">CSVDataLoader</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataLoader.DEFAULT_CHUNK_SIZE"><code class="docutils literal notranslate"><span class="pre">CSVDataLoader.DEFAULT_CHUNK_SIZE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataLoader.__init__"><code class="docutils literal notranslate"><span class="pre">CSVDataLoader.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataLoader.next_batch"><code class="docutils literal notranslate"><span class="pre">CSVDataLoader.next_batch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataLoader.next_line"><code class="docutils literal notranslate"><span class="pre">CSVDataLoader.next_line()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataLoader.resource_name"><code class="docutils literal notranslate"><span class="pre">CSVDataLoader.resource_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataLoader.restart"><code class="docutils literal notranslate"><span class="pre">CSVDataLoader.restart()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -130,32 +131,55 @@
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="thirdai.dataset.S3DataLoader">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.dataset.</span></span><span class="sig-name descname"><span class="pre">S3DataLoader</span></span><a class="headerlink" href="#thirdai.dataset.S3DataLoader" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="thirdai.dataset.CSVDataLoader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.dataset.</span></span><span class="sig-name descname"><span class="pre">CSVDataLoader</span></span><a class="headerlink" href="#thirdai.dataset.CSVDataLoader" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#thirdai.dataset.DataLoader" title="thirdai._thirdai.dataset.DataLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataLoader</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.dataset.S3DataLoader.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.dataset.S3DataLoader.__init__" title="Permalink to this definition"></a></dt>
+<p>CSV data loader that can be used to load from a cloud
+storage instance such as s3 and GCS.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>storage_path</strong> – Path to the CSV file.</p></li>
+<li><p><strong>batch_size</strong> – Batch size</p></li>
+<li><p><strong>gcs_credentials_path</strong> – Path to a file containing GCS credentials.
+This is typically a credentials.json file. For the authorization
+protocol to work, the credentials file must contain a project ID,
+client E-mail, a token URI and a private key.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Note: To read a file from s3, Pandas will expect a credentials file</dt><dd><p>containing an AWS access key id and an AWS secret key.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="thirdai.dataset.CSVDataLoader.DEFAULT_CHUNK_SIZE">
+<span class="sig-name descname"><span class="pre">DEFAULT_CHUNK_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1000</span></em><a class="headerlink" href="#thirdai.dataset.CSVDataLoader.DEFAULT_CHUNK_SIZE" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="thirdai.dataset.S3DataLoader.next_batch">
-<span class="sig-name descname"><span class="pre">next_batch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#thirdai.dataset.S3DataLoader.next_batch" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="thirdai.dataset.CSVDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.dataset.CSVDataLoader.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="thirdai.dataset.S3DataLoader.next_line">
-<span class="sig-name descname"><span class="pre">next_line</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#thirdai.dataset.S3DataLoader.next_line" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="thirdai.dataset.CSVDataLoader.next_batch">
+<span class="sig-name descname"><span class="pre">next_batch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#thirdai.dataset.CSVDataLoader.next_batch" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="thirdai.dataset.S3DataLoader.resource_name">
-<span class="sig-name descname"><span class="pre">resource_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#thirdai.dataset.S3DataLoader.resource_name" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="thirdai.dataset.CSVDataLoader.next_line">
+<span class="sig-name descname"><span class="pre">next_line</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#thirdai.dataset.CSVDataLoader.next_line" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="thirdai.dataset.S3DataLoader.restart">
-<span class="sig-name descname"><span class="pre">restart</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.dataset.S3DataLoader.restart" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="thirdai.dataset.CSVDataLoader.resource_name">
+<span class="sig-name descname"><span class="pre">resource_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#thirdai.dataset.CSVDataLoader.resource_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.dataset.CSVDataLoader.restart">
+<span class="sig-name descname"><span class="pre">restart</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.dataset.CSVDataLoader.restart" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
