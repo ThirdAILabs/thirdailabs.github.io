@@ -159,6 +159,7 @@
 <li class="toctree-l1"><a class="reference internal" href="thirdaidataset.html">thirdai.dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdaidata.html">thirdai.data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdailog.html">thirdai.logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thirdailicensing.html">thirdai.licensing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdaisearch.html">thirdai.search</a></li>
 </ul>
 
@@ -1637,7 +1638,7 @@ UDT model to create.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.models.UDTGenerator.evaluate">
-<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTGenerator.evaluate" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_scores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTGenerator.evaluate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluates the UniversalDeepTransformer (UDT) model on the given dataset and returns
 a list of generated queries as reformulations of the incorrect queries.</p>
 <dl class="field-list simple">
@@ -1646,12 +1647,14 @@ a list of generated queries as reformulations of the incorrect queries.</p>
 <li><p><strong>filename</strong> (<em>str</em>) – Path to the dataset file</p></li>
 <li><p><strong>top_k</strong> (<em>int</em>) – The number of candidate query reformulations suggested by the UDT model.
 The default value for k is 5.</p></li>
+<li><p><strong>return_scores</strong> (<em>bool</em>) – Whether or not to return the scores for the reformulations.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>List[List[str]]
-Returns a list of k reformulations for each incorrect query to be reformulated in the
-input dataset.</p>
+<dd class="field-even"><p>Tuple(List[List[str]]) or Tuple(List[List[str]], List[List[str]])
+Returns a tuple of list of k reformulations for each incorrect query to be
+reformulated in the input dataset. If return_scores is True, also returns
+the corresponding scores for the reformulations.</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -1675,7 +1678,7 @@ input dataset.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.models.UDTGenerator.predict">
-<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTGenerator.predict" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_scores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTGenerator.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs inference on a single sample.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1683,12 +1686,14 @@ input dataset.</p>
 <li><p><strong>input_query</strong> (<em>str</em>) – The input query as a string.</p></li>
 <li><p><strong>top_k</strong> (<em>int</em>) – The number of candidate query reformulations suggested by the UDT model
 for this input. The default value for k is 5.</p></li>
+<li><p><strong>return_scores</strong> (<em>bool</em>) – Whether or not to return the scores for the reformulations.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>List[str]
-Returns a list of k reformulations suggested by the UDT model for the given input
-sample.</p>
+<dd class="field-even"><p>Tuple(List[List[str]]) or Tuple(List[List[str]], List[List[str]])
+Returns a tuple of list of k reformulations for each incorrect query to be
+reformulated in the input dataset. If return_scores is True, also returns
+the corresponding scores for the reformulations.</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
@@ -1705,7 +1710,7 @@ sample.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.models.UDTGenerator.predict_batch">
-<span class="sig-name descname"><span class="pre">predict_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTGenerator.predict_batch" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">predict_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_scores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTGenerator.predict_batch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs inference on a batch of sammples in parallel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1713,12 +1718,14 @@ sample.</p>
 <li><p><strong>input_queries</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – A list of target queries to be reformulated.</p></li>
 <li><p><strong>top_k</strong> (<em>int</em>) – The number of candidate query reformulations suggested by the UDT model
 for this input batch. The default value for k is 5.</p></li>
+<li><p><strong>return_scores</strong> (<em>bool</em>) – Whether or not to return the scores for the reformulations.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>List[List[str]]
-Returns a list of k reformulations suggested by the UDT model for each of the given
-input samples.</p>
+<dd class="field-even"><p>Tuple(List[List[str]]) or Tuple(List[List[str]], List[List[str]])
+Returns a tuple of list of k reformulations for each incorrect query to be
+reformulated in the input dataset. If return_scores is True, also returns
+the corresponding scores for the reformulations.</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
