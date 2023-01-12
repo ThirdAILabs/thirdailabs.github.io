@@ -92,11 +92,6 @@
 <li class="toctree-l1"><a class="reference internal" href="thirdaibase.html">thirdai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdaibolt.html">thirdai.bolt</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">thirdai.bolt.models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.models.GenericDatasetLoader"><code class="docutils literal notranslate"><span class="pre">GenericDatasetLoader</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.GenericDatasetLoader.load_in_memory"><code class="docutils literal notranslate"><span class="pre">GenericDatasetLoader.load_in_memory()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.GenericDatasetLoader.restart"><code class="docutils literal notranslate"><span class="pre">GenericDatasetLoader.restart()</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.models.Pipeline"><code class="docutils literal notranslate"><span class="pre">Pipeline</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Pipeline.__init__"><code class="docutils literal notranslate"><span class="pre">Pipeline.__init__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.Pipeline.default_evaluate_batch_size"><code class="docutils literal notranslate"><span class="pre">Pipeline.default_evaluate_batch_size</span></code></a></li>
@@ -230,22 +225,6 @@
             
   <section id="module-thirdai.bolt.models">
 <span id="thirdai-bolt-models"></span><h1>thirdai.bolt.models<a class="headerlink" href="#module-thirdai.bolt.models" title="Permalink to this heading">¶</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="thirdai.bolt.models.GenericDatasetLoader">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.models.</span></span><span class="sig-name descname"><span class="pre">GenericDatasetLoader</span></span><a class="headerlink" href="#thirdai.bolt.models.GenericDatasetLoader" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.models.GenericDatasetLoader.load_in_memory">
-<span class="sig-name descname"><span class="pre">load_in_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_in_memory_batches</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4294967295</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dataset.BoltDataset</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dataset.BoltDataset</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.models.GenericDatasetLoader.load_in_memory" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.models.GenericDatasetLoader.restart">
-<span class="sig-name descname"><span class="pre">restart</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.models.GenericDatasetLoader.restart" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
 <dl class="py class">
 <dt class="sig sig-object py" id="thirdai.bolt.models.Pipeline">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.models.</span></span><span class="sig-name descname"><span class="pre">Pipeline</span></span><a class="headerlink" href="#thirdai.bolt.models.Pipeline" title="Permalink to this definition">¶</a></dt>
@@ -619,7 +598,7 @@ new true samples. Just like <cite>.update_temporal_trackers()</cite>,
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.models.TemporalContext.get_dataset_loader">
-<span class="sig-name descname"><span class="pre">get_dataset_loader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="thirdaidataset.html#thirdai.dataset.DataSource" title="thirdai.dataset.DataSource"><span class="pre">dataset.DataSource</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">thirdai::automl::data::DatasetLoader</span></span></span><a class="headerlink" href="#thirdai.bolt.models.TemporalContext.get_dataset_loader" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_dataset_loader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="thirdaidataset.html#thirdai.dataset.DataSource" title="thirdai.dataset.DataSource"><span class="pre">dataset.DataSource</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">thirdai::dataset::DatasetLoader</span></span></span><a class="headerlink" href="#thirdai.bolt.models.TemporalContext.get_dataset_loader" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
