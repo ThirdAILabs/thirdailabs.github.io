@@ -146,6 +146,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTGenerator.train"><code class="docutils literal notranslate"><span class="pre">UDTGenerator.train()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.models.UDTTextClassifier"><code class="docutils literal notranslate"><span class="pre">UDTTextClassifier</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTTextClassifier.predict"><code class="docutils literal notranslate"><span class="pre">UDTTextClassifier.predict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTTextClassifier.save"><code class="docutils literal notranslate"><span class="pre">UDTTextClassifier.save()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTTextClassifier.train"><code class="docutils literal notranslate"><span class="pre">UDTTextClassifier.train()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.models.UDTTextClassifier.validate"><code class="docutils literal notranslate"><span class="pre">UDTTextClassifier.validate()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="thirdaibolttypes.html">thirdai.bolt.types</a></li>
@@ -1577,7 +1584,7 @@ time is in terms of time_granularity. E.g. ‘time_granularity=”daily”` and
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.models.UDTGenerator.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTGenerator.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTGenerator.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>UniversalDeepTransformer (UDT) Constructor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1772,6 +1779,102 @@ it is not present it is trained in an unsupervised setting using just the target
 </li>
 </ul>
 </div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.bolt.models.UDTTextClassifier">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.models.</span></span><span class="sig-name descname"><span class="pre">UDTTextClassifier</span></span><a class="headerlink" href="#thirdai.bolt.models.UDTTextClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.models.UDTTextClassifier.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float32</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTTextClassifier.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the predicted scores for the model for each output class for each sample
+in the batch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>Dict</em>) – A dictionary containing the input data. This should contain the
+following fields. Two fields contain the bert tokens for each sample in
+the batch in CSR format. The field “tokens” should be a flattened numpy
+array of uint32 of all the tokens. The field “offsets” is a numpy array
+of uint32 of length (batch_size + 1) that gives the offsets of the tokens
+for each document. The tokens for document i should be in the range [offsets[i],
+offsets[i+1]) in the tokens array. The field “metadata” should be a 2D numpy
+array of 0/1 values (dtype is uint32) that represent the metadata for each
+document.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A 2D numpy array with dtype float32 and shape (batch_size, n_classes) which
+contains the predicted scores from the model for the given input samples.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.models.UDTTextClassifier.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTTextClassifier.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the model in a binary archive with the given filename.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – The location to save the model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.models.UDTTextClassifier.train">
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float32</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTTextClassifier.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trains the model for a single input batch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>Dict</em>) – A dictionary containing the input data. This should contain the
+following fields. Two fields contain the bert tokens for each sample in
+the batch in CSR format. The field “tokens” should be a flattened numpy
+array of uint32 of all the tokens. The field “offsets” is a numpy array
+of uint32 of length (batch_size + 1) that gives the offsets of the tokens
+for each document. The tokens for document i should be in the range [offsets[i],
+offsets[i+1]) in the tokens array. The field “metadata” should be a 2D numpy
+array of 0/1 values (dtype is uint32) that represent the metadata for each
+document.</p></li>
+<li><p><strong>labels</strong> (<em>np.ndarray</em>) – A 2D numpy array of type float32. The shape should be
+(batch_size, n_classes) and the label values should be 0/1.</p></li>
+<li><p><strong>learning_rate</strong> (<em>float</em>) – The learning rate to use for updating the model for the
+given batch.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The mean cross entropy loss over all the output classes in the batch.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.models.UDTTextClassifier.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float32</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#thirdai.bolt.models.UDTTextClassifier.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluates the model on a single input batch and returns the loss.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>Dict</em>) – A dictionary containing the input data. This should contain the
+following fields. Two fields contain the bert tokens for each sample in
+the batch in CSR format. The field “tokens” should be a flattened numpy
+array of uint32 of all the tokens. The field “offsets” is a numpy array
+of uint32 of length (batch_size + 1) that gives the offsets of the tokens
+for each document. The tokens for document i should be in the range [offsets[i],
+offsets[i+1]) in the tokens array. The field “metadata” should be a 2D numpy
+array of 0/1 values (dtype is uint32) that represent the metadata for each
+document.</p></li>
+<li><p><strong>labels</strong> (<em>np.ndarray</em>) – A 2D numpy array of type float32. The shape should be
+(batch_size, n_classes) and the label values should be 0/1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing the mean cross entropy loss over all the output classes
+and the cross entropy loss for each output class individually.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>

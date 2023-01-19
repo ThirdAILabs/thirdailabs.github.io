@@ -325,7 +325,7 @@ defined by the given config file.</p></li>
 and temporal tracking configurations.</p></li>
 </ul>
 <ol class="arabic simple" start="2">
-<li><p>__new__(self: object, source_column: str, target_column: str, dataset_size: str) -&gt; thirdai::automl::models::QueryCandidateGenerator</p></li>
+<li><p>__new__(self: object, source_column: str, target_column: str, dataset_size: str, delimiter: str = ‘,’) -&gt; thirdai::automl::models::QueryCandidateGenerator</p></li>
 </ol>
 <p>UniversalDeepTransformer (UDT) Constructor.</p>
 <dl class="field-list simple">
@@ -363,7 +363,7 @@ UDT model to create.</p>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>__new__(self: object, target_column: str, dataset_size: str) -&gt; thirdai::automl::models::QueryCandidateGenerator</p></li>
+<li><p>__new__(self: object, target_column: str, dataset_size: str, delimiter: str = ‘,’) -&gt; thirdai::automl::models::QueryCandidateGenerator</p></li>
 </ol>
 <p>UniversalDeepTransformer (UDT) Constructor.</p>
 <dl class="field-list simple">
@@ -400,6 +400,25 @@ UDT model to create.</p>
 <span class="go">    )</span>
 </pre></div>
 </div>
+<ol class="arabic simple" start="4">
+<li><p>__new__(self: object, input_vocab_size: int, metadata_dim: int, n_classes: int, model_size: str) -&gt; thirdai::automl::models::TextClassifier</p></li>
+</ol>
+<p>Constructs a text classifier which takes in bert tokens and metadata and returns
+scores for each of the N output classes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_vocab_size</strong> (<em>int</em>) – The number of tokens in the input vocabulary. This
+should be the the number of possible tokens returned by the tokenizer.</p></li>
+<li><p><strong>metadata_dim</strong> (<em>int</em>) – The dimension of the metadata. If this is specified as 0
+the metadata is not used and will be ignored if passed in.</p></li>
+<li><p><strong>n_classes</strong> (<em>int</em>) – The number of output classes the model will predict scores for.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A UDTTextClassifier for the given data.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
