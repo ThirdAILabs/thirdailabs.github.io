@@ -106,6 +106,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.dataset.CSVDataSource"><code class="docutils literal notranslate"><span class="pre">CSVDataSource</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataSource.DEFAULT_CHUNK_SIZE"><code class="docutils literal notranslate"><span class="pre">CSVDataSource.DEFAULT_CHUNK_SIZE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataSource.FIRST_DEFAULT_GCS_CREDS_PATH"><code class="docutils literal notranslate"><span class="pre">CSVDataSource.FIRST_DEFAULT_GCS_CREDS_PATH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataSource.SECOND_DEFAULT_GCS_CREDS_PATH"><code class="docutils literal notranslate"><span class="pre">CSVDataSource.SECOND_DEFAULT_GCS_CREDS_PATH</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataSource.__init__"><code class="docutils literal notranslate"><span class="pre">CSVDataSource.__init__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataSource.next_batch"><code class="docutils literal notranslate"><span class="pre">CSVDataSource.next_batch()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataSource.next_line"><code class="docutils literal notranslate"><span class="pre">CSVDataSource.next_line()</span></code></a></li>
@@ -194,12 +196,12 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.dataset.DataSource.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.dataset.DataSource.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.dataset.DataSource.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.dataset.DataSource.next_batch">
-<span class="sig-name descname"><span class="pre">next_batch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.dataset.DataSource.next_batch" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">next_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.dataset.DataSource.next_batch" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -231,14 +233,18 @@ storage instance such as s3 and GCS.</p>
 <li><p><strong>storage_path</strong> – Path to the CSV file.</p></li>
 <li><p><strong>batch_size</strong> – Batch size</p></li>
 <li><p><strong>gcs_credentials_path</strong> – Path to a file containing GCS credentials.
-This is typically a credentials.json file. For the authorization
+This is typically a credentials file. For the authorization
 protocol to work, the credentials file must contain a project ID,
 client E-mail, a token URI and a private key.</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="simple">
-<dt>Note: To read a file from s3, Pandas will expect a credentials file</dt><dd><p>containing an AWS access key id and an AWS secret key.</p>
+<dt>Note: To read a file from s3, Pandas will expect a credentials file</dt><dd><p>containing an AWS access key id and an AWS secret key located at
+~/aws/credentials. For GCS, the gcloud CLI typically stores the
+credentials file in locations, such as ~/.config/gcloud/credentials
+or ~/.config/gcloud/application_default_credentials.json.
+<a class="reference external" href="https://gcsfs.readthedocs.io/en/latest/api.html">https://gcsfs.readthedocs.io/en/latest/api.html</a></p>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -246,14 +252,24 @@ client E-mail, a token URI and a private key.</p></li>
 <span class="sig-name descname"><span class="pre">DEFAULT_CHUNK_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1000</span></em><a class="headerlink" href="#thirdai.dataset.CSVDataSource.DEFAULT_CHUNK_SIZE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="thirdai.dataset.CSVDataSource.FIRST_DEFAULT_GCS_CREDS_PATH">
+<span class="sig-name descname"><span class="pre">FIRST_DEFAULT_GCS_CREDS_PATH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'~/.config/gcloud/application_default_credentials.json'</span></em><a class="headerlink" href="#thirdai.dataset.CSVDataSource.FIRST_DEFAULT_GCS_CREDS_PATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="thirdai.dataset.CSVDataSource.SECOND_DEFAULT_GCS_CREDS_PATH">
+<span class="sig-name descname"><span class="pre">SECOND_DEFAULT_GCS_CREDS_PATH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'~/.config/gcloud/credentials'</span></em><a class="headerlink" href="#thirdai.dataset.CSVDataSource.SECOND_DEFAULT_GCS_CREDS_PATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.dataset.CSVDataSource.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.dataset.CSVDataSource.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.dataset.CSVDataSource.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.dataset.CSVDataSource.next_batch">
-<span class="sig-name descname"><span class="pre">next_batch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.dataset.CSVDataSource.next_batch" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">next_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.dataset.CSVDataSource.next_batch" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
