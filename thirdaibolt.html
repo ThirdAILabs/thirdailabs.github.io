@@ -130,7 +130,7 @@ with the correct spelling.</p>
 <span class="sig-name descname"><span class="pre">__new__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.__new__" title="Permalink to this definition"></a></dt>
 <dd><p>Overloaded function.</p>
 <ol class="arabic simple">
-<li><p>__new__(self: object, data_types: Dict[str, thirdai::automl::data::DataType], temporal_tracking_relationships: Dict[str, List[Union[str, thirdai::automl::data::TemporalConfig]]] = {}, target: str, n_target_classes: Optional[int] = None, integer_target: bool = False, time_granularity: str = ‘daily’, lookahead: int = 0, delimiter: str = ‘,’, model_config: Optional[str] = None, options: dict = {}) -&gt; thirdai::automl::models::UniversalDeepTransformer</p></li>
+<li><p>__new__(self: object, data_types: Dict[str, thirdai::automl::data::DataType], temporal_tracking_relationships: Dict[str, List[Union[str, thirdai::automl::data::TemporalConfig]]] = {}, target: str, n_target_classes: Optional[int] = None, integer_target: bool = False, time_granularity: str = ‘daily’, lookahead: int = 0, delimiter: str = ‘,’, model_config: Optional[str] = None, options: dict = {}) -&gt; thirdai::automl::udt::UDT</p></li>
 </ol>
 <p>UniversalDeepTransformer (UDT) Constructor.</p>
 <dl class="field-list simple">
@@ -239,6 +239,7 @@ defined by the given config file.</p></li>
 and temporal tracking configurations.</p></li>
 </ul>
 <ol class="arabic simple" start="2">
+<li><p>__new__(self: object, file_format: str, n_target_classes: int, input_dim: int, model_config: Optional[str] = None, options: dict = {}) -&gt; thirdai::automl::udt::UDT</p></li>
 <li><p>__new__(self: object, source_column: str, target_column: str, dataset_size: str, delimiter: str = ‘,’) -&gt; thirdai::automl::models::QueryCandidateGenerator</p></li>
 </ol>
 <p>UniversalDeepTransformer (UDT) Constructor.</p>
@@ -276,7 +277,7 @@ UDT model to create.</p>
 <span class="go">    )</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="3">
+<ol class="arabic simple" start="4">
 <li><p>__new__(self: object, target_column: str, dataset_size: str, delimiter: str = ‘,’) -&gt; thirdai::automl::models::QueryCandidateGenerator</p></li>
 </ol>
 <p>UniversalDeepTransformer (UDT) Constructor.</p>
@@ -314,7 +315,7 @@ UDT model to create.</p>
 <span class="go">    )</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="4">
+<ol class="arabic simple" start="5">
 <li><p>__new__(self: object, input_vocab_size: int, metadata_dim: int, n_classes: int, model_size: str) -&gt; thirdai::automl::models::TextClassifier</p></li>
 </ol>
 <p>Constructs a text classifier which takes in bert tokens and metadata and returns
