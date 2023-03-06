@@ -121,7 +121,7 @@ Defaults to False.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># We want to predict the current week&#39;s sales performance for each product using temporal context.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># For each product ID, we would like to track both their ad spend level and sales performance over time.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Ad spend level is known at the time of inference but sales performance is not. Then we can configure UDT as follows:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">deployment</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
 <span class="go">        data_types={</span>
 <span class="go">            &quot;product_id&quot;: bolt.types.categorical(),</span>
 <span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
@@ -176,7 +176,7 @@ to False.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># We want to predict the current week&#39;s sales performance for each product using temporal context.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># For each product ID, we would like to track both their ad spend and sales performance over time.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Ad spend is known at the time of inference but sales performance is not. Then we can configure UDT as follows:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">deployment</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
 <span class="go">        data_types={</span>
 <span class="go">            &quot;product_id&quot;: bolt.types.categorical(),</span>
 <span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>

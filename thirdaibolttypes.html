@@ -65,6 +65,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.numerical.__init__"><code class="docutils literal notranslate"><span class="pre">numerical.__init__()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.types.sequence"><code class="docutils literal notranslate"><span class="pre">sequence</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.sequence.__init__"><code class="docutils literal notranslate"><span class="pre">sequence.__init__()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.types.text"><code class="docutils literal notranslate"><span class="pre">text</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.text.__init__"><code class="docutils literal notranslate"><span class="pre">text.__init__()</span></code></a></li>
 </ul>
@@ -143,7 +147,7 @@ Defaults to False.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># We want to predict the current week&#39;s sales performance for each product using temporal context.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># For each product ID, we would like to track both their ad spend level and sales performance over time.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Ad spend level is known at the time of inference but sales performance is not. Then we can configure UDT as follows:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">deployment</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
 <span class="go">        data_types={</span>
 <span class="go">            &quot;product_id&quot;: bolt.types.categorical(),</span>
 <span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
@@ -188,7 +192,7 @@ Defaults to False.</p></li>
 <dd><p>Date column type. Use this object if a column contains date strings.
 Date strings must be in YYYY-MM-DD format.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">deployment</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
 <span class="go">        data_types: {</span>
 <span class="go">            &quot;timestamp&quot;: bolt.types.date()</span>
 <span class="go">        }</span>
@@ -248,7 +252,7 @@ to column type. Column type is one of:
 <span class="go">A531,22</span>
 <span class="go">A339,29</span>
 <span class="gp">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">deployment</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
 <span class="go">        data_types: {</span>
 <span class="go">            &quot;user_id&quot;: bolt.types.categorical(</span>
 <span class="go">                delimiter=&#39; &#39;,</span>
@@ -289,10 +293,48 @@ better the model performance.</p></li>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">deployment</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
 <span class="go">        data_types: {</span>
 <span class="go">            &quot;hours_watched&quot;: bolt.types.numerical(range=(0, 25), granularity=&quot;xs&quot;)</span>
 <span class="go">        }</span>
+<span class="go">        ...</span>
+<span class="go">    )</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.bolt.types.sequence">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">sequence</span></span><a class="headerlink" href="#thirdai.bolt.types.sequence" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.types.sequence.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.sequence.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Sequence column type. Use this object if a column contains an ordered sequence
+of strings delimited by a character. The delimiter must be different than the
+delimiter between columns.</p>
+<p>When the target column is a sequence type, then UDT will perform inferences
+recursively.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>delimiter</strong> (<em>str</em>) – Optional. The sequence delimiter. Defaults to ” “.</p></li>
+<li><p><strong>max_length</strong> (<em>int</em>) – Required if the column is the target. The maximum length
+of the sequence. If UDT sees longer sequences, elements beyond the provided
+upper bound will be ignored.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<span class="go">        data_types: {</span>
+<span class="go">            &quot;input_sequence&quot;: bolt.types.sequence(delimiter=&#39;\t&#39;)</span>
+<span class="go">            &quot;output_sequence&quot;: bolt.types.sequence(max_length=30) # max_length must be provided for target sequence.</span>
+<span class="go">        },</span>
+<span class="go">        target=&quot;output_sequence&quot;,</span>
+<span class="go">        n_target_classes=26</span>
 <span class="go">        ...</span>
 <span class="go">    )</span>
 </pre></div>
@@ -325,7 +367,7 @@ appropriate encoding type.</p></li>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">deployment</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
 <span class="go">        data_types: {</span>
 <span class="go">            &quot;user_motto&quot;: bolt.types.text(average_n_words=10),</span>
 <span class="go">            &quot;user_bio&quot;: bolt.types.text()</span>
