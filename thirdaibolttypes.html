@@ -388,10 +388,10 @@ search queries, and user bios.</p>
 <li><p><strong>average_n_words</strong> (<em>float</em>) – Optional. Average number of words in the
 text column in each row. If provided, UDT may make
 optimizations as appropriate.</p></li>
-<li><p><strong>contextual_encoding</strong> (<em>int</em>) – Optional. Either “local”, “global”, or “none”,
-defaults to “none”. If not “none”, udt is guaranteed to use this encoding
-type when processing this text column. Otherwise, udt will determine the
-appropriate encoding type.</p></li>
+<li><p><strong>contextual_encoding</strong> (<em>int</em>) – Optional. Either “local”, “global”, “char-k” (k
+is a number, e.g. “char-5”), or “none”, defaults to “none”. If not “none”,
+udt is guaranteed to use this encoding type when processing this text
+column. Otherwise, udt will determine the appropriate encoding type.</p></li>
 </ul>
 </dd>
 </dl>
@@ -399,7 +399,7 @@ appropriate encoding type.</p></li>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
 <span class="go">        data_types: {</span>
 <span class="go">            &quot;user_motto&quot;: bolt.types.text(average_n_words=10),</span>
-<span class="go">            &quot;user_bio&quot;: bolt.types.text()</span>
+<span class="go">            &quot;user_bio&quot;: bolt.types.text(contextual_encoding=&quot;local&quot;)</span>
 <span class="go">        }</span>
 <span class="go">        ...</span>
 <span class="go">    )</span>
