@@ -65,7 +65,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.callbacks.LearningRateScheduler"><code class="docutils literal notranslate"><span class="pre">LearningRateScheduler</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.LearningRateScheduler.__init__"><code class="docutils literal notranslate"><span class="pre">LearningRateScheduler.__init__()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.LearningRateScheduler.get_final_lr"><code class="docutils literal notranslate"><span class="pre">LearningRateScheduler.get_final_lr()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.callbacks.MultiStepLR"><code class="docutils literal notranslate"><span class="pre">MultiStepLR</span></code></a><ul>
@@ -78,6 +77,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.callbacks.Overfitting"><code class="docutils literal notranslate"><span class="pre">Overfitting</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.Overfitting.__init__"><code class="docutils literal notranslate"><span class="pre">Overfitting.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.callbacks.ReduceLROnPlateau"><code class="docutils literal notranslate"><span class="pre">ReduceLROnPlateau</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.callbacks.ReduceLROnPlateau.__init__"><code class="docutils literal notranslate"><span class="pre">ReduceLROnPlateau.__init__()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -213,12 +216,7 @@ metric recorded. Defaults to ‘prev’.</p></li>
 <dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.callbacks.Callback" title="thirdai._thirdai.bolt.callbacks.Callback"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callback</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.callbacks.LearningRateScheduler.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.callbacks.LRSchedule" title="thirdai.bolt.callbacks.LRSchedule"><span class="pre">bolt.callbacks.LRSchedule</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.callbacks.LearningRateScheduler.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.bolt.callbacks.LearningRateScheduler.get_final_lr">
-<span class="sig-name descname"><span class="pre">get_final_lr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#thirdai.bolt.callbacks.LearningRateScheduler.get_final_lr" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.callbacks.LRSchedule" title="thirdai.bolt.callbacks.LRSchedule"><span class="pre">bolt.callbacks.LRSchedule</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_level_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.callbacks.LearningRateScheduler.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -259,6 +257,17 @@ stops once that threshold is reached. This is useful for things like
 cold-start where we attain the best results when overfitting the unsupervised
 data.</p>
 </dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.bolt.callbacks.ReduceLROnPlateau">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.callbacks.</span></span><span class="sig-name descname"><span class="pre">ReduceLROnPlateau</span></span><a class="headerlink" href="#thirdai.bolt.callbacks.ReduceLROnPlateau" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.callbacks.Callback" title="thirdai._thirdai.bolt.callbacks.Callback"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callback</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.callbacks.ReduceLROnPlateau.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">monitored_metric</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patience</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_total_lr_updates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_delta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cooldown</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.callbacks.ReduceLROnPlateau.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
