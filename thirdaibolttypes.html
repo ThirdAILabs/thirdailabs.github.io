@@ -378,27 +378,24 @@ upper bound will be ignored.</p></li>
 <dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.types.text.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">average_n_words</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contextual_encoding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'none'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.text.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokenizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'words'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contextual_encoding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'none'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lowercase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.text.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Text column type. Use this object if a column contains text data
 (the meaning of the text matters). Examples include descriptions,
 search queries, and user bios.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>average_n_words</strong> (<em>float</em>) – Optional. Average number of words in the
-text column in each row. If provided, UDT may make
-optimizations as appropriate.</p></li>
-<li><p><strong>contextual_encoding</strong> (<em>int</em>) – Optional. Either “local”, “global”, “char-k” (k
-is a number, e.g. “char-5”), or “none”, defaults to “none”. If not “none”,
-udt is guaranteed to use this encoding type when processing this text
-column. Otherwise, udt will determine the appropriate encoding type.</p></li>
+<li><p><strong>tokenizer</strong> (<em>str</em>) – Optional. Either “words”, “words-punct” or
+“char-k” (k is a number, e.g. “char-5”). Defaults to “words”.</p></li>
+<li><p><strong>contextual_encoding</strong> (<em>str</em>) – Optional. Either “local”, “global”, or “none”,
+defaults to “none”.</p></li>
 </ul>
 </dd>
 </dl>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
 <span class="go">        data_types: {</span>
-<span class="go">            &quot;user_motto&quot;: bolt.types.text(average_n_words=10),</span>
+<span class="go">            &quot;user_motto&quot;: bolt.types.text(),</span>
 <span class="go">            &quot;user_bio&quot;: bolt.types.text(contextual_encoding=&quot;local&quot;)</span>
 <span class="go">        }</span>
 <span class="go">        ...</span>
