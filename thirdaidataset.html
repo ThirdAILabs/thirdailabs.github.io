@@ -65,10 +65,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataSource.FIRST_DEFAULT_GCS_CREDS_PATH"><code class="docutils literal notranslate"><span class="pre">CSVDataSource.FIRST_DEFAULT_GCS_CREDS_PATH</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataSource.SECOND_DEFAULT_GCS_CREDS_PATH"><code class="docutils literal notranslate"><span class="pre">CSVDataSource.SECOND_DEFAULT_GCS_CREDS_PATH</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataSource.__init__"><code class="docutils literal notranslate"><span class="pre">CSVDataSource.__init__()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataSource.next_batch"><code class="docutils literal notranslate"><span class="pre">CSVDataSource.next_batch()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataSource.next_line"><code class="docutils literal notranslate"><span class="pre">CSVDataSource.next_line()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataSource.resource_name"><code class="docutils literal notranslate"><span class="pre">CSVDataSource.resource_name()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.dataset.CSVDataSource.restart"><code class="docutils literal notranslate"><span class="pre">CSVDataSource.restart()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -139,7 +136,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="thirdai.dataset.CSVDataSource">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.dataset.</span></span><span class="sig-name descname"><span class="pre">CSVDataSource</span></span><a class="headerlink" href="#thirdai.dataset.CSVDataSource" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#thirdai.dataset.DataSource" title="thirdai._thirdai.dataset.DataSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSource</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PyDataSource</span></code></p>
 <p>CSV data source that can be used to load from a cloud
 storage instance such as s3 and GCS.</p>
 <dl class="field-list simple">
@@ -183,23 +180,8 @@ or ~/.config/gcloud/application_default_credentials.json.
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="thirdai.dataset.CSVDataSource.next_batch">
-<span class="sig-name descname"><span class="pre">next_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.dataset.CSVDataSource.next_batch" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.dataset.CSVDataSource.next_line">
-<span class="sig-name descname"><span class="pre">next_line</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.dataset.CSVDataSource.next_line" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="thirdai.dataset.CSVDataSource.resource_name">
 <span class="sig-name descname"><span class="pre">resource_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#thirdai.dataset.CSVDataSource.resource_name" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.dataset.CSVDataSource.restart">
-<span class="sig-name descname"><span class="pre">restart</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.dataset.CSVDataSource.restart" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>

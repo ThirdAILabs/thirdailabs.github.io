@@ -190,13 +190,15 @@
 </li>
       <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.class_name">class_name() (thirdai.bolt.UniversalDeepTransformer method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.clear_graph">clear_graph() (thirdai.bolt.UniversalDeepTransformer method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.clear_index">clear_index() (thirdai.bolt.UniversalDeepTransformer method)</a>
 </li>
       <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.cold_start">cold_start() (thirdai.bolt.UniversalDeepTransformer method)</a>
+</li>
+      <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.cold_start_on_data_source">cold_start_on_data_source() (thirdai.bolt.UniversalDeepTransformer method)</a>
 </li>
       <li><a href="thirdaibolttypes.html#thirdai.bolt.types.ColumnType">ColumnType (class in thirdai.bolt.types)</a>
 </li>
@@ -236,6 +238,8 @@
 </li>
       <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.embedding_representation">embedding_representation() (thirdai.bolt.UniversalDeepTransformer method)</a>
 </li>
+      <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.enable_rlhf">enable_rlhf() (thirdai.bolt.UniversalDeepTransformer method)</a>
+</li>
       <li><a href="thirdaibolt.html#thirdai.bolt.EvalConfig.enable_sparse_inference">enable_sparse_inference() (thirdai.bolt.EvalConfig method)</a>
 </li>
       <li><a href="thirdailog.html#thirdai.logging.error">error() (in module thirdai.logging)</a>
@@ -245,6 +249,8 @@
       <li><a href="thirdaibolt.html#thirdai.bolt.EvalConfig">EvalConfig (class in thirdai.bolt)</a>
 </li>
       <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.evaluate">evaluate() (thirdai.bolt.UniversalDeepTransformer method)</a>
+</li>
+      <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.evaluate_on_data_source">evaluate_on_data_source() (thirdai.bolt.UniversalDeepTransformer method)</a>
 </li>
       <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.explain">explain() (thirdai.bolt.UniversalDeepTransformer method)</a>
 </li>
@@ -300,6 +306,8 @@
 </li>
       <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.index_nodes">index_nodes() (thirdai.bolt.UniversalDeepTransformer method)</a>
 </li>
+      <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.index_nodes_on_data_source">index_nodes_on_data_source() (thirdai.bolt.UniversalDeepTransformer method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="thirdailog.html#thirdai.logging.info">info() (in module thirdai.logging)</a>
@@ -311,6 +319,8 @@
       <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.introduce_document">introduce_document() (thirdai.bolt.UniversalDeepTransformer method)</a>
 </li>
       <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.introduce_documents">introduce_documents() (thirdai.bolt.UniversalDeepTransformer method)</a>
+</li>
+      <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.introduce_documents_on_data_source">introduce_documents_on_data_source() (thirdai.bolt.UniversalDeepTransformer method)</a>
 </li>
       <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.introduce_label">introduce_label() (thirdai.bolt.UniversalDeepTransformer method)</a>
 </li>
@@ -373,18 +383,10 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="thirdaibolttypes.html#thirdai.bolt.types.neighbors">neighbors (class in thirdai.bolt.types)</a>
 </li>
-      <li><a href="thirdaidataset.html#thirdai.dataset.CSVDataSource.next_batch">next_batch() (thirdai.dataset.CSVDataSource method)</a>
-
-      <ul>
-        <li><a href="thirdaidataset.html#thirdai.dataset.DataSource.next_batch">(thirdai.dataset.DataSource method)</a>
+      <li><a href="thirdaidataset.html#thirdai.dataset.DataSource.next_batch">next_batch() (thirdai.dataset.DataSource method)</a>
 </li>
-      </ul></li>
-      <li><a href="thirdaidataset.html#thirdai.dataset.CSVDataSource.next_line">next_line() (thirdai.dataset.CSVDataSource method)</a>
-
-      <ul>
-        <li><a href="thirdaidataset.html#thirdai.dataset.DataSource.next_line">(thirdai.dataset.DataSource method)</a>
+      <li><a href="thirdaidataset.html#thirdai.dataset.DataSource.next_line">next_line() (thirdai.dataset.DataSource method)</a>
 </li>
-      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="thirdaibolttypes.html#thirdai.bolt.types.node_id">node_id (class in thirdai.bolt.types)</a>
@@ -443,20 +445,16 @@
 </li>
       <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.reset_temporal_trackers">reset_temporal_trackers() (thirdai.bolt.UniversalDeepTransformer method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="thirdaidataset.html#thirdai.dataset.CSVDataSource.resource_name">resource_name() (thirdai.dataset.CSVDataSource method)</a>
 
       <ul>
         <li><a href="thirdaidataset.html#thirdai.dataset.DataSource.resource_name">(thirdai.dataset.DataSource method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="thirdaidataset.html#thirdai.dataset.CSVDataSource.restart">restart() (thirdai.dataset.CSVDataSource method)</a>
-
-      <ul>
-        <li><a href="thirdaidataset.html#thirdai.dataset.DataSource.restart">(thirdai.dataset.DataSource method)</a>
+      <li><a href="thirdaidataset.html#thirdai.dataset.DataSource.restart">restart() (thirdai.dataset.DataSource method)</a>
 </li>
-      </ul></li>
       <li><a href="thirdaibolt.html#thirdai.bolt.EvalConfig.return_activations">return_activations() (thirdai.bolt.EvalConfig method)</a>
 </li>
   </ul></td>
@@ -562,6 +560,8 @@
       <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.train_batch">train_batch() (thirdai.bolt.UniversalDeepTransformer method)</a>
 </li>
       <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.train_neural_db">train_neural_db() (thirdai.bolt.UniversalDeepTransformer method)</a>
+</li>
+      <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.train_on_data_source">train_on_data_source() (thirdai.bolt.UniversalDeepTransformer method)</a>
 </li>
       <li><a href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer.train_with_hashes">train_with_hashes() (thirdai.bolt.UniversalDeepTransformer method)</a>
 </li>
