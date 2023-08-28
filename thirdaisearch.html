@@ -11,11 +11,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -54,20 +54,7 @@
 <li class="toctree-l1"><a class="reference internal" href="thirdaidata.html">thirdai.data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdailog.html">thirdai.logging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdailicensing.html">thirdai.licensing</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">thirdai.search</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#thirdai.search.DocRetrieval"><code class="docutils literal notranslate"><span class="pre">DocRetrieval</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.search.DocRetrieval.__init__"><code class="docutils literal notranslate"><span class="pre">DocRetrieval.__init__()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.search.DocRetrieval.add_doc"><code class="docutils literal notranslate"><span class="pre">DocRetrieval.add_doc()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.search.DocRetrieval.delete_doc"><code class="docutils literal notranslate"><span class="pre">DocRetrieval.delete_doc()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.search.DocRetrieval.deserialize_from_file"><code class="docutils literal notranslate"><span class="pre">DocRetrieval.deserialize_from_file()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.search.DocRetrieval.get_doc"><code class="docutils literal notranslate"><span class="pre">DocRetrieval.get_doc()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.search.DocRetrieval.query"><code class="docutils literal notranslate"><span class="pre">DocRetrieval.query()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.search.DocRetrieval.serialize_to_file"><code class="docutils literal notranslate"><span class="pre">DocRetrieval.serialize_to_file()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#thirdai.search.beam_search"><code class="docutils literal notranslate"><span class="pre">beam_search()</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">thirdai.search</a></li>
 </ul>
 
         </div>
@@ -94,78 +81,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-thirdai.search">
-<span id="thirdai-search"></span><h1>thirdai.search<a class="headerlink" href="#module-thirdai.search" title="Permalink to this heading"></a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="thirdai.search.DocRetrieval">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.search.</span></span><span class="sig-name descname"><span class="pre">DocRetrieval</span></span><a class="headerlink" href="#thirdai.search.DocRetrieval" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
-<p>The DocRetrieval module allows you to build, query, save, and load a semantic document search index.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.search.DocRetrieval.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">centroids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hashes_per_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_tables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dense_input_dimension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.search.DocRetrieval.__init__" title="Permalink to this definition"></a></dt>
-<dd><p>Constructs a new DocRetrieval index. Centroids should be a two-dimensional array of floats, where each row is of length dense_input_dimension (the dimension of the document embeddings). hashes_per_table and num_tables are hyperparameters for the doc sketches. Roughly, increase num_tables to increase accuracy at thecost of speed and memory (you can try powers of 2; a good starting value is 32). Hashes_per_table should be around log_2 the averagedocument size (by number of embeddings).</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.search.DocRetrieval.add_doc">
-<span class="sig-name descname"><span class="pre">add_doc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.search.DocRetrieval.add_doc" title="Permalink to this definition"></a></dt>
-<dd><p>Overloaded function.</p>
-<ol class="arabic simple">
-<li><p>add_doc(self: thirdai._thirdai.search.DocRetrieval, doc_id: str, doc_text: str, doc_embeddings: numpy.ndarray[numpy.float32]) -&gt; bool</p></li>
-</ol>
-<p>Adds a new document to the DocRetrieval index. If the doc_id already exists in the index, this will overwrite it. The doc_embeddings should be a two dimensional numpy array of the document’s embeddings. Each row should be of length dense_input_dimension. doc_text is only needed if you want it to be retrieved in calls to get_doc and query. Returns true if thiswas a new document and false otherwise.</p>
-<ol class="arabic simple" start="2">
-<li><p>add_doc(self: thirdai._thirdai.search.DocRetrieval, doc_id: str, doc_text: str, doc_embeddings: numpy.ndarray[numpy.float32], doc_centroid_ids: List[int]) -&gt; bool</p></li>
-</ol>
-<p>A normal add, except also accepts the ids of the closest centroidto each of the doc_embeddings if these are precomputed (helpful for batch adds).</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.search.DocRetrieval.delete_doc">
-<span class="sig-name descname"><span class="pre">delete_doc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">doc_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#thirdai.search.DocRetrieval.delete_doc" title="Permalink to this definition"></a></dt>
-<dd><p>Delete the document with the passed doc_id if such a document exists, otherwise this is a NOOP. Returns true if the document was succesfully deleted, false if no document with doc_id was found.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.search.DocRetrieval.deserialize_from_file">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">deserialize_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.search.DocRetrieval" title="thirdai.search.DocRetrieval"><span class="pre">search.DocRetrieval</span></a></span></span><a class="headerlink" href="#thirdai.search.DocRetrieval.deserialize_from_file" title="Permalink to this definition"></a></dt>
-<dd><p>Deserialize the DocRetrieval index from a file.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.search.DocRetrieval.get_doc">
-<span class="sig-name descname"><span class="pre">get_doc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">doc_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.search.DocRetrieval.get_doc" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the doc_text of the document with doc_id, or None if no document with doc_id was found.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.search.DocRetrieval.query">
-<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.search.DocRetrieval.query" title="Permalink to this definition"></a></dt>
-<dd><p>Overloaded function.</p>
-<ol class="arabic simple">
-<li><p>query(self: thirdai._thirdai.search.DocRetrieval, query_embeddings: numpy.ndarray[numpy.float32], top_k: int, num_to_rerank: int = 8192) -&gt; numpy.ndarray</p></li>
-</ol>
-<p>Finds the best top_k documents that are most likely to semantically answer the query. There is an additional optional parameter here called num_to_rerank that represents how many documents you want us to internally rerank. The default of 8192 is fine for most use cases.</p>
-<ol class="arabic simple" start="2">
-<li><p>query(self: thirdai._thirdai.search.DocRetrieval, query_embeddings: numpy.ndarray[numpy.float32], query_centroid_ids: List[int], top_k: int, num_to_rerank: int = 8192) -&gt; numpy.ndarray</p></li>
-</ol>
-<p>A normal query, except also accepts the ids of the closest centroidto each of the query_embeddings</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.search.DocRetrieval.serialize_to_file">
-<span class="sig-name descname"><span class="pre">serialize_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.search.DocRetrieval.serialize_to_file" title="Permalink to this definition"></a></dt>
-<dd><p>Serialize the DocRetrieval index to a file.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="thirdai.search.beam_search">
-<span class="sig-prename descclassname"><span class="pre">thirdai.search.</span></span><span class="sig-name descname"><span class="pre">beam_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">probabilities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float32</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transition_matrix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float32</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beam_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#thirdai.search.beam_search" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
+  <section id="thirdai-search">
+<h1>thirdai.search<a class="headerlink" href="#thirdai-search" title="Link to this heading"></a></h1>
 </section>
 
 
