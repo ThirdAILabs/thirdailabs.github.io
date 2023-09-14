@@ -54,8 +54,19 @@
 <li class="toctree-l1"><a class="reference internal" href="thirdaidataset.html">thirdai.dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdaidata.html">thirdai.data</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">thirdai.logging</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#logging">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.logging.setup"><code class="docutils literal notranslate"><span class="pre">setup()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#logging">Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.logging.trace"><code class="docutils literal notranslate"><span class="pre">trace()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.logging.debug"><code class="docutils literal notranslate"><span class="pre">debug()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.logging.info"><code class="docutils literal notranslate"><span class="pre">info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.logging.warn"><code class="docutils literal notranslate"><span class="pre">warn()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.logging.error"><code class="docutils literal notranslate"><span class="pre">error()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.logging.critical"><code class="docutils literal notranslate"><span class="pre">critical()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="thirdailicensing.html">thirdai.licensing</a></li>
@@ -97,11 +108,69 @@ program.</p>
 <section id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h2>
 <p>The following function can be used to setup logging at the start of the program.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="thirdai.logging.setup">
+<span class="sig-prename descclassname"><span class="pre">thirdai.logging.</span></span><span class="sig-name descname"><span class="pre">setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_to_stderr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'info'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'[%Y-%m-%dT%T]</span> <span class="pre">[%l]</span> <span class="pre">|</span> <span class="pre">%v'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flush_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.logging.setup" title="Link to this definition"></a></dt>
+<dd><p>Set up log for thirdai C++ library.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>log_to_stderr</strong> (<em>bool</em>) – Print logs to standard error. Turned off
+(false) by default.</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – Path to file to write logs to. Empty (default) implies
+no file log.</p></li>
+<li><p><strong>level</strong> (<em>str</em>) – Print logs upto this level. Choices are
+trace,debug,info,warn,critical,error,off. Default is info.</p></li>
+<li><p><strong>pattern</strong> (<em>str</em>) – Pattern string to customize log from client. See
+<a class="reference external" href="https://github.com/gabime/spdlog/wiki/3.-Custom-formatting">https://github.com/gabime/spdlog/wiki/3.-Custom-formatting</a> for using
+format-strings.</p></li>
+<li><p><strong>flush_interval</strong> (<em>int</em>) – Interval in seconds at which logs will be flushed while in operation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="logging">
 <h2>Logging<a class="headerlink" href="#logging" title="Link to this heading"></a></h2>
 <p>The following are python bindings to the <cite>log::&lt;level&gt;</cite> functions available in
 the thirdai C++ library.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="thirdai.logging.trace">
+<span class="sig-prename descclassname"><span class="pre">thirdai.logging.</span></span><span class="sig-name descname"><span class="pre">trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.logging.trace" title="Link to this definition"></a></dt>
+<dd><p>Write to logs with level trace.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="thirdai.logging.debug">
+<span class="sig-prename descclassname"><span class="pre">thirdai.logging.</span></span><span class="sig-name descname"><span class="pre">debug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.logging.debug" title="Link to this definition"></a></dt>
+<dd><p>Write to logs with level debug.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="thirdai.logging.info">
+<span class="sig-prename descclassname"><span class="pre">thirdai.logging.</span></span><span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.logging.info" title="Link to this definition"></a></dt>
+<dd><p>Write to logs with level info.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="thirdai.logging.warn">
+<span class="sig-prename descclassname"><span class="pre">thirdai.logging.</span></span><span class="sig-name descname"><span class="pre">warn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.logging.warn" title="Link to this definition"></a></dt>
+<dd><p>Write to logs with level warn.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="thirdai.logging.error">
+<span class="sig-prename descclassname"><span class="pre">thirdai.logging.</span></span><span class="sig-name descname"><span class="pre">error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.logging.error" title="Link to this definition"></a></dt>
+<dd><p>Write to logs with level error.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="thirdai.logging.critical">
+<span class="sig-prename descclassname"><span class="pre">thirdai.logging.</span></span><span class="sig-name descname"><span class="pre">critical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.logging.critical" title="Link to this definition"></a></dt>
+<dd><p>Write to logs with level critical.</p>
+</dd></dl>
+
 </section>
 </section>
 
