@@ -21,8 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="thirdai.bolt.models" href="thirdaiboltmodels.html" />
-    <link rel="prev" title="thirdai" href="thirdaibase.html" /> 
+    <link rel="next" title="thirdai.logging" href="thirdailog.html" />
+    <link rel="prev" title="thirdai.neural_db" href="thirdaineuraldb.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,85 +48,133 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdaibase.html">thirdai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thirdaineuraldb.html">thirdai.neural_db</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">thirdai.bolt</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.__init__"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.__init__()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.associate"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.associate()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.associate_cold_start"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.associate_cold_start()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.associate_cold_start_data_source"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.associate_cold_start_data_source()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.associate_train"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.associate_train()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.associate_train_data_source"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.associate_train_data_source()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.checkpoint"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.checkpoint()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.class_name"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.class_name()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.clear_graph"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.clear_graph()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.clear_index"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.clear_index()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.cold_start"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.cold_start()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.cold_start_on_data_source"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.cold_start_on_data_source()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.data_types"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.data_types()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.embedding_representation"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.embedding_representation()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.enable_rlhf"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.enable_rlhf()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.evaluate"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.evaluate()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.evaluate_on_data_source"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.evaluate_on_data_source()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.explain"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.explain()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.forget"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.forget()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.get_cold_start_meta_data"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.get_cold_start_meta_data()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.get_data_processor"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.get_data_processor()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.get_entity_embedding"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.get_entity_embedding()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.get_index"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.get_index()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.get_parameters"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.get_parameters()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.index"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.index()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.index_batch"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.index_batch()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.index_metadata"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.index_metadata()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.index_metadata_batch"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.index_metadata_batch()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.index_nodes"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.index_nodes()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.index_nodes_on_data_source"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.index_nodes_on_data_source()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.insert_into_neural_db"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.insert_into_neural_db()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.insert_into_neural_db_batch"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.insert_into_neural_db_batch()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.introduce_document"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.introduce_document()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.introduce_documents"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.introduce_documents()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.introduce_documents_on_data_source"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.introduce_documents_on_data_source()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.introduce_label"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.introduce_label()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.load"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.load()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.load_neural_db"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.load_neural_db()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.model_dims"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.model_dims()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.output_correctness"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.output_correctness()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.predict"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.predict()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.predict_batch"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.predict_batch()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.predict_hashes"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.predict_hashes()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.predict_hashes_batch"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.predict_hashes_batch()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.pretrain_neural_db"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.pretrain_neural_db()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.query"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.query()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.reset_neural_db"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.reset_neural_db()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.reset_temporal_trackers"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.reset_temporal_trackers()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.save"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.save()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.save_neural_db"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.save_neural_db()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.score_batch"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.score_batch()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.set_decode_params"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.set_decode_params()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.set_index"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.set_index()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.set_mach_sampling_threshold"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.set_mach_sampling_threshold()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.set_output_sparsity"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.set_output_sparsity()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.set_parameters"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.set_parameters()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.teach_concept_association"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.teach_concept_association()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.train"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.train()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.train_batch"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.train_batch()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.train_neural_db"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.train_neural_db()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.train_on_data_source"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.train_on_data_source()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.train_with_hashes"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.train_with_hashes()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.upvote"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.upvote()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.verify_can_distribute"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.verify_can_distribute()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#udt">UDT</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.__init__"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.associate"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.associate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.associate_cold_start"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.associate_cold_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.associate_cold_start_data_source"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.associate_cold_start_data_source()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.associate_train"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.associate_train()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.associate_train_data_source"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.associate_train_data_source()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.checkpoint"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.checkpoint()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.class_name"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.class_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.clear_graph"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.clear_graph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.clear_index"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.clear_index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.cold_start"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.cold_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.cold_start_on_data_source"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.cold_start_on_data_source()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.data_types"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.data_types()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.embedding_representation"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.embedding_representation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.enable_rlhf"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.enable_rlhf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.evaluate"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.evaluate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.evaluate_on_data_source"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.evaluate_on_data_source()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.explain"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.explain()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.forget"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.forget()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.get_cold_start_meta_data"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.get_cold_start_meta_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.get_data_processor"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.get_data_processor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.get_entity_embedding"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.get_entity_embedding()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.get_index"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.get_index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.get_parameters"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.get_parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.index"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.index_batch"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.index_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.index_metadata"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.index_metadata()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.index_metadata_batch"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.index_metadata_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.index_nodes"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.index_nodes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.index_nodes_on_data_source"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.index_nodes_on_data_source()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.insert_into_neural_db"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.insert_into_neural_db()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.insert_into_neural_db_batch"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.insert_into_neural_db_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.introduce_document"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.introduce_document()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.introduce_documents"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.introduce_documents()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.introduce_documents_on_data_source"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.introduce_documents_on_data_source()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.introduce_label"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.introduce_label()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.load"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.load_neural_db"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.load_neural_db()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.model_dims"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.model_dims()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.output_correctness"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.output_correctness()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.predict"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.predict_batch"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.predict_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.predict_hashes"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.predict_hashes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.predict_hashes_batch"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.predict_hashes_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.pretrain_neural_db"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.pretrain_neural_db()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.query"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.query()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.reset_neural_db"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.reset_neural_db()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.reset_temporal_trackers"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.reset_temporal_trackers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.save"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.save()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.save_neural_db"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.save_neural_db()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.score_batch"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.score_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.set_decode_params"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.set_decode_params()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.set_index"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.set_index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.set_mach_sampling_threshold"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.set_mach_sampling_threshold()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.set_output_sparsity"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.set_output_sparsity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.set_parameters"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.set_parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.teach_concept_association"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.teach_concept_association()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.train"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.train()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.train_batch"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.train_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.train_neural_db"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.train_neural_db()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.train_on_data_source"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.train_on_data_source()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.train_with_hashes"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.train_with_hashes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.upvote"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.upvote()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.UniversalDeepTransformer.verify_can_distribute"><code class="docutils literal notranslate"><span class="pre">UniversalDeepTransformer.verify_can_distribute()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.Validation"><code class="docutils literal notranslate"><span class="pre">Validation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.Validation.__init__"><code class="docutils literal notranslate"><span class="pre">Validation.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.Validation.filename"><code class="docutils literal notranslate"><span class="pre">Validation.filename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.Validation.metrics"><code class="docutils literal notranslate"><span class="pre">Validation.metrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.Validation.sparse_validation"><code class="docutils literal notranslate"><span class="pre">Validation.sparse_validation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.Validation.steps_per_validation"><code class="docutils literal notranslate"><span class="pre">Validation.steps_per_validation</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="thirdaiboltmodels.html">thirdai.bolt.models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thirdaibolttypes.html">thirdai.bolt.types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thirdaibolttemporal.html">thirdai.bolt.temporal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thirdaiboltcallbacks.html">thirdai.bolt.callbacks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thirdaidataset.html">thirdai.dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thirdaidata.html">thirdai.data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-thirdai.bolt.types">UDT Input Column Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.ColumnType"><code class="docutils literal notranslate"><span class="pre">ColumnType</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.categorical"><code class="docutils literal notranslate"><span class="pre">categorical</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.types.categorical.__init__"><code class="docutils literal notranslate"><span class="pre">categorical.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.types.categorical.delimiter"><code class="docutils literal notranslate"><span class="pre">categorical.delimiter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.date"><code class="docutils literal notranslate"><span class="pre">date</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.types.date.__init__"><code class="docutils literal notranslate"><span class="pre">date.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.metadata"><code class="docutils literal notranslate"><span class="pre">metadata</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.types.metadata.__init__"><code class="docutils literal notranslate"><span class="pre">metadata.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.neighbors"><code class="docutils literal notranslate"><span class="pre">neighbors</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.types.neighbors.__init__"><code class="docutils literal notranslate"><span class="pre">neighbors.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.node_id"><code class="docutils literal notranslate"><span class="pre">node_id</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.types.node_id.__init__"><code class="docutils literal notranslate"><span class="pre">node_id.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.numerical"><code class="docutils literal notranslate"><span class="pre">numerical</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.types.numerical.__init__"><code class="docutils literal notranslate"><span class="pre">numerical.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.sequence"><code class="docutils literal notranslate"><span class="pre">sequence</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.types.sequence.__init__"><code class="docutils literal notranslate"><span class="pre">sequence.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.text"><code class="docutils literal notranslate"><span class="pre">text</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.types.text.__init__"><code class="docutils literal notranslate"><span class="pre">text.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-thirdai.bolt.temporal">UDT Temporal Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.temporal.TemporalConfig"><code class="docutils literal notranslate"><span class="pre">TemporalConfig</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.temporal.categorical"><code class="docutils literal notranslate"><span class="pre">categorical()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.temporal.numerical"><code class="docutils literal notranslate"><span class="pre">numerical()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="thirdailog.html">thirdai.logging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdailicensing.html">thirdai.licensing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thirdaisearch.html">thirdai.search</a></li>
 </ul>
 
         </div>
@@ -155,6 +203,8 @@
              
   <section id="thirdai-bolt">
 <h1>thirdai.bolt<a class="headerlink" href="#thirdai-bolt" title="Link to this heading"></a></h1>
+<section id="udt">
+<h2>UDT<a class="headerlink" href="#udt" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="thirdai.bolt.UniversalDeepTransformer">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.</span></span><span class="sig-name descname"><span class="pre">UniversalDeepTransformer</span></span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer" title="Link to this definition"></a></dt>
@@ -170,7 +220,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data_types</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="thirdaibolttypes.html#thirdai.bolt.types.ColumnType" title="thirdai.bolt.types.ColumnType"><em>bolt.types.ColumnType</em></a><em>]</em>) – <p>A mapping from column name to column type.
+<li><p><strong>data_types</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai.bolt.types.ColumnType"><em>bolt.types.ColumnType</em></a><em>]</em>) – <p>A mapping from column name to column type.
 This map specifies the columns that we want to pass into the model; it does
 not need to include all columns in the dataset.</p>
 <p>Column type is one of:
@@ -182,7 +232,7 @@ See bolt.types for details.</p>
 <p>If <cite>temporal_tracking_relationships</cite> is non-empty, there must one and only one
 bolt.types.date() column. This column contains date strings in YYYY-MM-DD format.</p>
 </p></li>
-<li><p><strong>temporal_tracking_relationships</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="thirdaibolttemporal.html#thirdai.bolt.temporal.TemporalConfig" title="thirdai.bolt.temporal.TemporalConfig"><em>bolt.temporal.TemporalConfig</em></a><em>]</em><em>]</em><em>]</em>) – <p>Optional.
+<li><p><strong>temporal_tracking_relationships</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="#thirdai.bolt.temporal.TemporalConfig" title="thirdai.bolt.temporal.TemporalConfig"><em>bolt.temporal.TemporalConfig</em></a><em>]</em><em>]</em><em>]</em>) – <p>Optional.
 A mapping from column name to a list of either other column names or bolt.temporal objects.
 This mapping tells UDT what columns can be tracked over time for each key.
 For example, we may want to tell UDT that we want to track a user’s watch
@@ -365,7 +415,7 @@ UDT model to create.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.UniversalDeepTransformer.associate_cold_start_data_source">
-<span class="sig-name descname"><span class="pre">associate_cold_start_data_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">balancing_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="thirdaidataset.html#thirdai.dataset.DataSource" title="thirdai.dataset.DataSource"><span class="pre">dataset.DataSource</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">strong_column_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weak_column_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_target_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_buckets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_association_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bolt.TrainOptions</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.associate_cold_start_data_source" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">associate_cold_start_data_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">balancing_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dataset.DataSource</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strong_column_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weak_column_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_target_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_buckets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_association_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bolt.TrainOptions</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.associate_cold_start_data_source" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -375,7 +425,7 @@ UDT model to create.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.UniversalDeepTransformer.associate_train_data_source">
-<span class="sig-name descname"><span class="pre">associate_train_data_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">balancing_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="thirdaidataset.html#thirdai.dataset.DataSource" title="thirdai.dataset.DataSource"><span class="pre">dataset.DataSource</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_target_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_buckets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_association_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bolt.TrainOptions</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.associate_train_data_source" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">associate_train_data_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">balancing_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dataset.DataSource</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_target_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_buckets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_association_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bolt.TrainOptions</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.associate_train_data_source" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -430,7 +480,7 @@ UDT model to create.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.UniversalDeepTransformer.evaluate_on_data_source">
-<span class="sig-name descname"><span class="pre">evaluate_on_data_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="thirdaidataset.html#thirdai.dataset.DataSource" title="thirdai.dataset.DataSource"><span class="pre">DataSource</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_sparse_inference</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.evaluate_on_data_source" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">evaluate_on_data_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataSource</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_sparse_inference</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.evaluate_on_data_source" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -659,7 +709,7 @@ Note: Only works with UDT Classifier (without extreme classification enabled)</p
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.UniversalDeepTransformer.train">
-<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Validation</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_in_memory_batches</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Callback</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle_reservoir_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">64000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.train" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.Validation" title="thirdai.bolt.Validation"><span class="pre">Validation</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_in_memory_batches</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Callback</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle_reservoir_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">64000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.train" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -669,12 +719,12 @@ Note: Only works with UDT Classifier (without extreme classification enabled)</p
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.UniversalDeepTransformer.train_neural_db">
-<span class="sig-name descname"><span class="pre">train_neural_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Validation</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_in_memory_batches</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Callback</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle_reservoir_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">64000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.train_neural_db" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">train_neural_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.Validation" title="thirdai.bolt.Validation"><span class="pre">Validation</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_in_memory_batches</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Callback</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle_reservoir_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">64000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.train_neural_db" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.UniversalDeepTransformer.train_on_data_source">
-<span class="sig-name descname"><span class="pre">train_on_data_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="thirdaidataset.html#thirdai.dataset.DataSource" title="thirdai.dataset.DataSource"><span class="pre">DataSource</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_in_memory_batches</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Callback</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.train_on_data_source" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">train_on_data_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataSource</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_in_memory_batches</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Callback</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.train_on_data_source" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -694,14 +744,521 @@ Note: Only works with UDT Classifier (without extreme classification enabled)</p
 
 </dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.bolt.Validation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.</span></span><span class="sig-name descname"><span class="pre">Validation</span></span><a class="headerlink" href="#thirdai.bolt.Validation" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.Validation.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_sparse_inference</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.Validation.__init__" title="Link to this definition"></a></dt>
+<dd><p>Creates a validation object that stores the necessary information for the model
+to perform validation during training.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – The name of the validation file.</p></li>
+<li><p><strong>metrics</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – The metrics to compute for validation.</p></li>
+<li><p><strong>interval</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – The interval, in number of batches, between computing
+validation. For instance, <cite>interval=10</cite> means that validation metrics will
+be computed every 10 batches. If it is not specified then validation will
+be done after each epoch.</p></li>
+<li><p><strong>use_sparse_inference</strong> (<em>bool</em>) – Optional, defaults to False. When True, sparse
+inference will be used during validation.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">validation</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">Validation</span><span class="p">(</span>
+<span class="go">        filename=&quot;validation.csv&quot;, metrics=[&quot;categorical_accuracy&quot;], interval=10</span>
+<span class="go">    )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s2">&quot;train.csv&quot;</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">validation</span><span class="o">=</span><span class="n">validation</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="thirdai.bolt.Validation.filename">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filename</span></span><a class="headerlink" href="#thirdai.bolt.Validation.filename" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="thirdai.bolt.Validation.metrics">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">metrics</span></span><a class="headerlink" href="#thirdai.bolt.Validation.metrics" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="thirdai.bolt.Validation.sparse_validation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sparse_validation</span></span><a class="headerlink" href="#thirdai.bolt.Validation.sparse_validation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="thirdai.bolt.Validation.steps_per_validation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">steps_per_validation</span></span><a class="headerlink" href="#thirdai.bolt.Validation.steps_per_validation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-thirdai.bolt.types">
+<span id="udt-input-column-types"></span><h2>UDT Input Column Types<a class="headerlink" href="#module-thirdai.bolt.types" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.bolt.types.ColumnType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">ColumnType</span></span><a class="headerlink" href="#thirdai.bolt.types.ColumnType" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<p>Base class for bolt types.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.bolt.types.categorical">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">categorical</span></span><a class="headerlink" href="#thirdai.bolt.types.categorical" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.types.categorical.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.types.metadata" title="thirdai.bolt.types.metadata"><span class="pre">bolt.types.metadata</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.categorical.__init__" title="Link to this definition"></a></dt>
+<dd><p>Temporal categorical config. Use this object to configure how a
+categorical column is tracked over time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column_name</strong> (<em>str</em>) – The name of the tracked column.</p></li>
+<li><p><strong>track_last_n</strong> (<em>int</em>) – Number of last categorical values to track
+per tracking id.</p></li>
+<li><p><strong>column_known_during_inference</strong> (<em>bool</em>) – Optional. Whether the
+value of the tracked column is known during inference. Defaults
+to False.</p></li>
+<li><p><strong>use_metadata</strong> (<em>bool</em>) – Optional. Whether to use the metadata of the N
+tracked items, if metadata is provided in the corresponding
+categorical column type object. Ignored if no metadata is provided.
+Defaults to False.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Suppose each row of our data has the following columns: &quot;product_id&quot;, &quot;timestamp&quot;, &quot;ad_spend_level&quot;, &quot;sales_performance&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># We want to predict the current week&#39;s sales performance for each product using temporal context.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># For each product ID, we would like to track both their ad spend level and sales performance over time.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Ad spend level is known at the time of inference but sales performance is not. Then we can configure UDT as follows:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<span class="go">        data_types={</span>
+<span class="go">            &quot;product_id&quot;: bolt.types.categorical(),</span>
+<span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
+<span class="go">            &quot;ad_spend_level&quot;: bolt.types.categorical(),</span>
+<span class="go">            &quot;sales_performance&quot;: bolt.types.categorical(),</span>
+<span class="go">        },</span>
+<span class="go">        temporal_tracking_relationships={</span>
+<span class="go">            &quot;product_id&quot;: [</span>
+<span class="go">                bolt.temporal.categorical(column_name=&quot;ad_spend_level&quot;, track_last_n=5, column_known_during_inference=True),</span>
+<span class="go">                bolt.temporal.categorical(column_name=&quot;ad_spend_level&quot;, track_last_n=25, column_known_during_inference=True),</span>
+<span class="go">                bolt.temporal.categorical(column_name=&quot;sales_performance&quot;, track_last_n=5), # column_known_during_inference defaults to False</span>
+<span class="go">            ]</span>
+<span class="go">        },</span>
+<span class="go">        ...</span>
+<span class="go">    )</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Temporal categorical features are tracked as a set; if we track the last 5 ad spend levels,</dt><dd><p>we capture what the last 5 ad spend levels are, but we do not capture their order.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The same column can be tracked more than once, allowing us to capture both short and</dt><dd><p>long term trends.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="thirdai.bolt.types.categorical.delimiter">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delimiter</span></span><a class="headerlink" href="#thirdai.bolt.types.categorical.delimiter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.bolt.types.date">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">date</span></span><a class="headerlink" href="#thirdai.bolt.types.date" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.types.date.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.date.__init__" title="Link to this definition"></a></dt>
+<dd><p>Date column type. Use this object if a column contains date strings.
+Date strings must be in YYYY-MM-DD format.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<span class="go">        data_types: {</span>
+<span class="go">            &quot;timestamp&quot;: bolt.types.date()</span>
+<span class="go">        }</span>
+<span class="go">        ...</span>
+<span class="go">    )</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.bolt.types.metadata">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">metadata</span></span><a class="headerlink" href="#thirdai.bolt.types.metadata" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.types.metadata.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai.bolt.types.ColumnType"><span class="pre">bolt.types.ColumnType</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.metadata.__init__" title="Link to this definition"></a></dt>
+<dd><p>A configuration object for processing a metadata file to enrich categorical
+features from the main dataset. To illustrate when this is useful, suppose
+we are building a movie recommendation system. The contents of the training
+dataset may look something like the following:</p>
+<p>user_id,movie_id,timestamp
+A526,B894,2022-01-01
+A339,B801,2022-01-01
+A293,B801,2022-01-01
+…</p>
+<p>If you have additional information about users or movies, such as users’
+age groups or movie genres, you can use that information to enrich your
+model. Adding these features into the main dataset as new columns is wasteful
+because the same users and movies ids will be repeated many times throughout
+the dataset. Instead, we can put them all in a metadata file and UDT will
+inject these features where appropriate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – Path to metadata file. The file should be in CSV format.</p></li>
+<li><p><strong>key_column_name</strong> (<em>str</em>) – The name of the column whose values are used as
+keys to map metadata features back to values in the main dataset.
+This column does not need to be passed into the <cite>data_types</cite> argument.</p></li>
+<li><p><strong>data_types</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai.bolt.types.ColumnType"><em>bolt.types.ColumnType</em></a><em>]</em>) – A mapping from column name
+to column type. Column type is one of:
+- <cite>bolt.types.categorical</cite>
+- <cite>bolt.types.numerical</cite>
+- <cite>bolt.types.text</cite>
+- <cite>bolt.types.date</cite></p></li>
+<li><p><strong>delimiter</strong> (<em>str</em>) – Optional. Defaults to ‘,’. A single character
+(length-1 string) that separates the columns of the metadata file.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;user_meta.csv&quot;</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<span class="go">user_id,age</span>
+<span class="go">A526,52</span>
+<span class="go">A531,22</span>
+<span class="go">A339,29</span>
+<span class="go">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<span class="go">        data_types: {</span>
+<span class="go">            &quot;user_id&quot;: bolt.types.categorical(</span>
+<span class="go">                delimiter=&#39; &#39;,</span>
+<span class="go">                metadata=bolt.types.metadata(</span>
+<span class="go">                    filename=&quot;user_meta.csv&quot;,</span>
+<span class="go">                    data_types={&quot;age&quot;: bolt.types.numerical()},</span>
+<span class="go">                    key_column_name=&quot;user_id&quot;</span>
+<span class="go">                )</span>
+<span class="go">            )</span>
+<span class="go">        }</span>
+<span class="go">        ...</span>
+<span class="go">    )</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.bolt.types.neighbors">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">neighbors</span></span><a class="headerlink" href="#thirdai.bolt.types.neighbors" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.types.neighbors.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.neighbors.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.bolt.types.node_id">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">node_id</span></span><a class="headerlink" href="#thirdai.bolt.types.node_id" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.types.node_id.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.node_id.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.bolt.types.numerical">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">numerical</span></span><a class="headerlink" href="#thirdai.bolt.types.numerical" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.types.numerical.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">granularity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'m'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.numerical.__init__" title="Link to this definition"></a></dt>
+<dd><p>Numerical column type. Use this object if a column contains numerical
+data (the value is treated as a quantity). Examples include hours of
+a movie watched, sale quantity, or population size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>range</strong> (<em>tuple</em><em>(</em><em>float</em><em>, </em><em>float</em><em>)</em>) – The expected range (min to max) of the
+numeric quantity. The more accurate this range to the test data, the
+better the model performance.</p></li>
+<li><p><strong>granularity</strong> (<em>str</em>) – Optional. One of “extrasmall”/”xs”, “small”/”s”, “medium”/”m”,
+“large”/”l” or “extralarge”/”xl” . Defaults to “m”.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<span class="go">        data_types: {</span>
+<span class="go">            &quot;hours_watched&quot;: bolt.types.numerical(range=(0, 25), granularity=&quot;xs&quot;)</span>
+<span class="go">        }</span>
+<span class="go">        ...</span>
+<span class="go">    )</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.bolt.types.sequence">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">sequence</span></span><a class="headerlink" href="#thirdai.bolt.types.sequence" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.types.sequence.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.sequence.__init__" title="Link to this definition"></a></dt>
+<dd><p>Sequence column type. Use this object if a column contains an ordered sequence
+of strings delimited by a character. The delimiter must be different than the
+delimiter between columns.</p>
+<p>When the target column is a sequence type, then UDT will perform inferences
+recursively.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>delimiter</strong> (<em>str</em>) – Optional. The sequence delimiter. Defaults to “ “.</p></li>
+<li><p><strong>max_length</strong> (<em>int</em>) – Required if the column is the target. The maximum length
+of the sequence. If UDT sees longer sequences, elements beyond the provided
+upper bound will be ignored.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<span class="go">        data_types: {</span>
+<span class="go">            &quot;input_sequence&quot;: bolt.types.sequence(delimiter=&#39;\t&#39;)</span>
+<span class="go">            &quot;output_sequence&quot;: bolt.types.sequence(max_length=30) # max_length must be provided for target sequence.</span>
+<span class="go">        },</span>
+<span class="go">        target=&quot;output_sequence&quot;,</span>
+<span class="go">        n_target_classes=26</span>
+<span class="go">        ...</span>
+<span class="go">    )</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.bolt.types.text">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">text</span></span><a class="headerlink" href="#thirdai.bolt.types.text" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.types.text.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.types.text.__init__" title="Link to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: thirdai._thirdai.bolt.types.text, tokenizer: str = ‘words’, contextual_encoding: str = ‘none’, lowercase: bool = True) -&gt; None</p></li>
+</ol>
+<p>Text column type. Use this object if a column contains text data
+(the meaning of the text matters). Examples include descriptions,
+search queries, and user bios.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tokenizer</strong> (<em>str</em>) – Optional. Either “words”, “words-punct” or
+“char-k” (k is a number, e.g. “char-5”). Defaults to “words”.</p></li>
+<li><p><strong>contextual_encoding</strong> (<em>str</em>) – Optional. Either “local”, “global”, “ngram-N”, or
+“none”, defaults to “none”.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<span class="go">        data_types: {</span>
+<span class="go">            &quot;user_motto&quot;: bolt.types.text(),</span>
+<span class="go">            &quot;user_bio&quot;: bolt.types.text(contextual_encoding=&quot;local&quot;)</span>
+<span class="go">        }</span>
+<span class="go">        ...</span>
+<span class="go">    )</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>__init__(self: thirdai._thirdai.bolt.types.text, tokenizer: thirdai._thirdai.dataset.WordpieceTokenizer, contextual_encoding: str = ‘none’) -&gt; None</p></li>
+</ol>
+<p>Text column type. Use this object if a column contains text data
+(the meaning of the text matters). Examples include descriptions,
+search queries, and user bios.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tokenizer</strong> (<em>str</em>) – Optional. Either “words”, “words-punct” or
+“char-k” (k is a number, e.g. “char-5”). Defaults to “words”.</p></li>
+<li><p><strong>contextual_encoding</strong> (<em>str</em>) – Optional. Either “local”, “global”, “ngram-N”, or
+“none”, defaults to “none”.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<span class="go">        data_types: {</span>
+<span class="go">            &quot;user_motto&quot;: bolt.types.text(),</span>
+<span class="go">            &quot;user_bio&quot;: bolt.types.text(contextual_encoding=&quot;local&quot;)</span>
+<span class="go">        }</span>
+<span class="go">        ...</span>
+<span class="go">    )</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-thirdai.bolt.temporal">
+<span id="udt-temporal-options"></span><h2>UDT Temporal Options<a class="headerlink" href="#module-thirdai.bolt.temporal" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.bolt.temporal.TemporalConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.temporal.</span></span><span class="sig-name descname"><span class="pre">TemporalConfig</span></span><a class="headerlink" href="#thirdai.bolt.temporal.TemporalConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<p>Base class for temporal feature configs.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="thirdai.bolt.temporal.categorical">
+<span class="sig-prename descclassname"><span class="pre">thirdai.bolt.temporal.</span></span><span class="sig-name descname"><span class="pre">categorical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_last_n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_known_during_inference</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.temporal.TemporalConfig" title="thirdai.bolt.temporal.TemporalConfig"><span class="pre">bolt.temporal.TemporalConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.temporal.categorical" title="Link to this definition"></a></dt>
+<dd><p>Temporal categorical config. Use this object to configure how a
+categorical column is tracked over time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column_name</strong> (<em>str</em>) – The name of the tracked column.</p></li>
+<li><p><strong>track_last_n</strong> (<em>int</em>) – Number of last categorical values to track
+per tracking id.</p></li>
+<li><p><strong>column_known_during_inference</strong> (<em>bool</em>) – Optional. Whether the
+value of the tracked column is known during inference. Defaults
+to False.</p></li>
+<li><p><strong>use_metadata</strong> (<em>bool</em>) – Optional. Whether to use the metadata of the N
+tracked items, if metadata is provided in the corresponding
+categorical column type object. Ignored if no metadata is provided.
+Defaults to False.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Suppose each row of our data has the following columns: &quot;product_id&quot;, &quot;timestamp&quot;, &quot;ad_spend_level&quot;, &quot;sales_performance&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># We want to predict the current week&#39;s sales performance for each product using temporal context.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># For each product ID, we would like to track both their ad spend level and sales performance over time.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Ad spend level is known at the time of inference but sales performance is not. Then we can configure UDT as follows:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<span class="go">        data_types={</span>
+<span class="go">            &quot;product_id&quot;: bolt.types.categorical(),</span>
+<span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
+<span class="go">            &quot;ad_spend_level&quot;: bolt.types.categorical(),</span>
+<span class="go">            &quot;sales_performance&quot;: bolt.types.categorical(),</span>
+<span class="go">        },</span>
+<span class="go">        temporal_tracking_relationships={</span>
+<span class="go">            &quot;product_id&quot;: [</span>
+<span class="go">                bolt.temporal.categorical(column_name=&quot;ad_spend_level&quot;, track_last_n=5, column_known_during_inference=True),</span>
+<span class="go">                bolt.temporal.categorical(column_name=&quot;ad_spend_level&quot;, track_last_n=25, column_known_during_inference=True),</span>
+<span class="go">                bolt.temporal.categorical(column_name=&quot;sales_performance&quot;, track_last_n=5), # column_known_during_inference defaults to False</span>
+<span class="go">            ]</span>
+<span class="go">        },</span>
+<span class="go">        ...</span>
+<span class="go">    )</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Temporal categorical features are tracked as a set; if we track the last 5 ad spend levels,</dt><dd><p>we capture what the last 5 ad spend levels are, but we do not capture their order.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The same column can be tracked more than once, allowing us to capture both short and</dt><dd><p>long term trends.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="thirdai.bolt.temporal.numerical">
+<span class="sig-prename descclassname"><span class="pre">thirdai.bolt.temporal.</span></span><span class="sig-name descname"><span class="pre">numerical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">history_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_known_during_inference</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.bolt.temporal.TemporalConfig" title="thirdai.bolt.temporal.TemporalConfig"><span class="pre">bolt.temporal.TemporalConfig</span></a></span></span><a class="headerlink" href="#thirdai.bolt.temporal.numerical" title="Link to this definition"></a></dt>
+<dd><p>Temporal numerical config. Use this object to configure how a
+numerical column is tracked over time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column_name</strong> (<em>str</em>) – The name of the tracked column.</p></li>
+<li><p><strong>history_length</strong> (<em>int</em>) – Amount of time to look back. Time is in terms
+of the time granularity passed to the UDT constructor.</p></li>
+<li><p><strong>column_known_during_inference</strong> (<em>bool</em>) – Optional. Whether the
+value of the tracked column is known during inference. Defaults
+to False.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Suppose each row of our data has the following columns: &quot;product_id&quot;, &quot;timestamp&quot;, &quot;ad_spend&quot;, &quot;sales_performance&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># We want to predict the current week&#39;s sales performance for each product using temporal context.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># For each product ID, we would like to track both their ad spend and sales performance over time.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Ad spend is known at the time of inference but sales performance is not. Then we can configure UDT as follows:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<span class="go">        data_types={</span>
+<span class="go">            &quot;product_id&quot;: bolt.types.categorical(),</span>
+<span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
+<span class="go">            &quot;ad_spend&quot;: bolt.types.numerical(range=(0, 10000)),</span>
+<span class="go">            &quot;sales_performance&quot;: bolt.types.categorical(),</span>
+<span class="go">        },</span>
+<span class="go">        target=&quot;sales_performance&quot;</span>
+<span class="go">        time_granularity=&quot;weekly&quot;,</span>
+<span class="go">        temporal_tracking_relationships={</span>
+<span class="go">            &quot;product_id&quot;: [</span>
+<span class="go">                # Track last 5 weeks of ad spend</span>
+<span class="go">                bolt.temporal.numerical(column_name=&quot;ad_spend&quot;, history_length=5, column_known_during_inference=True),</span>
+<span class="go">                # Track last 10 weeks of ad spend</span>
+<span class="go">                bolt.temporal.numerical(column_name=&quot;ad_spend&quot;, history_length=10, column_known_during_inference=True),</span>
+<span class="go">                # Track last 5 weeks of sales quantity</span>
+<span class="go">                bolt.temporal.numerical(column_name=&quot;sales_quantity&quot;, history_length=5), # column_known_during_inference defaults to False</span>
+<span class="go">            ]</span>
+<span class="go">        },</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>)</p>
+</div></blockquote>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The same column can be tracked more than once, allowing us to capture both short and</dt><dd><p>long term trends.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="thirdaibase.html" class="btn btn-neutral float-left" title="thirdai" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="thirdaiboltmodels.html" class="btn btn-neutral float-right" title="thirdai.bolt.models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="thirdaineuraldb.html" class="btn btn-neutral float-left" title="thirdai.neural_db" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="thirdailog.html" class="btn btn-neutral float-right" title="thirdai.logging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

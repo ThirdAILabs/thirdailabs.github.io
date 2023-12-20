@@ -21,7 +21,6 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="thirdai.search" href="thirdaisearch.html" />
     <link rel="prev" title="thirdai.logging" href="thirdailog.html" /> 
 </head>
 
@@ -48,16 +47,17 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdaibase.html">thirdai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thirdaineuraldb.html">thirdai.neural_db</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdaibolt.html">thirdai.bolt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thirdaiboltmodels.html">thirdai.bolt.models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thirdaibolttypes.html">thirdai.bolt.types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thirdaibolttemporal.html">thirdai.bolt.temporal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thirdaiboltcallbacks.html">thirdai.bolt.callbacks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thirdaidataset.html">thirdai.dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thirdaidata.html">thirdai.data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdailog.html">thirdai.logging</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">thirdai.licensing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thirdaisearch.html">thirdai.search</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">thirdai.licensing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.licensing.LicenseState"><code class="docutils literal notranslate"><span class="pre">LicenseState</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.licensing.activate"><code class="docutils literal notranslate"><span class="pre">activate()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.licensing.deactivate"><code class="docutils literal notranslate"><span class="pre">deactivate()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.licensing.set_path"><code class="docutils literal notranslate"><span class="pre">set_path()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#thirdai.licensing.start_heartbeat"><code class="docutils literal notranslate"><span class="pre">start_heartbeat()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -84,8 +84,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="thirdai-licensing">
-<h1>thirdai.licensing<a class="headerlink" href="#thirdai-licensing" title="Link to this heading"></a></h1>
+  <section id="module-thirdai.licensing">
+<span id="thirdai-licensing"></span><h1>thirdai.licensing<a class="headerlink" href="#module-thirdai.licensing" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.licensing.LicenseState">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.licensing.</span></span><span class="sig-name descname"><span class="pre">LicenseState</span></span><a class="headerlink" href="#thirdai.licensing.LicenseState" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="thirdai.licensing.activate">
+<span class="sig-prename descclassname"><span class="pre">thirdai.licensing.</span></span><span class="sig-name descname"><span class="pre">activate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.licensing.activate" title="Link to this definition"></a></dt>
+<dd><p>Set a ThirdAI API access key to authenticate future calls to ThirdAI functions.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="thirdai.licensing.deactivate">
+<span class="sig-prename descclassname"><span class="pre">thirdai.licensing.</span></span><span class="sig-name descname"><span class="pre">deactivate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.licensing.deactivate" title="Link to this definition"></a></dt>
+<dd><p>Deactivate the currently active license. Future calls to ThirdAI functions may fail.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="thirdai.licensing.set_path">
+<span class="sig-prename descclassname"><span class="pre">thirdai.licensing.</span></span><span class="sig-name descname"><span class="pre">set_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">license_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.licensing.set_path" title="Link to this definition"></a></dt>
+<dd><p>Set a license filepath for any future calls to ThirdAI functions.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="thirdai.licensing.start_heartbeat">
+<span class="sig-prename descclassname"><span class="pre">thirdai.licensing.</span></span><span class="sig-name descname"><span class="pre">start_heartbeat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">license_server_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heartbeat_timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.licensing.start_heartbeat" title="Link to this definition"></a></dt>
+<dd><p>Starts a ThirdAI heartbeat endpoint to remain authenticated for future calls to ThirdAI functions.</p>
+</dd></dl>
+
 </section>
 
 
@@ -93,7 +123,6 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="thirdailog.html" class="btn btn-neutral float-left" title="thirdai.logging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="thirdaisearch.html" class="btn btn-neutral float-right" title="thirdai.search" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
