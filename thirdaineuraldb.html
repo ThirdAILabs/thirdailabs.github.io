@@ -134,6 +134,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.URL.name"><code class="docutils literal notranslate"><span class="pre">URL.name</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.URL.process_data"><code class="docutils literal notranslate"><span class="pre">URL.process_data()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.URL.reference"><code class="docutils literal notranslate"><span class="pre">URL.reference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.URL.save_meta"><code class="docutils literal notranslate"><span class="pre">URL.save_meta()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.URL.size"><code class="docutils literal notranslate"><span class="pre">URL.size</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.URL.strong_text"><code class="docutils literal notranslate"><span class="pre">URL.strong_text()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.URL.weak_text"><code class="docutils literal notranslate"><span class="pre">URL.weak_text()</span></code></a></li>
@@ -233,6 +234,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.AnyOf.__init__"><code class="docutils literal notranslate"><span class="pre">AnyOf.__init__()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.AnyOf.filter"><code class="docutils literal notranslate"><span class="pre">AnyOf.filter()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.AnyOf.filter_df_column"><code class="docutils literal notranslate"><span class="pre">AnyOf.filter_df_column()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.AnyOf.sql_condition"><code class="docutils literal notranslate"><span class="pre">AnyOf.sql_condition()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.neural_db.EqualTo"><code class="docutils literal notranslate"><span class="pre">EqualTo</span></code></a><ul>
@@ -243,35 +245,26 @@
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.GreaterThan.__init__"><code class="docutils literal notranslate"><span class="pre">GreaterThan.__init__()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.GreaterThan.filter"><code class="docutils literal notranslate"><span class="pre">GreaterThan.filter()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.GreaterThan.filter_df_column"><code class="docutils literal notranslate"><span class="pre">GreaterThan.filter_df_column()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.GreaterThan.sql_condition"><code class="docutils literal notranslate"><span class="pre">GreaterThan.sql_condition()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.neural_db.LessThan"><code class="docutils literal notranslate"><span class="pre">LessThan</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.LessThan.__init__"><code class="docutils literal notranslate"><span class="pre">LessThan.__init__()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.LessThan.filter"><code class="docutils literal notranslate"><span class="pre">LessThan.filter()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.LessThan.filter_df_column"><code class="docutils literal notranslate"><span class="pre">LessThan.filter_df_column()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.LessThan.sql_condition"><code class="docutils literal notranslate"><span class="pre">LessThan.sql_condition()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.neural_db.InRange"><code class="docutils literal notranslate"><span class="pre">InRange</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.InRange.__init__"><code class="docutils literal notranslate"><span class="pre">InRange.__init__()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.InRange.filter"><code class="docutils literal notranslate"><span class="pre">InRange.filter()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.InRange.filter_df_column"><code class="docutils literal notranslate"><span class="pre">InRange.filter_df_column()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.InRange.sql_condition"><code class="docutils literal notranslate"><span class="pre">InRange.sql_condition()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#neuraldb-enterprise-python-client">NeuralDB Enterprise Python Client</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient"><code class="docutils literal notranslate"><span class="pre">NeuralDBClient</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.deployment_identifier"><code class="docutils literal notranslate"><span class="pre">NeuralDBClient.deployment_identifier</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.base_url"><code class="docutils literal notranslate"><span class="pre">NeuralDBClient.base_url</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.associate"><code class="docutils literal notranslate"><span class="pre">NeuralDBClient.associate()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.__init__"><code class="docutils literal notranslate"><span class="pre">NeuralDBClient.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">NeuralDBClient.associate()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.downvote"><code class="docutils literal notranslate"><span class="pre">NeuralDBClient.downvote()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.insert"><code class="docutils literal notranslate"><span class="pre">NeuralDBClient.insert()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.search"><code class="docutils literal notranslate"><span class="pre">NeuralDBClient.search()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.upvote"><code class="docutils literal notranslate"><span class="pre">NeuralDBClient.upvote()</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="#thirdai.neural_db.ModelBazaar"><code class="docutils literal notranslate"><span class="pre">ModelBazaar</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.ModelBazaar._base_url"><code class="docutils literal notranslate"><span class="pre">ModelBazaar._base_url</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.ModelBazaar._cache_dir"><code class="docutils literal notranslate"><span class="pre">ModelBazaar._cache_dir</span></code></a></li>
@@ -282,8 +275,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.ModelBazaar.await_train"><code class="docutils literal notranslate"><span class="pre">ModelBazaar.await_train()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.ModelBazaar.connect"><code class="docutils literal notranslate"><span class="pre">ModelBazaar.connect()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.ModelBazaar.deploy"><code class="docutils literal notranslate"><span class="pre">ModelBazaar.deploy()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">ModelBazaar.list_deployments()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">ModelBazaar.list_models()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">ModelBazaar.list_deployments()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">ModelBazaar.list_models()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.ModelBazaar.log_in"><code class="docutils literal notranslate"><span class="pre">ModelBazaar.log_in()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.ModelBazaar.pull_model"><code class="docutils literal notranslate"><span class="pre">ModelBazaar.pull_model()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.ModelBazaar.push_model"><code class="docutils literal notranslate"><span class="pre">ModelBazaar.push_model()</span></code></a></li>
@@ -417,7 +410,7 @@ NeuralDBs, it is also used for loading pretrained NeuralDB models.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.neural_db.NeuralDB.from_udt">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_udt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">udt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer" title="thirdai.bolt.UniversalDeepTransformer"><span class="pre">UniversalDeepTransformer</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'user'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv_id_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv_strong_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv_weak_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv_reference_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.NeuralDB.from_udt" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_udt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">udt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UniversalDeepTransformer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'user'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv_id_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv_strong_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv_weak_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv_reference_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.NeuralDB.from_udt" title="Link to this definition"></a></dt>
 <dd><p>Instantiate a NeuralDB, using the given UDT as the underlying model.
 Usually for porting a pretrained model into the NeuralDB format.
 Use the optional csv-related arguments to insert the pretraining dataset
@@ -425,7 +418,7 @@ into the NeuralDB instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>udt</strong> (<a class="reference internal" href="thirdaibolt.html#thirdai.bolt.UniversalDeepTransformer" title="thirdai.bolt.UniversalDeepTransformer"><em>bolt.UniversalDeepTransformer</em></a>) – The udt model to use in the NeuralDB.</p></li>
+<li><p><strong>udt</strong> (<em>bolt.UniversalDeepTransformer</em>) – The udt model to use in the NeuralDB.</p></li>
 <li><p><strong>user_id</strong> (<em>str</em>) – Optional, used to identify user/session in logging.</p></li>
 <li><p><strong>csv</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Optional, default None. The path to the CSV file
 used to train the udt model. If supplied, the CSV file will be
@@ -796,7 +789,7 @@ constrains to restrict results based on the metadata.</p></li>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.neural_db.CSV.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strong_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weak_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_extra_info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.neural_db.CSV.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strong_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weak_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_extra_info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_disk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.neural_db.CSV.__init__" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -920,7 +913,7 @@ constrains to restrict results based on the metadata.</p></li>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.neural_db.PDF.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'v1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">40</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emphasize_first_words</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_header_footer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_nonstandard_orientation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.PDF.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'v1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">40</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emphasize_first_words</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_header_footer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_nonstandard_orientation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_disk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.PDF.__init__" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -941,7 +934,7 @@ constrains to restrict results based on the metadata.</p></li>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Extracted</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.neural_db.DOCX.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.DOCX.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_disk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.DOCX.__init__" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -974,7 +967,7 @@ constrains to restrict results based on the metadata.</p></li>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.neural_db.URL.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Response</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_extra_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title_is_strong</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.URL.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Response</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_extra_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title_is_strong</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_disk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.URL.__init__" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1015,6 +1008,11 @@ constrains to restrict results based on the metadata.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.neural_db.URL.reference">
 <span class="sig-name descname"><span class="pre">reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#thirdai.neural_db.Reference" title="thirdai.neural_db.documents.Reference"><span class="pre">Reference</span></a></span></span><a class="headerlink" href="#thirdai.neural_db.URL.reference" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.neural_db.URL.save_meta">
+<span class="sig-name descname"><span class="pre">save_meta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.URL.save_meta" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
@@ -1389,7 +1387,7 @@ constrains to restrict results based on the metadata.</p></li>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.neural_db.SentenceLevelPDF.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.SentenceLevelPDF.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_disk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.SentenceLevelPDF.__init__" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1420,7 +1418,7 @@ constrains to restrict results based on the metadata.</p></li>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.neural_db.SentenceLevelDOCX.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.SentenceLevelDOCX.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_disk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.SentenceLevelDOCX.__init__" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1449,7 +1447,7 @@ NeuralDB Document framework.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.neural_db.InMemoryText.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">texts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadatas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.InMemoryText.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">texts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadatas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_disk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.InMemoryText.__init__" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1537,6 +1535,11 @@ NeuralDB Document framework.</p>
 <span class="sig-name descname"><span class="pre">filter_df_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.AnyOf.filter_df_column" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.neural_db.AnyOf.sql_condition">
+<span class="sig-name descname"><span class="pre">sql_condition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.AnyOf.sql_condition" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -1569,6 +1572,11 @@ NeuralDB Document framework.</p>
 <span class="sig-name descname"><span class="pre">filter_df_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.GreaterThan.filter_df_column" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.neural_db.GreaterThan.sql_condition">
+<span class="sig-name descname"><span class="pre">sql_condition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.GreaterThan.sql_condition" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -1588,6 +1596,11 @@ NeuralDB Document framework.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.neural_db.LessThan.filter_df_column">
 <span class="sig-name descname"><span class="pre">filter_df_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.LessThan.filter_df_column" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.neural_db.LessThan.sql_condition">
+<span class="sig-name descname"><span class="pre">sql_condition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.LessThan.sql_condition" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1611,160 +1624,17 @@ NeuralDB Document framework.</p>
 <span class="sig-name descname"><span class="pre">filter_df_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.InRange.filter_df_column" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.neural_db.InRange.sql_condition">
+<span class="sig-name descname"><span class="pre">sql_condition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.InRange.sql_condition" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </section>
 <section id="neuraldb-enterprise-python-client">
 <h2>NeuralDB Enterprise Python Client<a class="headerlink" href="#neuraldb-enterprise-python-client" title="Link to this heading"></a></h2>
 <p>A deployed instance of NeuralDB enterprise can be accessed via this python api.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.neural_db.model_bazaar.client.bazaar_client.</span></span><span class="sig-name descname"><span class="pre">NeuralDBClient</span></span><a class="headerlink" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>A client for interacting with the deployed NeuralDB model.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.deployment_identifier">
-<span class="sig-name descname"><span class="pre">deployment_identifier</span></span><a class="headerlink" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.deployment_identifier" title="Link to this definition"></a></dt>
-<dd><p>The identifier for the deployment.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.base_url">
-<span class="sig-name descname"><span class="pre">base_url</span></span><a class="headerlink" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.base_url" title="Link to this definition"></a></dt>
-<dd><p>The base URL for the deployed NeuralDB model.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">__init__(self,</span> <span class="pre">deployment_identifier</span></span></dt>
-<dd><p>str, base_url: str) -&gt; None:
-Initializes a new instance of the NeuralDBClient.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">search(self,</span> <span class="pre">query</span></span></dt>
-<dd><p>str, top_k: int = 10) -&gt; List[dict]:
-Searches the ndb model for relevant search results.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">insert(self,</span> <span class="pre">files</span></span></dt>
-<dd><p>List[str]) -&gt; None:
-Inserts documents into the ndb model.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.associate">
-<span class="sig-name descname"><span class="pre">associate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_pairs</span> <span class="pre">(List[Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]])</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.associate" title="Link to this definition"></a></dt>
-<dd><p>Associates source and target string pairs in the ndb model.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">upvote(self,</span> <span class="pre">text_id_pairs</span></span></dt>
-<dd><p>List[Dict[str, Union[str, int]]]) -&gt; None:
-Upvotes a response in the ndb model.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">downvote(self,</span> <span class="pre">text_id_pairs</span></span></dt>
-<dd><p>List[Dict[str, Union[str, int]]]) -&gt; None:
-Downvotes a response in the ndb model.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deployment_identifier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.__init__" title="Link to this definition"></a></dt>
-<dd><p>Initializes a new instance of the NeuralDBClient.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>deployment_identifier</strong> (<em>str</em>) – The identifier for the deployment.</p></li>
-<li><p><strong>base_url</strong> (<em>str</em>) – The base URL for the deployed NeuralDB model.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="id0">
-<span class="sig-name descname"><span class="pre">associate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text_pairs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
-<dd><p>Associates source and target string pairs in the ndb model.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>text_pairs</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of dictionaries where each dictionary has ‘source’ and ‘target’ keys.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.downvote">
-<span class="sig-name descname"><span class="pre">downvote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text_id_pairs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.downvote" title="Link to this definition"></a></dt>
-<dd><p>Downvote response with ‘reference_id’ corresponding to ‘query_text’ in the ndb model.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>text_id_pairs</strong> – (List[Dict[str, Union[str, int]]]): List of dictionaries where each dictionary has ‘query_text’ and ‘reference_id’ keys.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.insert">
-<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.insert" title="Link to this definition"></a></dt>
-<dd><p>Inserts documents into the ndb model.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>files</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – A list of file paths to be inserted into the ndb model.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.search">
-<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.search" title="Link to this definition"></a></dt>
-<dd><p>Searches the ndb model for similar queries.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>query</strong> (<em>str</em>) – The query to search for.</p></li>
-<li><p><strong>top_k</strong> (<em>int</em>) – The number of top results to retrieve (default is 10).</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A dict of search results containing keys: <cite>query_text</cite> and <cite>references</cite>.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Dict</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.upvote">
-<span class="sig-name descname"><span class="pre">upvote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text_id_pairs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient.upvote" title="Link to this definition"></a></dt>
-<dd><p>Upvote response with ‘reference_id’ corresponding to ‘query_text’ in the ndb model.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>text_id_pairs</strong> – (List[Dict[str, Union[str, int]]]): List of dictionaries where each dictionary has ‘query_text’ and ‘reference_id’ keys.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 <dl class="py class">
 <dt class="sig sig-object py" id="thirdai.neural_db.ModelBazaar">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.neural_db.</span></span><span class="sig-name descname"><span class="pre">ModelBazaar</span></span><a class="headerlink" href="#thirdai.neural_db.ModelBazaar" title="Link to this definition"></a></dt>
@@ -1897,11 +1767,11 @@ Connects to a deployed model and returns a NeuralDBClient instance.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.neural_db.ModelBazaar.await_deploy">
-<span class="sig-name descname"><span class="pre">await_deploy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndb_client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient" title="thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient"><span class="pre">NeuralDBClient</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.ModelBazaar.await_deploy" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">await_deploy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndb_client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">NeuralDBClient</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.ModelBazaar.await_deploy" title="Link to this definition"></a></dt>
 <dd><p>Waits for the deployment of a model to complete.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ndb_client</strong> (<a class="reference internal" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient" title="thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient"><em>NeuralDBClient</em></a>) – The NeuralDBClient instance.</p>
+<dd class="field-odd"><p><strong>ndb_client</strong> (<em>NeuralDBClient</em>) – The NeuralDBClient instance.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1929,7 +1799,7 @@ Connects to a deployed model and returns a NeuralDBClient instance.</p>
 <dd class="field-even"><p>A NeuralDBClient instance.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient" title="thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient">NeuralDBClient</a></p>
+<dd class="field-odd"><p>NeuralDBClient</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1950,14 +1820,14 @@ Connects to a deployed model and returns a NeuralDBClient instance.</p>
 <dd class="field-even"><p>A NeuralDBClient instance.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient" title="thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient">NeuralDBClient</a></p>
+<dd class="field-odd"><p>NeuralDBClient</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id1">
-<span class="sig-name descname"><span class="pre">list_deployments</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">list_deployments</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
 <dd><p>Lists the deployments in the Model Bazaar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1970,8 +1840,8 @@ Connects to a deployed model and returns a NeuralDBClient instance.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id2">
-<span class="sig-name descname"><span class="pre">list_models</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">list_models</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
 <dd><p>Lists available models in the Model Bazaar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -2009,7 +1879,7 @@ Connects to a deployed model and returns a NeuralDBClient instance.</p>
 <dd class="field-even"><p>A NeuralDBClient instance.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient" title="thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient">NeuralDBClient</a></p>
+<dd class="field-odd"><p>NeuralDBClient</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2069,11 +1939,11 @@ Connects to a deployed model and returns a NeuralDBClient instance.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.neural_db.ModelBazaar.undeploy">
-<span class="sig-name descname"><span class="pre">undeploy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndb_client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient" title="thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient"><span class="pre">NeuralDBClient</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.ModelBazaar.undeploy" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">undeploy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndb_client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">NeuralDBClient</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.ModelBazaar.undeploy" title="Link to this definition"></a></dt>
 <dd><p>Undeploys a deployed model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ndb_client</strong> (<a class="reference internal" href="#thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient" title="thirdai.neural_db.model_bazaar.client.bazaar_client.NeuralDBClient"><em>NeuralDBClient</em></a>) – The NeuralDBClient instance.</p>
+<dd class="field-odd"><p><strong>ndb_client</strong> (<em>NeuralDBClient</em>) – The NeuralDBClient instance.</p>
 </dd>
 </dl>
 </dd></dl>
