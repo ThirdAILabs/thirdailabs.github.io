@@ -115,6 +115,10 @@
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.types.text.__init__"><code class="docutils literal notranslate"><span class="pre">text.__init__()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#thirdai.bolt.types.token_tags"><code class="docutils literal notranslate"><span class="pre">token_tags</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.bolt.types.token_tags.__init__"><code class="docutils literal notranslate"><span class="pre">token_tags.__init__()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-thirdai.bolt.temporal">UDT Temporal Options</a><ul>
@@ -159,12 +163,8 @@
 <h2>UDT<a class="headerlink" href="#udt" title="Link to this heading"></a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.UniversalDeepTransformer.__init__">
-<span class="sig-prename descclassname"><span class="pre">UniversalDeepTransformer.</span></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.__init__" title="Link to this definition"></a></dt>
-<dd><p>Overloaded function.</p>
-<ol class="arabic simple">
-<li><p>__init__(self: thirdai._thirdai.bolt.UniversalDeepTransformer, data_types: Dict[str, thirdai::automl::DataType], temporal_tracking_relationships: Dict[str, List[Union[str, thirdai::automl::TemporalConfig]]] = {}, target: str, n_target_classes: Optional[int] = None, integer_target: bool = False, time_granularity: str = ‘daily’, lookahead: int = 0, delimiter: str = ‘,’, model_config: Optional[str] = None, pretrained_model: thirdai::automl::PretrainedBase = None, options: dict = {}) -&gt; None</p></li>
-</ol>
-<p>UniversalDeepTransformer (UDT) Constructor.</p>
+<span class="sig-prename descclassname"><span class="pre">UniversalDeepTransformer.</span></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data_types:</span> <span class="pre">Dict[str,</span> <span class="pre">thirdai::automl::DataType],</span> <span class="pre">temporal_tracking_relationships:</span> <span class="pre">Dict[str,</span> <span class="pre">List[Union[str,</span> <span class="pre">thirdai::automl::TemporalConfig]]]</span> <span class="pre">=</span> <span class="pre">{},</span> <span class="pre">target:</span> <span class="pre">str,</span> <span class="pre">delimiter:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">',',</span> <span class="pre">model_config:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">pretrained_model:</span> <span class="pre">object</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">**kwargs</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.__init__" title="Link to this definition"></a></dt>
+<dd><p>UniversalDeepTransformer (UDT) Constructor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -195,19 +195,6 @@ See bolt.temporal for details.</p>
 </p></li>
 <li><p><strong>target</strong> (<em>str</em>) – Name of the column that contains the value to be predicted by
 UDT. The target column has to be a categorical column.</p></li>
-<li><p><strong>n_target_classes</strong> (<em>int</em>) – Number of target classes.</p></li>
-<li><p><strong>integer_target</strong> (<em>bool</em>) – Whether the target classes are integers in the range 0 to n_target_classes - 1.</p></li>
-<li><p><strong>time_granularity</strong> (<em>str</em>) – Optional. Either <cite>“daily”</cite>/<cite>”d”</cite>, <cite>“weekly”</cite>/<cite>”w”</cite>, <cite>“biweekly”</cite>/<cite>”b”</cite>,
-or <cite>“monthly”</cite>/<cite>”m”</cite>. Interval of time that UDT should use for temporal features. Temporal numerical
-features are clubbed according to this time granularity. E.g. if
-<cite>time_granularity=”w”</cite> and the numerical values on days 1 and 2 are
-345.25 and 201.1 respectively, then UDT captures a single numerical
-value of 546.26 for the week instead of individual values for the two days.
-Defaults to “daily”.</p></li>
-<li><p><strong>lookahead</strong> (<em>str</em>) – Optional. How far into the future the model should predict. This length of
-time is in terms of time_granularity. E.g. ‘time_granularity=”daily”` and
-<cite>lookahead=5</cite> means that the model should learn to predict 5 days into the future. Defaults to 0
-(predict the current value of the target).</p></li>
 <li><p><strong>delimiter</strong> (<em>str</em>) – Optional. Defaults to ‘,’. A single character
 (length-1 string) that separates the columns of the CSV training / validation dataset.</p></li>
 <li><p><strong>model_config</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – This overwrites the autotuned model with a custom model
@@ -225,7 +212,7 @@ defined by the given config file.</p></li>
 <span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
 <span class="go">            &quot;ad_spend&quot;: bolt.types.numerical(range=(0, 10000)),</span>
 <span class="go">            &quot;sales_quantity&quot;: bolt.types.numerical(range=(0, 20)),</span>
-<span class="go">            &quot;sales_performance&quot;: bolt.types.categorical(),</span>
+<span class="go">            &quot;sales_performance&quot;: bolt.types.categorical(n_classes=5),</span>
 <span class="go">        },</span>
 <span class="go">        temporal_tracking_relationships={</span>
 <span class="go">            &quot;product_id&quot;: [</span>
@@ -240,7 +227,6 @@ defined by the given config file.</p></li>
 <span class="go">            ]</span>
 <span class="go">        },</span>
 <span class="go">        target=&quot;sales_performance&quot;,</span>
-<span class="go">        n_target_classes=5,</span>
 <span class="go">        time_granularity=&quot;weekly&quot;,</span>
 <span class="go">        lookahead=2 # predict 2 weeks ahead</span>
 <span class="go">    )</span>
@@ -251,7 +237,7 @@ defined by the given config file.</p></li>
 <span class="go">        data_types={</span>
 <span class="go">            &quot;user_id&quot;: bolt.types.categorical(),</span>
 <span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
-<span class="go">            &quot;movie_id&quot;: bolt.types.categorical(),</span>
+<span class="go">            &quot;movie_id&quot;: bolt.types.categorical(n_classes=3000),</span>
 <span class="go">            &quot;hours_watched&quot;: bolt.types.numerical(range=(0, 25)),</span>
 <span class="go">        },</span>
 <span class="go">        temporal_tracking_relationships={</span>
@@ -261,7 +247,6 @@ defined by the given config file.</p></li>
 <span class="go">            ]</span>
 <span class="go">        },</span>
 <span class="go">        target=&quot;movie_id&quot;,</span>
-<span class="go">        n_target_classes=3000</span>
 <span class="go">    )</span>
 </pre></div>
 </div>
@@ -270,85 +255,6 @@ defined by the given config file.</p></li>
 <li><p>Refer to the documentation bolt.types.ColumnType and bolt.temporal.TemporalConfig to better understand column types
 and temporal tracking configurations.</p></li>
 </ul>
-<ol class="arabic simple" start="2">
-<li><p>__init__(self: thirdai._thirdai.bolt.UniversalDeepTransformer, source_column: str, target_column: str, dataset_size: str, use_spell_checker: bool = False, delimiter: str = ‘,’, model_config: Optional[str] = None, options: dict = {}) -&gt; None</p></li>
-</ol>
-<p>UniversalDeepTransformer (UDT) Constructor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>source_column</strong> (<em>str</em>) – Optional. Column name specifying the source queries in the input
-dataset. If provided then the model can use these queries to augment its training.
-If not provided then the model be trained from the target queries directly. If the
-source column is specified the the model can be trained with in both a supervised
-setting where (incorrect query, correct query) pairs are provided and in an
-unsupervised setting where only correct queries are provided. If source is not specified
-then it can only be trained in an unsupervised setting.</p></li>
-<li><p><strong>target_column</strong> (<em>str</em>) – Column name specifying the target queries in the input dataset.
-Queries in this column are the target that the UDT model learns to predict.</p></li>
-<li><p><strong>dataset_size</strong> (<em>str</em>) – <p>The size of the input dataset. This size factor informs what
-UDT model to create.</p>
-<p>The dataset size can be one of the following:
-- small
-- medium
-- large</p>
-</p></li>
-</ul>
-</dd>
-</dl>
-<p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Suppose we have an input CSV dataset consisting of grammatically or syntactically</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># incorrect queries that we want to reformulate. We will assume that the dataset also</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># has a target correct query for each incorrect query. We can initialize a UDT model</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># for query reformulation as follows:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
-<span class="go">        target_column=&quot;queries_for_prediction&quot;,</span>
-<span class="go">        source_column=&quot;incorrect_queries&quot;,</span>
-<span class="go">        dataset_size=&quot;medium&quot;</span>
-<span class="go">    )</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>__init__(self: thirdai._thirdai.bolt.UniversalDeepTransformer, target_column: str, dataset_size: str, use_spell_checker: bool = False, delimiter: str = ‘,’, model_config: Optional[str] = None, options: dict = {}) -&gt; None</p></li>
-</ol>
-<p>UniversalDeepTransformer (UDT) Constructor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>source_column</strong> (<em>str</em>) – Optional. Column name specifying the source queries in the input
-dataset. If provided then the model can use these queries to augment its training.
-If not provided then the model be trained from the target queries directly. If the
-source column is specified the the model can be trained with in both a supervised
-setting where (incorrect query, correct query) pairs are provided and in an
-unsupervised setting where only correct queries are provided. If source is not specified
-then it can only be trained in an unsupervised setting.</p></li>
-<li><p><strong>target_column</strong> (<em>str</em>) – Column name specifying the target queries in the input dataset.
-Queries in this column are the target that the UDT model learns to predict.</p></li>
-<li><p><strong>dataset_size</strong> (<em>str</em>) – <p>The size of the input dataset. This size factor informs what
-UDT model to create.</p>
-<p>The dataset size can be one of the following:
-- small
-- medium
-- large</p>
-</p></li>
-</ul>
-</dd>
-</dl>
-<p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Suppose we have an input CSV dataset consisting of grammatically or syntactically</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># incorrect queries that we want to reformulate. We will assume that the dataset also</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># has a target correct query for each incorrect query. We can initialize a UDT model</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># for query reformulation as follows:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
-<span class="go">        target_column=&quot;queries_for_prediction&quot;,</span>
-<span class="go">        source_column=&quot;incorrect_queries&quot;,</span>
-<span class="go">        dataset_size=&quot;medium&quot;</span>
-<span class="go">    )</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="4">
-<li><p>__init__(self: thirdai._thirdai.bolt.UniversalDeepTransformer, file_format: str, n_target_classes: int, input_dim: int, model_config: Optional[str] = None, options: dict = {}) -&gt; None</p></li>
-</ol>
 </dd></dl>
 
 <dl class="py method">
@@ -491,11 +397,9 @@ computed during training. The format is: {“name of metric”: [list of values]
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
 <span class="go">        data_types={</span>
 <span class="go">            &quot;query&quot;: bolt.types.text(),</span>
-<span class="go">            &quot;product&quot;: bolt.types.categorical(),</span>
+<span class="go">            &quot;product&quot;: bolt.types.categorical(n_classes=1000),</span>
 <span class="go">        }</span>
 <span class="go">        target=&quot;product&quot;,</span>
-<span class="go">        n_target_classes=1000,</span>
-<span class="go">        integer_target=True,</span>
 <span class="go">    )</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">cold_start</span><span class="p">(</span>
 <span class="go">        filename=&quot;product_catalog.csv&quot;,</span>
@@ -613,13 +517,12 @@ column.</p>
 <span class="go">            &quot;user_id&quot;: bolt.types.categorical(),</span>
 <span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
 <span class="go">            &quot;special_event&quot;: bolt.types.categorical(),</span>
-<span class="go">            &quot;movie_title&quot;: bolt.types.categorical()</span>
+<span class="go">            &quot;movie_title&quot;: bolt.types.categorical(n_classes=500)</span>
 <span class="go">        },</span>
 <span class="go">        temporal_tracking_relationships={</span>
 <span class="go">            &quot;user_id&quot;: [&quot;movie_title&quot;]</span>
 <span class="go">        },</span>
 <span class="go">        target=&quot;movie_title&quot;,</span>
-<span class="go">        n_target_classes=500</span>
 <span class="go">    )</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Make a single prediction</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">activations</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
@@ -737,13 +640,12 @@ significance of that feature.</p>
 <span class="go">            &quot;user_id&quot;: bolt.types.categorical(),</span>
 <span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
 <span class="go">            &quot;special_event&quot;: bolt.types.categorical(),</span>
-<span class="go">            &quot;movie_title&quot;: bolt.types.categorical()</span>
+<span class="go">            &quot;movie_title&quot;: bolt.types.categorical(n_classes=500)</span>
 <span class="go">        },</span>
 <span class="go">        temporal_tracking_relationships={</span>
 <span class="go">            &quot;user_id&quot;: &quot;movie_title&quot;</span>
 <span class="go">        },</span>
 <span class="go">        target=&quot;movie_title&quot;,</span>
-<span class="go">        n_target_classes=500,</span>
 <span class="go">    )</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Make a single prediction</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">explanations</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span>
@@ -840,13 +742,12 @@ values are the respective column values.</p>
 <span class="go">            &quot;user_id&quot;: bolt.types.categorical(),</span>
 <span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
 <span class="go">            &quot;special_event&quot;: bolt.types.categorical(),</span>
-<span class="go">            &quot;movie_title&quot;: bolt.types.categorical()</span>
+<span class="go">            &quot;movie_title&quot;: bolt.types.categorical(n_classes=500)</span>
 <span class="go">        },</span>
 <span class="go">        temporal_tracking_relationships={</span>
 <span class="go">            &quot;user_id&quot;: [&quot;movie_title&quot;]</span>
 <span class="go">        },</span>
 <span class="go">        target=&quot;movie_title&quot;,</span>
-<span class="go">        n_target_classes=500,</span>
 <span class="go">    )</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get an embedding representation</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">embedding</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">embedding_representation</span><span class="p">(</span>
@@ -881,9 +782,9 @@ the name of a class predicted as output.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>label_id</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>str</em><em>]</em>) – The the name of the entity to get an embedding for.</p></li>
-<li><p><strong>integer_target=True</strong> (<em>If</em>)</p></li>
+<li><p><strong>target</strong> (<em>If type='int' for the</em>)</p></li>
 <li><p><strong>to</strong> (<em>this function should take in an integer from 0</em>)</p></li>
-<li><p><strong>string.</strong> (<em>n_target_classes - 1 instead</em><em> of </em><em>a</em>)</p></li>
+<li><p><strong>string.</strong> (<em>n_classes - 1 instead</em><em> of </em><em>a</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -944,13 +845,12 @@ values are the respective column values.</p>
 <span class="go">            &quot;user_id&quot;: bolt.types.categorical(),</span>
 <span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
 <span class="go">            &quot;special_event&quot;: bolt.types.categorical(),</span>
-<span class="go">            &quot;movie_title&quot;: bolt.types.categorical()</span>
+<span class="go">            &quot;movie_title&quot;: bolt.types.categorical(n_classes=500)</span>
 <span class="go">        },</span>
 <span class="go">        temporal_tracking_relationships={</span>
 <span class="go">            &quot;user_id&quot;: [&quot;movie_title&quot;]</span>
 <span class="go">        },</span>
 <span class="go">        target=&quot;movie_title&quot;,</span>
-<span class="go">        n_target_classes=500,</span>
 <span class="go">    )</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># We then deploy the model for inference. Inference is performed by calling model.predict()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">activations</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
@@ -989,13 +889,12 @@ values are the respective column values.</p>
 <span class="go">            &quot;user_id&quot;: bolt.types.categorical(),</span>
 <span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
 <span class="go">            &quot;special_event&quot;: bolt.types.categorical(),</span>
-<span class="go">            &quot;movie_title&quot;: bolt.types.categorical()</span>
+<span class="go">            &quot;movie_title&quot;: bolt.types.categorical(n_classes=500)</span>
 <span class="go">        },</span>
 <span class="go">        temporal_tracking_relationships={</span>
 <span class="go">            &quot;user_id&quot;: [&quot;movie_title&quot;]</span>
 <span class="go">        },</span>
 <span class="go">        target=&quot;movie_title&quot;,</span>
-<span class="go">        n_target_classes=500,</span>
 <span class="go">    )</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># We then deploy the model for inference. Inference is performed by calling model.predict()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">activations</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
@@ -1134,61 +1033,43 @@ inference will be used during validation.</p></li>
 <dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.types.categorical.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.types.metadata" title="thirdai.bolt.types.metadata"><span class="pre">bolt.types.metadata</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.categorical.__init__" title="Link to this definition"></a></dt>
-<dd><p>Temporal categorical config. Use this object to configure how a
-categorical column is tracked over time.</p>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_classes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'str'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#thirdai.bolt.types.metadata" title="thirdai.bolt.types.metadata"><span class="pre">bolt.types.metadata</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.categorical.__init__" title="Link to this definition"></a></dt>
+<dd><p>Categorical column type. Use this object if a column contains categorical
+data (each unique value is treated as a class). Examples include user IDs,
+movie titles, or age groups.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>column_name</strong> (<em>str</em>) – The name of the tracked column.</p></li>
-<li><p><strong>track_last_n</strong> (<em>int</em>) – Number of last categorical values to track
-per tracking id.</p></li>
-<li><p><strong>column_known_during_inference</strong> (<em>bool</em>) – Optional. Whether the
-value of the tracked column is known during inference. Defaults
-to False.</p></li>
-<li><p><strong>use_metadata</strong> (<em>bool</em>) – Optional. Whether to use the metadata of the N
-tracked items, if metadata is provided in the corresponding
-categorical column type object. Ignored if no metadata is provided.
-Defaults to False.</p></li>
+<li><p><strong>n_classes</strong> (<em>Optiona</em><em>[</em><em>int</em><em>]</em>) – Optional, defaults to None. If the data type is for the
+target column in a classification task then this must be specified to indicate
+how many classes are present in the dataset.</p></li>
+<li><p><strong>type</strong> (<em>str</em>) – Optional, defaults to “str”. How the categories are represented in the
+dataset, i.e. are they stored as strings or integers. This is primarily relevant
+for target columns since string categories will be mapped to integers to
+correspond to output neurons, however if the categories are already represented
+as integers then they can be used for labels directly.</p></li>
+<li><p><strong>delimiter</strong> (<em>str</em>) – Optional. Defaults to None. A single character
+(length-1 string) that separates multiple values in the same
+column. This can only be used for the target column. If not
+provided, UDT assumes that there is only one value in the column.</p></li>
+<li><p><strong>metadata</strong> (<a class="reference internal" href="#thirdai.bolt.types.metadata" title="thirdai.bolt.types.metadata"><em>metadata</em></a>) – Optional. A metadata object to be used when there
+is a separate metadata file corresponding to this categorical
+column.</p></li>
 </ul>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Suppose each row of our data has the following columns: &quot;product_id&quot;, &quot;timestamp&quot;, &quot;ad_spend_level&quot;, &quot;sales_performance&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># We want to predict the current week&#39;s sales performance for each product using temporal context.</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># For each product ID, we would like to track both their ad spend level and sales performance over time.</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Ad spend level is known at the time of inference but sales performance is not. Then we can configure UDT as follows:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
-<span class="go">        data_types={</span>
-<span class="go">            &quot;product_id&quot;: bolt.types.categorical(),</span>
-<span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
-<span class="go">            &quot;ad_spend_level&quot;: bolt.types.categorical(),</span>
-<span class="go">            &quot;sales_performance&quot;: bolt.types.categorical(),</span>
-<span class="go">        },</span>
-<span class="go">        temporal_tracking_relationships={</span>
-<span class="go">            &quot;product_id&quot;: [</span>
-<span class="go">                bolt.temporal.categorical(column_name=&quot;ad_spend_level&quot;, track_last_n=5, column_known_during_inference=True),</span>
-<span class="go">                bolt.temporal.categorical(column_name=&quot;ad_spend_level&quot;, track_last_n=25, column_known_during_inference=True),</span>
-<span class="go">                bolt.temporal.categorical(column_name=&quot;sales_performance&quot;, track_last_n=5), # column_known_during_inference defaults to False</span>
-<span class="go">            ]</span>
-<span class="go">        },</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
+<span class="go">        data_types: {</span>
+<span class="go">            &quot;user_id&quot;: bolt.types.categorical(</span>
+<span class="go">                delimiter=&#39; &#39;,</span>
+<span class="go">                metadata=bolt.types.metadata(filename=&quot;user_meta.csv&quot;, data_types={&quot;age&quot;: bolt.types.numerical()}, key_column_name=&quot;user_id&quot;)</span>
+<span class="go">            )</span>
+<span class="go">        }</span>
 <span class="go">        ...</span>
 <span class="go">    )</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt>Temporal categorical features are tracked as a set; if we track the last 5 ad spend levels,</dt><dd><p>we capture what the last 5 ad spend levels are, but we do not capture their order.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>The same column can be tracked more than once, allowing us to capture both short and</dt><dd><p>long term trends.</p>
-</dd>
-</dl>
-</li>
-</ul>
 </dd></dl>
 
 <dl class="py property">
@@ -1318,7 +1199,7 @@ to column type. Column type is one of:
 <dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.types.numerical.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">granularity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'m'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.numerical.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">granularity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'m'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">explicit_granularity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.numerical.__init__" title="Link to this definition"></a></dt>
 <dd><p>Numerical column type. Use this object if a column contains numerical
 data (the value is treated as a quantity). Examples include hours of
 a movie watched, sale quantity, or population size.</p>
@@ -1352,7 +1233,7 @@ better the model performance.</p></li>
 <dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.types.sequence.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.sequence.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_classes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.sequence.__init__" title="Link to this definition"></a></dt>
 <dd><p>Sequence column type. Use this object if a column contains an ordered sequence
 of strings delimited by a character. The delimiter must be different than the
 delimiter between columns.</p>
@@ -1372,10 +1253,9 @@ upper bound will be ignored.</p></li>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
 <span class="go">        data_types: {</span>
 <span class="go">            &quot;input_sequence&quot;: bolt.types.sequence(delimiter=&#39;\t&#39;)</span>
-<span class="go">            &quot;output_sequence&quot;: bolt.types.sequence(max_length=30) # max_length must be provided for target sequence.</span>
+<span class="go">            &quot;output_sequence&quot;: bolt.types.sequence(n_classes=26, max_length=30) # max_length must be provided for target sequence.</span>
 <span class="go">        },</span>
 <span class="go">        target=&quot;output_sequence&quot;,</span>
-<span class="go">        n_target_classes=26</span>
 <span class="go">        ...</span>
 <span class="go">    )</span>
 </pre></div>
@@ -1445,6 +1325,17 @@ search queries, and user bios.</p>
 </pre></div>
 </div>
 </dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="thirdai.bolt.types.token_tags">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">thirdai.bolt.types.</span></span><span class="sig-name descname"><span class="pre">token_tags</span></span><a class="headerlink" href="#thirdai.bolt.types.token_tags" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.bolt.types.token_tags.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.token_tags.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
