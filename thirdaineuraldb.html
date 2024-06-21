@@ -298,6 +298,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.ModelBazaar.train"><code class="docutils literal notranslate"><span class="pre">ModelBazaar.train()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.ModelBazaar.train_status"><code class="docutils literal notranslate"><span class="pre">ModelBazaar.train_status()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.ModelBazaar.undeploy"><code class="docutils literal notranslate"><span class="pre">ModelBazaar.undeploy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thirdai.neural_db.ModelBazaar.update_model"><code class="docutils literal notranslate"><span class="pre">ModelBazaar.update_model()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -2147,6 +2148,26 @@ Connects to a deployed model and returns a NeuralDBClient instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>ndb_client</strong> (<em>NeuralDBClient</em>) – The NeuralDBClient instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="thirdai.neural_db.ModelBazaar.update_model">
+<span class="sig-name descname"><span class="pre">update_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_model_identifier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.neural_db.ModelBazaar.update_model" title="Link to this definition"></a></dt>
+<dd><p>Creates a new model with give name by updating the existing model with RLHF Logs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_name</strong> (<em>str</em>) – Name for the new model.</p></li>
+<li><p><strong>base_model_identifier</strong> (<em>str</em>) – The identifier of the base model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Model instance.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Model</p>
 </dd>
 </dl>
 </dd></dl>
