@@ -163,99 +163,8 @@
 <h2>UDT<a class="headerlink" href="#udt" title="Link to this heading"></a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.UniversalDeepTransformer.__init__">
-<span class="sig-prename descclassname"><span class="pre">UniversalDeepTransformer.</span></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data_types:</span> <span class="pre">Dict[str,</span> <span class="pre">thirdai::automl::DataType],</span> <span class="pre">temporal_tracking_relationships:</span> <span class="pre">Dict[str,</span> <span class="pre">List[Union[str,</span> <span class="pre">thirdai::automl::TemporalConfig]]]</span> <span class="pre">=</span> <span class="pre">{},</span> <span class="pre">target:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">delimiter:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">',',</span> <span class="pre">model_config:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">pretrained_model:</span> <span class="pre">object</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">**kwargs</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.__init__" title="Link to this definition"></a></dt>
-<dd><p>UniversalDeepTransformer (UDT) Constructor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data_types</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai.bolt.types.ColumnType"><em>bolt.types.ColumnType</em></a><em>]</em>) – <p>A mapping from column name to column type.
-This map specifies the columns that we want to pass into the model; it does
-not need to include all columns in the dataset.</p>
-<p>Column type is one of:
-- <cite>bolt.types.categorical</cite>
-- <cite>bolt.types.numerical</cite>
-- <cite>bolt.types.text</cite>
-- <cite>bolt.types.date</cite>
-See bolt.types for details.</p>
-<p>If <cite>temporal_tracking_relationships</cite> is non-empty, there must one and only one
-bolt.types.date() column. This column contains date strings in YYYY-MM-DD format.</p>
-</p></li>
-<li><p><strong>temporal_tracking_relationships</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="#thirdai.bolt.temporal.TemporalConfig" title="thirdai.bolt.temporal.TemporalConfig"><em>bolt.temporal.TemporalConfig</em></a><em>]</em><em>]</em><em>]</em>) – <p>Optional.
-A mapping from column name to a list of either other column names or bolt.temporal objects.
-This mapping tells UDT what columns can be tracked over time for each key.
-For example, we may want to tell UDT that we want to track a user’s watch
-history by passing in a map like <cite>{“user_id”: [“movie_id”]}</cite></p>
-<p>If we provide a mapping from a string to a list of strings like the above,
-the temporal tracking configuration will be autotuned. You can achieve finer
-grained control by passing in bolt.temporal objects intead of strings.</p>
-<p>A bolt.temporal object is one of:
-- <cite>bolt.temporal.categorical</cite>
-- <cite>bolt.temporal.numerical</cite>
-See bolt.temporal for details.</p>
-</p></li>
-<li><p><strong>target</strong> (<em>str</em>) – Name of the column that contains the value to be predicted by
-UDT. The target column has to be a categorical column.</p></li>
-<li><p><strong>delimiter</strong> (<em>str</em>) – Optional. Defaults to ‘,’. A single character
-(length-1 string) that separates the columns of the CSV training / validation dataset.</p></li>
-<li><p><strong>model_config</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – This overwrites the autotuned model with a custom model
-defined by the given config file.</p></li>
-</ul>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Suppose each row of our data has the following columns: &quot;product_id&quot;, &quot;timestamp&quot;, &quot;ad_spend&quot;, &quot;sales_quantity&quot;, &quot;sales_performance&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># We want to predict next week&#39;s sales performance for each product using temporal context.</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># For each product ID, we would like to track both their ad spend and sales quantity over time.</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
-<span class="go">        data_types={</span>
-<span class="go">            &quot;product_id&quot;: bolt.types.categorical(),</span>
-<span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
-<span class="go">            &quot;ad_spend&quot;: bolt.types.numerical(range=(0, 10000)),</span>
-<span class="go">            &quot;sales_quantity&quot;: bolt.types.numerical(range=(0, 20)),</span>
-<span class="go">            &quot;sales_performance&quot;: bolt.types.categorical(n_classes=5),</span>
-<span class="go">        },</span>
-<span class="go">        temporal_tracking_relationships={</span>
-<span class="go">            &quot;product_id&quot;: [</span>
-<span class="go">                # We can use multiple bolt.temporal objects with the same column name but</span>
-<span class="go">                # different history lengths to track different intervals of the same variable</span>
-<span class="go">                # Track last 5 weeks of ad spend</span>
-<span class="go">                bolt.temporal.numerical(column_name=&quot;ad_spend&quot;, history_length=5),</span>
-<span class="go">                # Track last 10 weeks of ad spend</span>
-<span class="go">                bolt.temporal.numerical(column_name=&quot;ad_spend&quot;, history_length=10),</span>
-<span class="go">                # Track last 5 weeks of sales performance</span>
-<span class="go">                bolt.temporal.categorical(column_name=&quot;sales_performance&quot;, history_length=5),</span>
-<span class="go">            ]</span>
-<span class="go">        },</span>
-<span class="go">        target=&quot;sales_performance&quot;,</span>
-<span class="go">        time_granularity=&quot;weekly&quot;,</span>
-<span class="go">        lookahead=2 # predict 2 weeks ahead</span>
-<span class="go">    )</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Alternatively suppose our data has the following columns: &quot;user_id&quot;, &quot;movie_id&quot;, &quot;hours_watched&quot;, &quot;timestamp&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># We want to build a movie recommendation system.</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Then we may configure UDT as follows:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">bolt</span><span class="o">.</span><span class="n">UniversalDeepTransformer</span><span class="p">(</span>
-<span class="go">        data_types={</span>
-<span class="go">            &quot;user_id&quot;: bolt.types.categorical(),</span>
-<span class="go">            &quot;timestamp&quot;: bolt.types.date(),</span>
-<span class="go">            &quot;movie_id&quot;: bolt.types.categorical(n_classes=3000),</span>
-<span class="go">            &quot;hours_watched&quot;: bolt.types.numerical(range=(0, 25)),</span>
-<span class="go">        },</span>
-<span class="go">        temporal_tracking_relationships={</span>
-<span class="go">            &quot;user_id&quot;: [</span>
-<span class="go">                &quot;movie_id&quot;, # autotuned movie temporal tracking</span>
-<span class="go">                bolt.temporal.numerical(column_name=&quot;hours_watched&quot;, history_length=&quot;5&quot;) # track last 5 days of hours watched.</span>
-<span class="go">            ]</span>
-<span class="go">        },</span>
-<span class="go">        target=&quot;movie_id&quot;,</span>
-<span class="go">    )</span>
-</pre></div>
-</div>
-<p class="rubric">Notes</p>
-<ul class="simple">
-<li><p>Refer to the documentation bolt.types.ColumnType and bolt.temporal.TemporalConfig to better understand column types
-and temporal tracking configurations.</p></li>
-</ul>
-</dd></dl>
+<span class="sig-prename descclassname"><span class="pre">UniversalDeepTransformer.</span></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#thirdai.bolt.UniversalDeepTransformer.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.UniversalDeepTransformer.train">
@@ -1334,7 +1243,7 @@ search queries, and user bios.</p>
 <dd><p>Bases: <a class="reference internal" href="#thirdai.bolt.types.ColumnType" title="thirdai._thirdai.bolt.types.ColumnType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnType</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="thirdai.bolt.types.token_tags.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.token_tags.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">data.transformations.NERLearnedTag</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#thirdai.bolt.types.token_tags.__init__" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
